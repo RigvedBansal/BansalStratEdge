@@ -561,6 +561,15 @@ h3 {
   gap: 1rem;
 }
 
+.journal-masthead,
+.journal-stats,
+.editorial-grid,
+.topic-grid,
+.article-related-grid {
+  display: grid;
+  gap: 1rem;
+}
+
 .premium-grid {
   margin-top: 2.2rem;
 }
@@ -750,6 +759,112 @@ h3 {
   gap: 1rem;
 }
 
+.journal-masthead {
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+  align-items: end;
+}
+
+.journal-stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.journal-stat,
+.editorial-card,
+.topic-card,
+.article-related-card,
+.article-hero-card,
+.article-body,
+.aside-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  box-shadow: var(--shadow);
+}
+
+.journal-stat,
+.editorial-card,
+.article-related-card,
+.aside-card {
+  padding: 1.35rem;
+  background: linear-gradient(180deg, rgba(255, 253, 249, 0.96), rgba(255, 248, 240, 0.86));
+}
+
+.journal-stat strong {
+  display: block;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.08em;
+  color: var(--obsidian);
+}
+
+.journal-stat span {
+  display: block;
+  margin-top: 0.55rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  font-size: 0.94rem;
+}
+
+.editorial-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 2rem;
+}
+
+.editorial-card h3,
+.topic-card h3,
+.article-related-card h3 {
+  margin-top: 0.7rem;
+  font-size: 1.28rem;
+  line-height: 1.16;
+}
+
+.editorial-card p:last-child,
+.topic-card p:last-child,
+.article-related-card p:last-child {
+  color: var(--ink-soft);
+}
+
+.journal-section-head {
+  max-width: 60rem;
+  margin-bottom: 2rem;
+}
+
+.journal-section-head h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.2rem, 4.6vw, 4rem);
+  line-height: 0.96;
+}
+
+.journal-section-head p:last-child {
+  color: var(--ink-soft);
+  line-height: 1.76;
+}
+
+.section-dark .journal-section-head p:last-child {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.journal-card-top,
+.article-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.mini-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.42rem 0.68rem;
+  border-radius: 999px;
+  background: rgba(21, 36, 63, 0.06);
+  border: 1px solid rgba(21, 36, 63, 0.08);
+  color: var(--navy);
+  font-size: 0.77rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
 .mini-panel {
   padding: 1.2rem;
   border-radius: 22px;
@@ -781,6 +896,152 @@ h3 {
   margin-top: 0.7rem;
   font-size: 1.5rem;
   line-height: 1.12;
+}
+
+.journal-card .text-link,
+.article-related-card .text-link,
+.aside-card .text-link {
+  margin-top: 1.15rem;
+}
+
+.topic-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.topic-card {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.topic-card h3 {
+  color: #fff;
+}
+
+.topic-card ul {
+  margin: 1rem 0 0;
+  padding-left: 1rem;
+  line-height: 1.9;
+}
+
+.topic-card a {
+  color: rgba(255, 255, 255, 0.82);
+  transition: color var(--transition);
+}
+
+.topic-card a:hover,
+.topic-card a:focus-visible {
+  color: #fff;
+}
+
+.article-hero-card {
+  padding: 2rem;
+  background:
+    radial-gradient(circle at top right, rgba(200, 169, 106, 0.14), transparent 28%),
+    linear-gradient(155deg, rgba(255, 253, 249, 0.98), rgba(246, 239, 228, 0.9));
+}
+
+.article-hero-card h1 {
+  margin-top: 1rem;
+  max-width: 16ch;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.9rem, 5vw, 5.1rem);
+  line-height: 0.94;
+}
+
+.article-standfirst {
+  max-width: 62ch;
+  margin-top: 1rem;
+  color: var(--ink-soft);
+  font-size: 1.08rem;
+  line-height: 1.78;
+}
+
+.article-layout {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.35fr) minmax(0, 0.65fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.article-aside {
+  position: sticky;
+  top: 7rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.aside-label {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.aside-card strong {
+  display: block;
+  margin-top: 0.55rem;
+  font-size: 1.12rem;
+  line-height: 1.4;
+}
+
+.aside-card p,
+.aside-card li {
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.aside-card ul {
+  margin: 0.9rem 0 0;
+  padding-left: 1rem;
+}
+
+.article-body {
+  padding: 2rem;
+  background: linear-gradient(180deg, rgba(255, 253, 249, 0.98), rgba(248, 241, 233, 0.9));
+}
+
+.article-body p,
+.article-body li {
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+.article-body h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 0.98;
+}
+
+.article-block + .article-block {
+  margin-top: 2.3rem;
+  padding-top: 2.3rem;
+  border-top: 1px solid var(--line);
+}
+
+.article-block ul {
+  margin: 1rem 0 0;
+  padding-left: 1rem;
+}
+
+.article-pullquote {
+  margin: 2rem 0;
+  padding: 1.4rem 1.5rem;
+  border-left: 4px solid var(--champagne);
+  border-radius: var(--radius-md);
+  background: rgba(200, 169, 106, 0.1);
+  color: var(--obsidian);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.22;
+}
+
+.article-related-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .article-stack {
@@ -891,12 +1152,19 @@ h3 {
   transform: translateY(0);
 }
 
+.journal-article-page .reveal {
+  opacity: 1;
+  transform: none;
+}
+
 @media (max-width: 1160px) {
   .hero-layout,
+  .journal-masthead,
   .strategy-layout,
   .founder-layout,
   .signature-layout,
   .journal-feature,
+  .article-layout,
   .founder-profile,
   .founder-profile-reverse,
   .contact-card {
@@ -909,12 +1177,22 @@ h3 {
   }
 
   .signature-grid,
-  .article-stack {
+  .article-stack,
+  .article-related-grid {
     grid-template-columns: 1fr;
+  }
+
+  .editorial-grid,
+  .topic-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero-copy h1 {
     max-width: 11.5ch;
+  }
+
+  .article-aside {
+    position: static;
   }
 }
 
@@ -956,11 +1234,15 @@ h3 {
   }
 
   .hero-indicators,
+  .journal-stats,
+  .editorial-grid,
   .suite-grid,
   .premium-grid-4,
   .insight-grid,
   .journal-grid,
-  .article-stack {
+  .article-stack,
+  .topic-grid,
+  .article-related-grid {
     grid-template-columns: 1fr;
   }
 
@@ -997,6 +1279,12 @@ h3 {
     font-size: clamp(2.2rem, 11vw, 3.4rem);
   }
 
+  .article-hero-card h1,
+  .journal-section-head h2,
+  .article-body h2 {
+    font-size: clamp(2rem, 9vw, 3.2rem);
+  }
+
   .hero-copy h1 {
     max-width: 100%;
     line-height: 0.98;
@@ -1020,6 +1308,13 @@ h3 {
 
   .journal-feature,
   .longform-card,
+  .article-hero-card,
+  .article-body,
+  .aside-card,
+  .journal-stat,
+  .editorial-card,
+  .topic-card,
+  .article-related-card,
   .founder-profile-copy,
   .contact-card,
   .signature-panel,

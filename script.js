@@ -27,19 +27,26 @@ navLinks.forEach((link) => {
 });
 
 const path = window.location.pathname.split("/").pop() || "index.html";
+const isHomePage = document.body.classList.contains("home-page");
+const isFoundersPage = document.body.classList.contains("founders-page");
+const isBlogsSection =
+  document.body.classList.contains("blogs-page") ||
+  document.body.classList.contains("journal-article-page") ||
+  path === "blogs.html" ||
+  path.startsWith("journal-");
 
 document.querySelectorAll("[data-nav-link]").forEach((link) => {
   const target = link.getAttribute("href");
 
-  if ((path === "index.html" || path === "") && target === "./index.html") {
+  if ((isHomePage || path === "index.html" || path === "") && target === "./index.html") {
     link.setAttribute("aria-current", "page");
   }
 
-  if (path === "blogs.html" && target === "./blogs.html") {
+  if (isBlogsSection && target === "./blogs.html") {
     link.setAttribute("aria-current", "page");
   }
 
-  if (path === "founders.html" && target === "./founders.html") {
+  if ((isFoundersPage || path === "founders.html") && target === "./founders.html") {
     link.setAttribute("aria-current", "page");
   }
 });
