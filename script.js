@@ -38,6 +38,10 @@ document.querySelectorAll("[data-nav-link]").forEach((link) => {
   if (path === "blogs.html" && target === "./blogs.html") {
     link.setAttribute("aria-current", "page");
   }
+
+  if (path === "founders.html" && target === "./founders.html") {
+    link.setAttribute("aria-current", "page");
+  }
 });
 
 const reveals = document.querySelectorAll(".reveal");
