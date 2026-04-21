@@ -1344,3 +1344,1318 @@ h3 {
     transform: none;
   }
 }
+
+/* Home landing page redesign */
+
+body.home-page.landing-page {
+  color: #142033;
+  background:
+    radial-gradient(circle at top left, rgba(186, 154, 101, 0.18), transparent 28%),
+    linear-gradient(180deg, #fcfaf6 0%, #f5efe6 52%, #f8f4ed 100%);
+}
+
+body.home-page.landing-page::before {
+  background-image:
+    linear-gradient(rgba(20, 32, 51, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 32, 51, 0.028) 1px, transparent 1px);
+  background-size: 128px 128px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 76%);
+}
+
+.home-page.landing-page .container {
+  width: min(1120px, calc(100vw - 1.5rem));
+}
+
+.lp-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 0.8rem 0 0;
+}
+
+.lp-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(20, 32, 51, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 252, 247, 0.82);
+  box-shadow: 0 18px 44px rgba(20, 32, 51, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.lp-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 0;
+}
+
+.lp-brand-mark {
+  width: 2.95rem;
+  height: 2.95rem;
+  border-radius: 1rem;
+  background: #fff;
+  object-fit: contain;
+  box-shadow: 0 14px 32px rgba(20, 32, 51, 0.12);
+}
+
+.lp-brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  line-height: 1;
+}
+
+.lp-brand-copy strong {
+  font-size: 0.98rem;
+  letter-spacing: -0.04em;
+}
+
+.lp-brand-copy small {
+  color: rgba(20, 32, 51, 0.64);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.lp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.3rem;
+  padding: 0.9rem 1.35rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.lp-button:hover,
+.lp-button:focus-visible {
+  transform: translateY(-1px);
+}
+
+.lp-button-dark {
+  color: #fff;
+  background: linear-gradient(135deg, #111d31, #253b61);
+  box-shadow: 0 16px 34px rgba(17, 29, 49, 0.2);
+}
+
+.lp-button-soft {
+  color: #142033;
+  background: rgba(255, 253, 249, 0.92);
+  border-color: rgba(20, 32, 51, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82);
+}
+
+.lp-main {
+  padding-bottom: 5rem;
+}
+
+.lp-hero {
+  padding: clamp(3rem, 7vw, 5.75rem) 0 2rem;
+}
+
+.lp-hero-grid,
+.lp-proof-grid,
+.lp-founder-grid {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.lp-hero-copy,
+.lp-hero-panel,
+.lp-fit-card,
+.lp-service-card,
+.lp-process-card,
+.lp-proof-card,
+.lp-lead-card,
+.lp-founder-copy,
+.lp-final-card,
+.lp-faq-item {
+  border: 1px solid rgba(20, 32, 51, 0.08);
+  border-radius: 28px;
+  background: rgba(255, 252, 247, 0.88);
+  box-shadow: 0 20px 48px rgba(20, 32, 51, 0.06);
+}
+
+.lp-hero-copy {
+  padding: clamp(1.6rem, 4vw, 2.75rem);
+}
+
+.lp-kicker,
+.lp-card-label,
+.lp-panel-label {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #8b6a39;
+}
+
+.lp-hero-copy h1 {
+  margin-top: 0.9rem;
+  max-width: 10ch;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(2.8rem, 12vw, 5.3rem);
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  line-height: 0.93;
+}
+
+.lp-lead,
+.lp-section-heading p,
+.lp-service-card p,
+.lp-process-card p,
+.lp-proof-copy p,
+.lp-lead-copy p,
+.lp-founder-copy p,
+.lp-final-card p,
+.lp-faq-item p,
+.lp-panel-item p,
+.lp-microcopy,
+.lp-form-note,
+.lp-form-response,
+.lp-footer p {
+  margin: 0;
+  color: rgba(20, 32, 51, 0.76);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.lp-lead {
+  max-width: 60ch;
+  margin-top: 1rem;
+  font-size: 1.04rem;
+}
+
+.lp-hero-copy .lp-button {
+  margin-top: 1.5rem;
+}
+
+.lp-microcopy {
+  margin-top: 0.85rem;
+  font-size: 0.92rem;
+}
+
+.lp-hero-panel {
+  padding: 1.4rem;
+}
+
+.lp-panel-stack {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.lp-panel-item {
+  padding: 1.15rem 1.2rem;
+  border-radius: 22px;
+  background: #f9f3ea;
+  border: 1px solid rgba(20, 32, 51, 0.06);
+}
+
+.lp-panel-item h2,
+.lp-section-heading h2,
+.lp-proof-copy h2,
+.lp-lead-copy h2,
+.lp-founder-copy h2,
+.lp-final-card h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.2rem, 7vw, 3.55rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.94;
+}
+
+.lp-panel-item h2 {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.04em;
+}
+
+.lp-panel-item p {
+  margin-top: 0.45rem;
+  font-size: 0.95rem;
+}
+
+.lp-section {
+  padding: clamp(1.2rem, 4vw, 2rem) 0;
+}
+
+.lp-section-soft .lp-process-card,
+.lp-section-soft .lp-faq-item {
+  background: rgba(255, 249, 241, 0.94);
+}
+
+.lp-section-heading {
+  display: grid;
+  gap: 0.8rem;
+  margin-bottom: 1.15rem;
+  max-width: 52rem;
+}
+
+.lp-fit-grid,
+.lp-service-grid,
+.lp-process-grid,
+.lp-faq-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.lp-fit-card,
+.lp-service-card,
+.lp-process-card,
+.lp-faq-item {
+  padding: 1.35rem;
+}
+
+.lp-fit-card-muted {
+  background: rgba(248, 243, 236, 0.9);
+}
+
+.lp-list {
+  display: grid;
+  gap: 0.82rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lp-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: rgba(20, 32, 51, 0.84);
+  line-height: 1.6;
+}
+
+.lp-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72rem;
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 999px;
+  background: #8b6a39;
+}
+
+.lp-service-grid {
+  align-items: stretch;
+}
+
+.lp-service-card {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.lp-service-card h3,
+.lp-process-card h3 {
+  margin: 0;
+  font-size: 1.22rem;
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+}
+
+.lp-service-card strong {
+  color: #142033;
+}
+
+.lp-process-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.lp-process-card span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 999px;
+  background: rgba(37, 59, 97, 0.08);
+  color: #142033;
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.lp-process-card h3 {
+  margin-top: 0.95rem;
+}
+
+.lp-proof-grid {
+  align-items: center;
+}
+
+.lp-proof-copy {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.lp-proof-card {
+  padding: 1.45rem;
+}
+
+.lp-lead-card {
+  display: grid;
+  gap: 1.25rem;
+  padding: clamp(1.35rem, 4vw, 2rem);
+}
+
+.lp-lead-form {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.lp-lead-form input {
+  width: 100%;
+  min-height: 3.35rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(20, 32, 51, 0.14);
+  border-radius: 16px;
+  background: #fff;
+  color: #142033;
+}
+
+.lp-lead-form input:focus-visible {
+  outline: 2px solid rgba(139, 106, 57, 0.26);
+  outline-offset: 2px;
+  border-color: rgba(139, 106, 57, 0.42);
+}
+
+.lp-form-note,
+.lp-form-response {
+  font-size: 0.9rem;
+}
+
+.lp-form-response {
+  min-height: 1.35rem;
+  color: #5f4b28;
+}
+
+.lp-founder-grid {
+  align-items: center;
+}
+
+.lp-founder-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.lp-founder-frame {
+  width: min(100%, 430px);
+  padding: 0.8rem;
+  border: 1px solid rgba(20, 32, 51, 0.08);
+  border-radius: 34px;
+  background: rgba(255, 252, 247, 0.88);
+  box-shadow: 0 20px 48px rgba(20, 32, 51, 0.08);
+}
+
+.lp-founder-frame img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 26px;
+  object-fit: cover;
+}
+
+.lp-founder-copy {
+  display: grid;
+  gap: 0.9rem;
+  padding: clamp(1.45rem, 4vw, 2.1rem);
+}
+
+.lp-faq-list {
+  gap: 0.85rem;
+}
+
+.lp-faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  list-style: none;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+}
+
+.lp-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.lp-faq-item summary::after {
+  content: "+";
+  flex-shrink: 0;
+  color: #8b6a39;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.lp-faq-item[open] summary::after {
+  content: "-";
+}
+
+.lp-faq-item p {
+  margin-top: 0.95rem;
+  max-width: 72ch;
+}
+
+.lp-final-section {
+  padding-top: 1.5rem;
+}
+
+.lp-final-card {
+  display: grid;
+  gap: 0.95rem;
+  justify-items: start;
+  padding: clamp(1.55rem, 4vw, 2.25rem);
+}
+
+.lp-footer {
+  padding: 0 0 2.8rem;
+}
+
+.lp-footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-top: 0.4rem;
+}
+
+.lp-footer a {
+  color: #142033;
+  font-weight: 700;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 720px) {
+  .home-page.landing-page .container {
+    width: min(1120px, calc(100vw - 2rem));
+  }
+
+  .lp-hero-grid,
+  .lp-proof-grid,
+  .lp-founder-grid {
+    grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.96fr);
+    gap: 1.25rem;
+  }
+
+  .lp-fit-grid,
+  .lp-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lp-lead-card {
+    grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+    align-items: center;
+  }
+}
+
+@media (min-width: 960px) {
+  .lp-service-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lp-process-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lp-fit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 639px) {
+  .lp-header-inner {
+    padding: 0.75rem 0.8rem;
+  }
+
+  .lp-brand-copy strong {
+    font-size: 0.92rem;
+  }
+
+  .lp-button {
+    width: 100%;
+  }
+
+  .lp-header .lp-button {
+    width: auto;
+    min-height: 2.95rem;
+    padding-inline: 1rem;
+    font-size: 0.88rem;
+  }
+
+  .lp-hero-copy h1 {
+    max-width: 100%;
+  }
+
+  .lp-panel-item,
+  .lp-fit-card,
+  .lp-service-card,
+  .lp-process-card,
+  .lp-proof-card,
+  .lp-faq-item,
+  .lp-final-card {
+    border-radius: 24px;
+  }
+
+  .lp-final-card {
+    justify-items: stretch;
+  }
+}
+
+/* Landing polish refresh */
+
+body.home-page.landing-page {
+  background:
+    radial-gradient(circle at top left, rgba(186, 154, 101, 0.12), transparent 24%),
+    radial-gradient(circle at 85% 10%, rgba(21, 36, 63, 0.08), transparent 20%),
+    linear-gradient(180deg, #fcf9f4 0%, #f5efe6 48%, #f8f4ed 100%);
+}
+
+body.home-page.landing-page::before {
+  background-size: 144px 144px;
+  opacity: 0.72;
+}
+
+.home-page.landing-page .container {
+  width: min(1160px, calc(100vw - 2rem));
+}
+
+.lp-hero {
+  padding: clamp(2.4rem, 5vw, 4.1rem) 0 1.7rem;
+}
+
+.lp-hero-grid {
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.lp-hero-copy,
+.lp-fit-card,
+.lp-service-card,
+.lp-process-card,
+.lp-proof-card,
+.lp-lead-card,
+.lp-final-card,
+.lp-faq-item {
+  background: linear-gradient(180deg, rgba(255, 253, 249, 0.96), rgba(248, 242, 233, 0.9));
+  border: 1px solid rgba(20, 32, 51, 0.08);
+  box-shadow: 0 20px 44px rgba(20, 32, 51, 0.06);
+}
+
+.lp-hero-panel {
+  display: grid;
+  gap: 1rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.lp-hero-copy {
+  padding: clamp(1.65rem, 4vw, 2.4rem);
+}
+
+.lp-hero-copy h1 {
+  max-width: 8.5ch;
+  margin-top: 0.75rem;
+  font-size: clamp(3rem, 7.2vw, 4.9rem);
+  line-height: 0.96;
+  letter-spacing: -0.075em;
+}
+
+.lp-lead {
+  max-width: 34rem;
+  margin-top: 1rem;
+  font-size: 1.05rem;
+}
+
+.lp-hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.35rem;
+}
+
+.lp-hero-chips span,
+.lp-inline-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.62rem 0.84rem;
+  border-radius: 999px;
+  background: rgba(21, 36, 63, 0.05);
+  border: 1px solid rgba(21, 36, 63, 0.09);
+  color: var(--navy);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.lp-hero-actions {
+  align-items: center;
+  margin-top: 1.35rem;
+}
+
+.lp-hero-actions .lp-button {
+  margin-top: 0;
+}
+
+.lp-inline-link {
+  margin-top: 0;
+  font-size: 0.94rem;
+}
+
+#call-planner {
+  scroll-margin-top: 7rem;
+}
+
+.lp-scheduler-card,
+.lp-hero-help,
+.lp-checklist-preview {
+  padding: 1.35rem;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255, 253, 249, 0.96), rgba(248, 242, 233, 0.9));
+  border: 1px solid rgba(20, 32, 51, 0.08);
+  box-shadow: 0 20px 44px rgba(20, 32, 51, 0.06);
+}
+
+.lp-scheduler-card h2 {
+  margin-top: 0.55rem;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(1.45rem, 2.7vw, 2rem);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.05em;
+}
+
+.lp-panel-copy {
+  margin: 0.75rem 0 0;
+  color: rgba(20, 32, 51, 0.74);
+  line-height: 1.65;
+}
+
+.lp-call-form,
+.lp-lead-form {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1.1rem;
+}
+
+.lp-lead-form-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.lp-lead-form-row .lp-button {
+  width: auto;
+  min-width: 15rem;
+}
+
+.lp-field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.lp-field {
+  display: grid;
+  gap: 0.42rem;
+}
+
+.lp-field span {
+  color: rgba(20, 32, 51, 0.7);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.lp-field input,
+.lp-field textarea,
+.lp-lead-form input {
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0.92rem 1rem;
+  border: 1px solid rgba(20, 32, 51, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.96);
+  color: #142033;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.lp-field textarea {
+  min-height: 7.4rem;
+  resize: vertical;
+}
+
+.lp-field input:focus-visible,
+.lp-field textarea:focus-visible,
+.lp-lead-form input:focus-visible {
+  outline: 2px solid rgba(139, 106, 57, 0.22);
+  outline-offset: 2px;
+  border-color: rgba(139, 106, 57, 0.4);
+}
+
+.lp-call-form .lp-button,
+.lp-lead-form .lp-button {
+  width: 100%;
+}
+
+.lp-lead-form .lp-lead-form-row .lp-button {
+  width: auto;
+}
+
+.lp-hero-help {
+  background: linear-gradient(180deg, rgba(249, 244, 236, 0.98), rgba(245, 239, 230, 0.92));
+}
+
+.lp-hero-points {
+  display: grid;
+  gap: 0.95rem;
+  margin: 0.95rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lp-hero-points li {
+  position: relative;
+  padding-left: 1.05rem;
+  color: rgba(20, 32, 51, 0.82);
+  line-height: 1.62;
+}
+
+.lp-hero-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72rem;
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 999px;
+  background: #8b6a39;
+}
+
+.trust-band {
+  padding-top: 0.4rem;
+}
+
+.trust-band-row {
+  padding: 0.9rem 0 1rem;
+  color: rgba(20, 32, 51, 0.72);
+}
+
+.lp-section {
+  padding: clamp(1.5rem, 4vw, 2.2rem) 0;
+}
+
+.lp-section-heading {
+  margin-bottom: 1.35rem;
+}
+
+.lp-section-heading h2,
+.lp-proof-copy h2,
+.lp-lead-copy h2,
+.lp-final-card h2 {
+  font-size: clamp(2.45rem, 5vw, 3.7rem);
+  line-height: 0.97;
+}
+
+.lp-service-card,
+.lp-process-card,
+.lp-fit-card,
+.lp-proof-card,
+.lp-faq-item {
+  border-radius: 26px;
+}
+
+.lp-service-card {
+  gap: 0.75rem;
+}
+
+.lp-service-card h3,
+.lp-process-card h3 {
+  font-size: 1.18rem;
+  line-height: 1.28;
+}
+
+.lp-process-card span {
+  background: rgba(37, 59, 97, 0.09);
+}
+
+.lp-lead-card {
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  align-items: start;
+}
+
+.lp-checklist-preview {
+  margin-top: 1.2rem;
+}
+
+.lp-checklist-preview .lp-list {
+  margin-top: 0.75rem;
+}
+
+.lp-form-note,
+.lp-form-response {
+  color: rgba(20, 32, 51, 0.64);
+  line-height: 1.55;
+}
+
+.lp-form-response {
+  min-height: 1.4rem;
+  color: #5f4b28;
+}
+
+.lp-final-card {
+  gap: 1rem;
+}
+
+.lp-final-card p {
+  max-width: 42rem;
+}
+
+.contact-card {
+  align-items: center;
+}
+
+.home-page .founder-layout {
+  grid-template-columns: minmax(0, 0.74fr) minmax(0, 1.26fr);
+  gap: clamp(1.4rem, 3vw, 2.4rem);
+  align-items: start;
+}
+
+.home-page .founder-portrait {
+  max-width: 23rem;
+  justify-self: center;
+}
+
+.home-page .portrait-frame {
+  border-radius: 26px;
+}
+
+.home-page .portrait-frame img {
+  aspect-ratio: 1 / 1.14;
+}
+
+@media (min-width: 720px) {
+  .lp-hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.94fr);
+  }
+}
+
+@media (max-width: 959px) {
+  .lp-lead-card {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .founder-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .founder-portrait {
+    max-width: 20rem;
+  }
+}
+
+@media (max-width: 719px) {
+  .home-page.landing-page .container {
+    width: min(100%, calc(100vw - 1rem));
+  }
+
+  .lp-hero-copy h1 {
+    max-width: 100%;
+    font-size: clamp(2.75rem, 14vw, 4rem);
+  }
+
+  .lp-field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lp-lead-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .lp-lead-form-row .lp-button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .lp-scheduler-card,
+  .lp-hero-help,
+  .lp-checklist-preview {
+    border-radius: 24px;
+  }
+}
+
+/* Checklist page */
+
+body.checklist-page {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(200, 169, 106, 0.14), transparent 24%),
+    radial-gradient(circle at 88% 8%, rgba(36, 55, 87, 0.1), transparent 22%),
+    linear-gradient(180deg, #fbf8f2 0%, #f2ebe1 100%);
+}
+
+body.checklist-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(21, 36, 63, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21, 36, 63, 0.018) 1px, transparent 1px);
+  background-size: 112px 112px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.52), transparent 82%);
+  pointer-events: none;
+}
+
+.checklist-hero-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: 1.2rem;
+  align-items: start;
+  padding: clamp(1.45rem, 4vw, 2.25rem);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at top right, rgba(200, 169, 106, 0.15), transparent 32%),
+    linear-gradient(180deg, rgba(255, 253, 249, 0.98), rgba(246, 239, 228, 0.92));
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  box-shadow: var(--shadow);
+}
+
+.checklist-hero-copy h1 {
+  margin-top: 0.7rem;
+  max-width: 11ch;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.8rem, 6.2vw, 4.9rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+
+.checklist-hero-copy p:last-child {
+  max-width: 60ch;
+  color: var(--ink-soft);
+  line-height: 1.78;
+}
+
+.checklist-hero-panel {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.checklist-summary-card,
+.checklist-notes-card {
+  padding: 1.3rem;
+  border-radius: 26px;
+  background: rgba(255, 253, 249, 0.82);
+  border: 1px solid rgba(21, 36, 63, 0.08);
+  box-shadow: 0 18px 40px rgba(20, 32, 51, 0.06);
+}
+
+.checklist-summary-score {
+  display: grid;
+  gap: 0.18rem;
+  margin-top: 0.65rem;
+}
+
+.checklist-summary-score strong {
+  font-size: clamp(2.35rem, 5vw, 3.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.08em;
+}
+
+.checklist-summary-score span {
+  color: rgba(20, 32, 51, 0.7);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.checklist-progress {
+  overflow: hidden;
+  height: 0.72rem;
+  margin-top: 1rem;
+  border-radius: 999px;
+  background: rgba(21, 36, 63, 0.08);
+}
+
+.checklist-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #c8a96a, #243757);
+  transition: width 220ms ease;
+}
+
+.checklist-summary-copy {
+  margin: 0.95rem 0 0;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.checklist-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.checklist-hero-actions .button {
+  min-height: 3rem;
+}
+
+.checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.checklist-card {
+  padding: 1.45rem;
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(255, 253, 249, 0.98), rgba(248, 242, 233, 0.92));
+  border: 1px solid rgba(21, 36, 63, 0.08);
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.checklist-card.is-complete {
+  border-color: rgba(200, 169, 106, 0.45);
+  box-shadow: 0 20px 44px rgba(20, 32, 51, 0.08);
+}
+
+.checklist-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.checklist-card-status {
+  margin: 0;
+  color: rgba(20, 32, 51, 0.6);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.checklist-card h2 {
+  margin-top: 0.72rem;
+  font-size: 1.5rem;
+  line-height: 1.06;
+}
+
+.checklist-card-copy {
+  margin: 0.65rem 0 0;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.checklist-items {
+  display: grid;
+  gap: 0.8rem;
+  margin: 1.15rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.checklist-item {
+  position: relative;
+}
+
+.checklist-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.checklist-choice {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(21, 36, 63, 0.08);
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.checklist-choice:hover {
+  transform: translateY(-1px);
+  border-color: rgba(21, 36, 63, 0.16);
+  box-shadow: 0 14px 30px rgba(20, 32, 51, 0.06);
+}
+
+.checklist-choice-copy {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.checklist-choice-copy strong {
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.checklist-choice-copy span {
+  color: var(--ink-soft);
+  line-height: 1.62;
+}
+
+.checklist-tick {
+  position: relative;
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-top: 0.1rem;
+  border-radius: 0.42rem;
+  border: 1px solid rgba(21, 36, 63, 0.18);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.checklist-toggle:focus-visible + .checklist-choice {
+  outline: 2px solid rgba(139, 106, 57, 0.28);
+  outline-offset: 3px;
+}
+
+.checklist-toggle:checked + .checklist-choice {
+  background: rgba(245, 239, 229, 0.92);
+  border-color: rgba(200, 169, 106, 0.35);
+}
+
+.checklist-toggle:checked + .checklist-choice .checklist-tick {
+  border-color: rgba(21, 36, 63, 0.08);
+  background: linear-gradient(135deg, #c8a96a, #243757);
+  box-shadow: 0 8px 16px rgba(36, 55, 87, 0.18);
+}
+
+.checklist-toggle:checked + .checklist-choice .checklist-tick::after {
+  content: "";
+  position: absolute;
+  left: 0.43rem;
+  top: 0.18rem;
+  width: 0.32rem;
+  height: 0.7rem;
+  border: solid #fff;
+  border-width: 0 0.14rem 0.14rem 0;
+  transform: rotate(45deg);
+}
+
+.checklist-notes-card h2 {
+  margin-top: 0.6rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 0.98;
+}
+
+.checklist-score-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.35rem;
+}
+
+.checklist-score-grid article {
+  padding: 1rem 1.05rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(21, 36, 63, 0.08);
+}
+
+.checklist-score-grid strong {
+  display: block;
+  font-size: 1rem;
+  letter-spacing: -0.03em;
+}
+
+.checklist-score-grid p {
+  margin: 0.55rem 0 0;
+  color: var(--ink-soft);
+  line-height: 1.68;
+}
+
+@media (max-width: 959px) {
+  .checklist-hero-card,
+  .checklist-grid,
+  .checklist-score-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 719px) {
+  .checklist-hero-actions {
+    flex-direction: column;
+  }
+
+  .checklist-hero-actions .button {
+    width: 100%;
+  }
+
+  .checklist-card {
+    padding: 1.2rem;
+  }
+}
+
+@media print {
+  body.checklist-page::before,
+  .site-header,
+  .checklist-hero-actions {
+    display: none;
+  }
+
+  body.checklist-page {
+    background: #fff;
+  }
+
+  .checklist-hero-card,
+  .checklist-card,
+  .checklist-summary-card,
+  .checklist-notes-card,
+  .checklist-score-grid article,
+  .checklist-choice {
+    box-shadow: none;
+    background: #fff;
+  }
+
+  .checklist-progress {
+    border: 1px solid rgba(21, 36, 63, 0.14);
+  }
+}

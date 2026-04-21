@@ -3,21 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bansal StratEdge Pvt. Ltd. | Premium Finance, Capital & AI Advisory</title>
+    <title>Bansal StratEdge Pvt. Ltd. | Finance Systems, Capital Discipline &amp; AI for Finance</title>
     <meta
       name="description"
-      content="Bansal StratEdge Pvt. Ltd. is a premium strategic advisory firm focused on enterprise finance transformation, capital strategy, board-grade performance management and governed AI adoption."
+      content="Bansal StratEdge helps CFOs, finance teams, Series A-C startups, and mid-sized companies improve FP&amp;A, capital efficiency, and practical AI in finance with focused advisory and clear execution."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
       rel="stylesheet"
     />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body class="home-page">
+  <body class="home-page landing-page">
     <div class="page-shell">
       <header class="site-header">
         <div class="container nav-shell">
@@ -48,73 +48,78 @@
       </header>
 
       <main>
-        <section class="hero">
-          <div class="container hero-layout">
-            <div class="hero-copy reveal">
-              <p class="eyebrow">Strategic finance advisory for complex businesses</p>
-              <h1>Finance strategy for institutions that demand precision, credibility and control.</h1>
-              <p class="hero-text">
-                Bansal StratEdge helps leadership teams strengthen capital discipline, modernize finance operations and
-                adopt AI with governance that stands up in serious operating environments.
+        <section class="lp-hero">
+          <div class="container lp-hero-grid">
+            <div class="lp-hero-copy reveal">
+              <p class="lp-kicker">Finance systems, capital discipline, practical AI</p>
+              <h1>Sharpen the finance system your team already has.</h1>
+              <p class="lp-lead">
+                For CFOs, finance teams, Series A-C startups, and mid-sized companies that need better planning,
+                stronger capital discipline, and practical AI inside finance. We keep the work focused, hands-on, and
+                light on consulting ceremony.
               </p>
-
-              <div class="hero-actions">
-                <a class="button button-primary" href="#capabilities">View Core Capabilities</a>
-                <a class="button button-secondary" href="./blogs.html">Read Our Financial Journal</a>
+              <div class="lp-hero-chips" aria-label="Core focus areas">
+                <span>FP&amp;A setup</span>
+                <span>Capital efficiency</span>
+                <span>AI for finance</span>
               </div>
-
-              <div class="hero-indicators">
-                <article>
-                  <span class="metric">20+</span>
-                  <p>years of senior finance leadership shaping our perspective</p>
-                </article>
-                <article>
-                  <span class="metric">5</span>
-                  <p>global banking institutions reflected across capital and performance roles</p>
-                </article>
-                <article>
-                  <span class="metric">3</span>
-                  <p>integrated mandates across finance, capital strategy and governed AI</p>
-                </article>
+              <div class="hero-actions lp-hero-actions">
+                <a class="lp-button lp-button-dark" href="#call-planner" data-scroll-to-call>Book a Strategy Call</a>
+                <a class="lp-button lp-button-soft" href="#checklist">Get the CFO Checklist</a>
               </div>
+              <p class="lp-microcopy">Pick a preferred slot first. We will open Gmail with a draft to Kamlesh and your details already filled in.</p>
             </div>
 
-            <aside class="hero-suite reveal" aria-label="Strategic advisory overview">
-              <div class="suite-caption">
-                <span>Executive Mandate</span>
-                <span>Bansal StratEdge</span>
+            <aside class="lp-hero-panel reveal" id="call-planner" aria-label="Strategy call planner">
+              <div class="lp-scheduler-card">
+                <p class="lp-panel-label">Book a strategy call</p>
+                <h2>Pick a preferred date and time.</h2>
+                <p class="lp-panel-copy">
+                  Choose the slot that works for you. We will open Gmail with a draft addressed to
+                  kamlesh@kamleshbansal.com.
+                </p>
+
+                <form class="lp-call-form" id="strategy-call-form">
+                  <div class="lp-field-grid">
+                    <label class="lp-field" for="strategy-date">
+                      <span>Date</span>
+                      <input id="strategy-date" name="preferred_date" type="date" required />
+                    </label>
+
+                    <label class="lp-field" for="strategy-time">
+                      <span>Time</span>
+                      <input id="strategy-time" name="preferred_time" type="time" required />
+                    </label>
+                  </div>
+
+                  <label class="lp-field" for="strategy-company">
+                    <span>Company / role</span>
+                    <input id="strategy-company" name="company" type="text" placeholder="Example: CFO, Acme Labs" />
+                  </label>
+
+                  <label class="lp-field" for="strategy-note">
+                    <span>What should we discuss?</span>
+                    <textarea
+                      id="strategy-note"
+                      name="context"
+                      rows="4"
+                      placeholder="Optional: planning issues, capital questions, AI workflow ideas, or the decision bottleneck you want to fix."
+                    ></textarea>
+                  </label>
+
+                  <button class="lp-button lp-button-dark" type="submit">Draft Strategy Call Email</button>
+                  <p class="lp-form-note">Opens Gmail in the browser with a prefilled draft to Kamlesh.</p>
+                  <p class="lp-form-response" id="strategy-response" aria-live="polite"></p>
+                </form>
               </div>
 
-              <article class="suite-feature">
-                <p class="suite-label">Strategic Positioning</p>
-                <h2>Capital clarity, modern finance design and governed AI in one coherent operating agenda.</h2>
-                <p>
-                  We help leadership teams improve decision quality without sacrificing governance, operating discipline
-                  or credibility.
-                </p>
-              </article>
-
-              <div class="suite-grid">
-                <article class="suite-card">
-                  <p class="suite-label">Capital</p>
-                  <h3>Allocation frameworks, balance sheet discipline and funding architecture.</h3>
-                </article>
-                <article class="suite-card">
-                  <p class="suite-label">Finance</p>
-                  <h3>Sharper FP&amp;A, clearer reporting and decision-ready performance rhythms.</h3>
-                </article>
-                <article class="suite-card">
-                  <p class="suite-label">AI</p>
-                  <h3>Governed analytics and AI adoption for high-accountability environments.</h3>
-                </article>
-                <article class="suite-card suite-card-muted">
-                  <p class="suite-label">Delivery</p>
-                  <ul>
-                    <li>Diagnostic clarity</li>
-                    <li>Executive alignment</li>
-                    <li>Measured execution</li>
-                  </ul>
-                </article>
+              <div class="lp-hero-help">
+                <p class="lp-panel-label">Where we typically help</p>
+                <ul class="lp-hero-points">
+                  <li>Forecasts, dashboards, and management review rhythms that are easier to act on</li>
+                  <li>Working capital, spend discipline, and capital allocation decisions that need sharper trade-offs</li>
+                  <li>Finance workflows where AI can remove manual work without creating control noise</li>
+                </ul>
               </div>
             </aside>
           </div>
@@ -123,31 +128,97 @@
         <section class="trust-band">
           <div class="container trust-band-row">
             <span>Built for CFO offices</span>
-            <span>Financial institutions</span>
-            <span>Promoter-led enterprises</span>
-            <span>Capital-intensive businesses</span>
-            <span>Regulated and high-consequence environments</span>
+            <span>Series A-C finance teams</span>
+            <span>Mid-sized operators</span>
+            <span>Capital discipline work</span>
+            <span>Practical AI in finance</span>
+          </div>
+        </section>
+
+        <section class="lp-section" id="fit">
+          <div class="container">
+            <div class="lp-section-heading">
+              <p class="lp-kicker">Who This Is For</p>
+              <h2>A good fit for finance teams with real operating complexity.</h2>
+              <p>
+                We are intentionally selective. The right clients usually have meaningful financial decisions to make and
+                want tighter systems, not more generic advice.
+              </p>
+            </div>
+
+            <div class="lp-fit-grid">
+              <article class="lp-fit-card reveal">
+                <p class="lp-card-label">Best fit</p>
+                <ul class="lp-list">
+                  <li>CFOs and finance teams that need stronger planning, reporting, and management visibility</li>
+                  <li>Startups from Series A to C that are building finance discipline before complexity compounds</li>
+                  <li>Mid-sized companies that have outgrown spreadsheet-heavy finance operations</li>
+                </ul>
+              </article>
+
+              <article class="lp-fit-card lp-fit-card-muted reveal">
+                <p class="lp-card-label">Not for</p>
+                <ul class="lp-list">
+                  <li>Very early-stage businesses that only need bookkeeping or basic back-office support</li>
+                  <li>Teams looking for a broad consulting retainer with vague deliverables</li>
+                  <li>Companies that want an AI story before they have a finance problem worth solving</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="lp-section" id="services">
+          <div class="container">
+            <div class="lp-section-heading">
+              <p class="lp-kicker">What We Do</p>
+              <h2>Three focused services, each tied to a clear outcome.</h2>
+              <p>We productize the work so buyers can understand the value quickly and know what they are buying.</p>
+            </div>
+
+            <div class="lp-service-grid">
+              <article class="lp-service-card reveal">
+                <p class="lp-card-label">FP&amp;A System Setup</p>
+                <h3>Build a planning and reporting system finance can actually run.</h3>
+                <p><strong>What it is:</strong> A focused rebuild of your forecast model, reporting cadence, and management dashboard structure.</p>
+                <p><strong>Outcome:</strong> Clearer forecasts, cleaner reporting, and faster monthly decision cycles.</p>
+              </article>
+
+              <article class="lp-service-card reveal">
+                <p class="lp-card-label">Capital Efficiency Audit</p>
+                <h3>See where cash and capital decisions are underperforming.</h3>
+                <p><strong>What it is:</strong> A short diagnostic on working capital, spend discipline, investment logic, and capital allocation choices.</p>
+                <p><strong>Outcome:</strong> A tighter view of what is draining efficiency and what to fix first.</p>
+              </article>
+
+              <article class="lp-service-card reveal">
+                <p class="lp-card-label">AI for Finance</p>
+                <h3>Use AI where it improves finance work, not where it creates noise.</h3>
+                <p><strong>What it is:</strong> Practical AI use cases for reporting, variance analysis, commentary, and finance workflow support.</p>
+                <p><strong>Outcome:</strong> Useful automation with sensible controls and a clear owner inside finance.</p>
+              </article>
+            </div>
           </div>
         </section>
 
         <section class="section" id="capabilities">
           <div class="container">
             <div class="section-intro reveal">
-              <p class="eyebrow">Capabilities</p>
-              <h2>A focused advisory platform for businesses that expect institutional quality.</h2>
+              <p class="eyebrow">Broader Capabilities</p>
+              <h2>Beyond the core offers, we can support deeper finance and capital work.</h2>
               <p>
-                We stay close to the decisions that materially change enterprise outcomes: where finance strategy,
-                capital design and operating discipline intersect.
+                If the immediate problem expands into operating model design, capital decisions, leadership reporting,
+                or finance workflow redesign, we can stay close to that work as well.
               </p>
             </div>
 
             <div class="premium-grid premium-grid-4">
               <article class="premium-card reveal">
                 <p class="card-index">01</p>
-                <h3>Enterprise Finance Transformation</h3>
+                <h3>Finance Operating Model Design</h3>
                 <p>
-                  Redesign finance for faster judgment, stronger planning cycles and management reporting that helps
-                  leaders act rather than merely review.
+                  Redesign finance for faster judgment, stronger planning cycles, and reporting structures that help
+                  leaders act rather than just review numbers.
                 </p>
                 <ul>
                   <li>Scenario-led FP&amp;A</li>
@@ -158,10 +229,10 @@
 
               <article class="premium-card reveal">
                 <p class="card-index">02</p>
-                <h3>Capital Strategy &amp; Balance Sheet Stewardship</h3>
+                <h3>Capital Planning &amp; Stewardship</h3>
                 <p>
-                  Bring greater rigor to capital allocation, liquidity choices, return thresholds and enterprise
-                  funding strategy.
+                  Bring greater rigor to capital allocation, liquidity choices, return thresholds, and the trade-offs
+                  behind enterprise funding decisions.
                 </p>
                 <ul>
                   <li>Capital deployment frameworks</li>
@@ -172,24 +243,24 @@
 
               <article class="premium-card reveal">
                 <p class="card-index">03</p>
-                <h3>AI Governance for Finance Functions</h3>
+                <h3>AI Workflow Design for Finance</h3>
                 <p>
-                  Prioritize finance AI use cases with a governance-led lens so innovation strengthens control rather
-                  than eroding it.
+                  Prioritize finance AI use cases with a practical, governance-aware lens so automation improves work
+                  quality instead of adding noise.
                 </p>
                 <ul>
                   <li>Use-case prioritization</li>
-                  <li>Model risk and accountability design</li>
-                  <li>Explainability in finance workflows</li>
+                  <li>Workflow and ownership design</li>
+                  <li>Controls around finance automation</li>
                 </ul>
               </article>
 
               <article class="premium-card reveal">
                 <p class="card-index">04</p>
-                <h3>Chairman, Board &amp; CEO Decision Support</h3>
+                <h3>Board &amp; CEO Decision Support</h3>
                 <p>
-                  Shape strategic finance narratives that help top leadership see trade-offs, timing and capital
-                  consequences clearly.
+                  Shape finance narratives that help leadership teams see timing, trade-offs, and capital consequences
+                  more clearly.
                 </p>
                 <ul>
                   <li>Board-ready performance framing</li>
@@ -201,15 +272,44 @@
           </div>
         </section>
 
+        <section class="lp-section lp-section-soft" id="process">
+          <div class="container">
+            <div class="lp-section-heading">
+              <p class="lp-kicker">How It Works</p>
+              <h2>Simple process. No long consulting maze.</h2>
+            </div>
+
+            <div class="lp-process-grid">
+              <article class="lp-process-card reveal">
+                <span>01</span>
+                <h3>Diagnose</h3>
+                <p>We identify the planning gaps, capital bottlenecks, and reporting issues that are actually slowing decisions down.</p>
+              </article>
+
+              <article class="lp-process-card reveal">
+                <span>02</span>
+                <h3>Build</h3>
+                <p>We design the model, workflow, or operating structure required to make finance more useful.</p>
+              </article>
+
+              <article class="lp-process-card reveal">
+                <span>03</span>
+                <h3>Optimize</h3>
+                <p>We refine what works, remove what does not, and help the finance team run the system with confidence.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
         <section class="section section-dark" id="approach">
           <div class="container strategy-layout">
             <div class="strategy-copy reveal">
               <p class="eyebrow eyebrow-light">Our Approach</p>
-              <h2>Elegant strategy is only credible when it survives operational reality.</h2>
+              <h2>Good finance advice should survive real operating constraints.</h2>
               <p>
-                Bansal StratEdge combines finance depth with execution discipline. We do not separate advisory from
-                implementation logic, because premium advice should be usable inside real governance structures,
-                management cycles and capital constraints.
+                Bansal StratEdge combines finance depth with practical execution. We focus on the actual decision
+                bottleneck, build the smallest useful system that solves it, and keep the work grounded in how teams
+                really operate.
               </p>
             </div>
 
@@ -218,21 +318,21 @@
                 <span>01</span>
                 <div>
                   <h3>Diagnose the real decision bottleneck</h3>
-                  <p>We identify where reporting, capital logic, organizational incentives or governance design is slowing performance.</p>
+                  <p>We identify where reporting, capital logic, workflow design, or team ownership is slowing judgment.</p>
                 </div>
               </article>
               <article class="strategy-card reveal">
                 <span>02</span>
                 <div>
-                  <h3>Design the executive operating model</h3>
-                  <p>We shape planning cadences, accountability structures and finance workflows that leadership teams can trust.</p>
+                  <h3>Design the operating model around it</h3>
+                  <p>We shape planning cadences, accountability structures, and finance workflows that leadership can trust.</p>
                 </div>
               </article>
               <article class="strategy-card reveal">
                 <span>03</span>
                 <div>
                   <h3>Embed discipline without adding clutter</h3>
-                  <p>We favor clarity, governance and measured adoption over transformation theatre.</p>
+                  <p>We favor clarity, governance, and measured adoption over long transformation programs.</p>
                 </div>
               </article>
             </div>
@@ -242,28 +342,83 @@
         <section class="section">
           <div class="container signature-layout">
             <div class="signature-panel reveal">
-              <p class="eyebrow">Why Clients Come to Us</p>
-              <h2>Senior finance judgment, not generic consulting language.</h2>
+              <p class="eyebrow">Why Teams Choose Us</p>
+              <h2>Focused finance judgment, not generic consulting language.</h2>
               <p>
-                Our positioning is intentionally selective. Businesses engage us when the work is consequential,
-                leadership-facing and too important to be diluted by trend-chasing.
+                The positioning is intentionally selective. Clients come to us when the work is consequential,
+                leadership-facing, and needs direct thinking rather than a large process.
               </p>
             </div>
 
             <div class="signature-grid">
               <article class="signature-card reveal">
                 <h3>Finance-first lens</h3>
-                <p>We begin with balance sheets, cash generation, operating performance and executive reporting quality.</p>
+                <p>We begin with cash, planning quality, operating performance, and what management needs to decide.</p>
               </article>
               <article class="signature-card reveal">
-                <h3>Institutional polish</h3>
-                <p>Every recommendation is designed to stand up in the boardroom, not just in a presentation room.</p>
+                <h3>Practical operating design</h3>
+                <p>We try to leave teams with cleaner systems and workflows they can actually keep running.</p>
               </article>
               <article class="signature-card reveal">
-                <h3>Governed innovation</h3>
-                <p>We treat AI as a strategic capability that must be aligned to accountability, controls and business value.</p>
+                <h3>Sensible AI positioning</h3>
+                <p>We use AI where it improves finance work and say no where it adds risk, clutter, or theater.</p>
               </article>
             </div>
+          </div>
+        </section>
+
+        <section class="lp-section" id="proof">
+          <div class="container lp-proof-grid">
+            <div class="lp-proof-copy reveal">
+              <p class="lp-kicker">Early Proof</p>
+              <h2>Built on experience in finance + strategy.</h2>
+              <p>
+                Bansal StratEdge is an early-stage firm, so we keep the proof honest. No inflated logos. No borrowed case
+                studies. The value proposition is senior attention, clear thinking, and practical finance work that helps
+                management teams decide better.
+              </p>
+            </div>
+
+            <div class="lp-proof-card reveal">
+              <p class="lp-card-label">Typical impact areas include:</p>
+              <ul class="lp-list">
+                <li>Shorter planning and review cycles with clearer forecast ownership</li>
+                <li>Better visibility into cash use, working capital, and capital trade-offs</li>
+                <li>Less manual reporting and more time spent on decision-quality analysis</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="lp-section" id="checklist">
+          <div class="container lp-lead-card reveal">
+            <div class="lp-lead-copy">
+              <p class="lp-kicker">Free resource</p>
+              <h2>CFO Capital Efficiency Checklist</h2>
+              <p>
+                A sharper working checklist for CFOs and finance leads who want to pressure-test cash control, spend
+                discipline, reporting quality, and AI readiness before the next board cycle or planning reset.
+              </p>
+              <div class="lp-checklist-preview">
+                <p class="lp-card-label">What is inside</p>
+                <ul class="lp-list">
+                  <li>24 practical review points across cash, working capital, spend, allocation, reporting, and AI controls</li>
+                  <li>Interactive tick-off progress so teams can use it as a live review tool, not just a static download</li>
+                  <li>A simple scoring guide to help you see where discipline is solid and where leakage is still hiding</li>
+                </ul>
+                <a class="text-link lp-inline-link" href="./cfo-capital-efficiency-checklist.html">Preview the checklist</a>
+              </div>
+            </div>
+
+            <form class="lp-lead-form" id="checklist-form">
+              <div class="lp-lead-form-row">
+                <label class="sr-only" for="checklist-email">Email address</label>
+                <input id="checklist-email" name="email" type="email" placeholder="Your email" required />
+                <button class="lp-button lp-button-dark" type="submit">Get the CFO Checklist</button>
+              </div>
+              <p class="lp-form-note">Opens Gmail with a prefilled request addressed to rigvedkbansal@gmail.com.</p>
+              <p class="lp-form-response" id="checklist-response" aria-live="polite"></p>
+            </form>
           </div>
         </section>
 
@@ -277,20 +432,20 @@
 
             <div class="founder-copy reveal">
               <p class="eyebrow">Founder Leadership</p>
-              <h2>Kamlesh Bansal brings a global finance perspective shaped across Citi, JPMorgan, Deutsche Bank, ING and ICICI.</h2>
+              <h2>Kamlesh Bansal brings a finance-and-strategy lens shaped by years inside complex financial environments.</h2>
               <p>
-                His background spans capital strategy, balance sheet stewardship, performance governance and enterprise
-                finance leadership in complex institutional settings. That experience anchors the firm’s insistence on
-                rigor, composure and practical strategic advice.
+                Bansal StratEdge is built around clear thinking, direct problem solving, and a preference for systems
+                that management teams can actually use. The firm sits at the intersection of finance, strategy, and
+                practical AI adoption.
               </p>
               <p>
-                His current work and public writing examine generative AI, governance, capital decisions and the
-                changing role of finance leadership in businesses that cannot compromise on control.
+                Because the firm is early-stage, clients work closely with the founder rather than being handed into a
+                large consulting chain. The focus is thoughtful diagnosis, sensible design, and useful execution.
               </p>
 
               <div class="tag-list">
+                <span>FP&amp;A Design</span>
                 <span>Capital Allocation</span>
-                <span>Balance Sheet Strategy</span>
                 <span>Performance Governance</span>
                 <span>AI in Finance</span>
               </div>
@@ -303,14 +458,52 @@
           </div>
         </section>
 
+        <section class="lp-section lp-section-soft" id="faq">
+          <div class="container">
+            <div class="lp-section-heading">
+              <p class="lp-kicker">FAQ</p>
+              <h2>Real buyer questions.</h2>
+            </div>
+
+            <div class="lp-faq-list">
+              <details class="lp-faq-item reveal" open>
+                <summary>Do you work with small companies?</summary>
+                <p>
+                  Yes, if finance is already becoming a real operating function. We are usually a fit for funded startups
+                  and mid-sized businesses with enough complexity to benefit from better planning, capital discipline, and
+                  reporting. If you mainly need bookkeeping or basic admin support, we are probably not the right fit.
+                </p>
+              </details>
+
+              <details class="lp-faq-item reveal">
+                <summary>How is this different from consultants?</summary>
+                <p>
+                  We keep the scope narrower and more practical. The goal is not a broad transformation deck. The goal is
+                  to diagnose what is slowing finance down, build the right system, and leave the team with something they
+                  can actually run.
+                </p>
+              </details>
+
+              <details class="lp-faq-item reveal">
+                <summary>Do you use AI or just advise?</summary>
+                <p>
+                  Both, when it makes sense. We help identify the right finance use cases, shape the workflow, and
+                  implement lightweight solutions where the payoff is real. If AI adds noise, risk, or unnecessary
+                  complexity, we will say so.
+                </p>
+              </details>
+            </div>
+          </div>
+        </section>
+
         <section class="section section-insights">
           <div class="container">
             <div class="section-intro reveal">
               <p class="eyebrow">Financial Journal</p>
               <h2>Original perspectives on finance, capital and AI for decision-makers.</h2>
               <p>
-                The insights section now carries original Bansal StratEdge writing designed to sound like a premium
-                advisory voice: measured, analytical and useful in real operating contexts.
+                The journal remains part of the site. It gives buyers a way to understand how the firm thinks before
+                they ever book a call.
               </p>
             </div>
 
@@ -343,19 +536,28 @@
           </div>
         </section>
 
+        <section class="lp-section lp-final-section" id="book-call">
+          <div class="container lp-final-card reveal">
+            <p class="lp-kicker">Next Step</p>
+            <h2>If the finance problem is real, the first conversation should be simple.</h2>
+            <p>Choose a preferred date and time first, then we will draft the strategy-call email for you.</p>
+            <a class="lp-button lp-button-dark" href="#call-planner" data-scroll-to-call>Book a Strategy Call</a>
+          </div>
+        </section>
+
         <section class="section contact-section" id="contact">
           <div class="container contact-card reveal">
             <div>
               <p class="eyebrow">Contact</p>
-              <h2>For enterprises seeking a sharper finance and capital agenda.</h2>
+              <h2>If you want a sharper finance system, start with a short conversation.</h2>
               <p>
-                If your leadership team is rethinking finance design, capital deployment or AI-enabled decision support,
-                Bansal StratEdge can be reached directly by email.
+                Share the finance, capital, or AI workflow issue you are dealing with and we will tell you quickly if
+                there is a fit. You can also reach us directly at kamlesh@kamleshbansal.com.
               </p>
             </div>
 
             <div class="contact-actions">
-              <a class="button button-primary" href="mailto:kamlesh@kamleshbansal.com">kamlesh@kamleshbansal.com</a>
+              <a class="button button-primary" href="#call-planner" data-scroll-to-call>Book a Strategy Call</a>
               <a class="button button-secondary" href="./blogs.html">Browse the Journal</a>
             </div>
           </div>
@@ -375,7 +577,7 @@
           </a>
 
           <div class="footer-copy">
-            <p>Bansal StratEdge Pvt. Ltd. | Strategic advisory for enterprise finance, capital strategy and governed AI adoption.</p>
+            <p>Bansal StratEdge Pvt. Ltd. | Focused finance strategy for FP&amp;A, capital discipline and AI in finance.</p>
             <p>&copy; <span id="year"></span> Bansal StratEdge Pvt. Ltd.</p>
           </div>
         </div>
