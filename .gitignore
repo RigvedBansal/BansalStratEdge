@@ -5,4 +5,5 @@ node_modules/
 .DS_Store
 *.log
 
-# Build artifacts (keep dist/ as it contains the Speed Insights module)
+# Build artifacts
+dist/

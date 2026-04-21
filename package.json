@@ -5,7 +5,6 @@
   "main": "script.js",
   "type": "module",
   "scripts": {
-    "postinstall": "cp node_modules/@vercel/speed-insights/dist/index.mjs dist/speed-insights.mjs",
     "test": "echo \"No tests specified\""
   },
   "repository": {
