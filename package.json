@@ -1,0 +1,25 @@
+{
+  "name": "bansal-strat-edge",
+  "version": "1.0.0",
+  "description": "Bansal StratEdge - Finance Systems, Capital Discipline & AI for Finance",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "postinstall": "cp node_modules/@vercel/speed-insights/dist/index.mjs dist/speed-insights.mjs",
+    "test": "echo \"No tests specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RigvedBansal/BansalStratEdge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RigvedBansal/BansalStratEdge/issues"
+  },
+  "homepage": "https://github.com/RigvedBansal/BansalStratEdge#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}

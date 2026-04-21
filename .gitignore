@@ -1,0 +1,8 @@
+# Dependencies
+node_modules/
+
+# System files
+.DS_Store
+*.log
+
+# Build artifacts (keep dist/ as it contains the Speed Insights module)
