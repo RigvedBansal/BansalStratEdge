@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI in Finance Needs a Control Tower, Not a Sandbox | Bansal StratEdge Journal</title>
+    <meta
+      name="description"
+      content="Read Bansal StratEdge's longform essay on why finance AI requires operating governance, decision rights and escalation design rather than isolated experimentation."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      (() => {
+        const storageKey = "bansal-stratedge-theme";
+        const prefersDark =
+          typeof window.matchMedia === "function" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        let theme = prefersDark ? "dark" : "light";
+
+        try {
+          const storedTheme = window.localStorage.getItem(storageKey);
+
+          if (storedTheme === "dark" || storedTheme === "light") {
+            theme = storedTheme;
+          }
+        } catch (error) {
+          // Ignore storage access issues and fall back to the system preference.
+        }
+
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body class="journal-article-page">
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container nav-shell">
+          <a class="brand" href="./index.html" aria-label="Bansal StratEdge home">
+            <span class="brand-lockup">
+              <img class="brand-mark-image" src="./assets/bansal-mark-clean.png" alt="Bansal StratEdge logo mark" />
+              <span class="brand-copy">
+                <strong>Bansal StratEdge</strong>
+                <small>Pvt. Ltd.</small>
+              </span>
+            </span>
+          </a>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="site-nav" id="site-nav">
+            <a href="./index.html" data-nav-link="home">Home</a>
+            <a href="./index.html#capabilities">Capabilities</a>
+            <a href="./index.html#approach">Approach</a>
+            <a href="./founders.html" data-nav-link="founders">Founders</a>
+            <a href="./blogs.html" data-nav-link="blogs">Insights</a>
+            <a href="./index.html#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <div class="container">
+            <article class="article-hero-card reveal">
+              <p class="eyebrow">Journal Issue 02</p>
+              <div class="article-meta-row">
+                <span class="mini-chip">AI governance</span>
+                <span class="mini-chip">11 min read</span>
+                <span class="mini-chip">Longform</span>
+              </div>
+              <h1>AI in Finance Needs a Control Tower, Not a Sandbox</h1>
+              <p class="article-standfirst">
+                Finance teams should not treat AI as a cluster of disconnected prototypes. Once AI begins shaping
+                planning, reporting or management commentary, what matters most is not the model alone but the
+                governance of the workflow around it.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container article-layout">
+            <aside class="article-aside reveal">
+              <div class="aside-card">
+                <span class="aside-label">At a glance</span>
+                <strong>Fragmented experimentation creates hidden operating risk.</strong>
+                <p>
+                  The moment AI begins influencing financial judgment, isolated pilots can become a governance problem.
+                </p>
+              </div>
+
+              <div class="aside-card">
+                <span class="aside-label">Key takeaways</span>
+                <ul>
+                  <li>Govern the workflow, not just the algorithm.</li>
+                  <li>Decision rights matter more than pilot enthusiasm.</li>
+                  <li>Assistive AI and decision-shaping AI should not be governed identically.</li>
+                </ul>
+              </div>
+
+              <div class="aside-card">
+                <span class="aside-label">Continue reading</span>
+                <a class="text-link" href="./journal-board-narratives.html">Board-Ready Performance Narratives Start Long Before Board Week</a>
+                <a class="text-link" href="./journal-cfo-dashboards.html">Why CFO Dashboards Fail Before the Numbers Do</a>
+                <a class="text-link" href="./journal-capital-confidence.html">Capital Allocation in a More Expensive Cost of Confidence Era</a>
+              </div>
+            </aside>
+
+            <article class="article-body reveal">
+              <section class="article-block">
+                <p>
+                  Finance functions often begin AI adoption in the most understandable way possible: through contained
+                  experiments. A team tests a summarization tool, another pilots anomaly detection, another uses a model
+                  to accelerate management commentary. Each initiative appears harmless on its own, which is precisely
+                  why the overall operating risk can grow unnoticed.
+                </p>
+                <p>
+                  The problem is not experimentation itself. The problem is allowing multiple experiments to shape
+                  financial workflows before decision ownership, documentation standards and escalation paths are clear.
+                  In finance, the workflow is the real unit of risk. That is where explanation, approval and
+                  accountability either survive or disappear.
+                </p>
+              </section>
+
+              <section class="article-block">
+                <h2>The sandbox mindset becomes fragile very quickly</h2>
+                <p>
+                  Sandboxes create psychological permission to move fast, but they also encourage teams to treat AI as
+                  separate from the operating model. That separation becomes harder to defend once outputs begin
+                  informing forecasts, management commentary, risk assessments or pricing logic. At that point, the
+                  model is not peripheral. It is participating in judgment.
+                </p>
+                <p>
+                  When that happens without a common governance spine, finance leaders inherit a messy landscape:
+                  inconsistent standards, unclear review thresholds and uneven documentation. The technology may still
+                  be new, but the accountability problem is already old. Someone is relying on the output, and someone
+                  will be asked to explain it later.
+                </p>
+              </section>
+
+              <blockquote class="article-pullquote">
+                Finance does not need a gallery of AI pilots. It needs an operating model that decides where AI belongs,
+                who owns it and how exceptions are escalated.
+              </blockquote>
+
+              <section class="article-block">
+                <h2>Govern the workflow, not only the model</h2>
+                <p>
+                  Discussions about AI governance often focus on model review, bias controls or technical testing. Those
+                  matter, but finance needs a broader frame. Governance has to cover where data enters the process, how
+                  output is reviewed, when human override is required and what gets recorded for later explanation.
+                </p>
+                <p>
+                  A planning assistant that drafts commentary has a different risk profile from a model that influences
+                  forecast judgments. A reconciliation tool differs from a system that shapes executive interpretation.
+                  The governance architecture should reflect that difference explicitly. Otherwise teams either
+                  under-govern serious applications or over-govern low-risk ones until adoption collapses.
+                </p>
+              </section>
+
+              <section class="article-block">
+                <h2>Decision rights must be explicit</h2>
+                <p>
+                  One of the most important questions in finance AI is simple: who is accountable for accepting or
+                  rejecting the output? If that answer is vague, the design is unfinished. Premium governance requires
+                  named decision owners, defined review levels and clear escalation rules when confidence falls below
+                  acceptable thresholds.
+                </p>
+                <p>
+                  That is why a control-tower model is useful. It does not centralize every experiment into bureaucracy.
+                  It creates a visible operating layer where standards, approvals and exceptions are coordinated. The
+                  aim is not to slow learning. It is to prevent uncontrolled diffusion.
+                </p>
+              </section>
+
+              <section class="article-block">
+                <h2>What strong teams do differently</h2>
+                <ul>
+                  <li>They maintain an inventory of AI use cases across the finance workflow.</li>
+                  <li>They separate assistive use from decision-shaping use.</li>
+                  <li>They define who signs off on output in each material workflow.</li>
+                  <li>They build explanation and auditability into the process from the start.</li>
+                </ul>
+              </section>
+
+              <section class="article-block">
+                <h2>Closing thought</h2>
+                <p>
+                  Finance has every reason to pursue AI, but not casually. Once AI becomes part of judgment, governance
+                  has to become part of design. The teams that win will not be the ones with the highest number of
+                  pilots. They will be the ones that create clarity about where AI can add value without weakening the
+                  credibility of the finance function itself.
+                </p>
+              </section>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="journal-section-head reveal">
+              <p class="eyebrow">Related Reading</p>
+              <h2>More on governance, reporting and executive confidence.</h2>
+              <p>These pieces look at the adjacent questions around accountability, management narrative and decision support quality.</p>
+            </div>
+
+            <div class="article-related-grid">
+              <article class="article-related-card reveal">
+                <p class="card-source">Board communication</p>
+                <h3>Board-Ready Performance Narratives Start Long Before Board Week</h3>
+                <p>Why governance quality depends on disciplined issue framing long before formal review cycles.</p>
+                <a class="text-link" href="./journal-board-narratives.html">Read article</a>
+              </article>
+
+              <article class="article-related-card reveal">
+                <p class="card-source">Finance design</p>
+                <h3>Why CFO Dashboards Fail Before the Numbers Do</h3>
+                <p>How finance reporting loses strategic value when it prioritizes visibility over judgment.</p>
+                <a class="text-link" href="./journal-cfo-dashboards.html">Read article</a>
+              </article>
+
+              <article class="article-related-card reveal">
+                <p class="card-source">Capital allocation</p>
+                <h3>Capital Allocation in a More Expensive Cost of Confidence Era</h3>
+                <p>Why capital decisions increasingly depend on credibility, reversibility and stakeholder trust.</p>
+                <a class="text-link" href="./journal-capital-confidence.html">Read article</a>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-row">
+          <a class="brand brand-footer" href="./index.html" aria-label="Bansal StratEdge home">
+            <span class="brand-lockup">
+              <img class="brand-mark-image" src="./assets/bansal-mark-clean.png" alt="Bansal StratEdge logo mark" />
+              <span class="brand-copy">
+                <strong>Bansal StratEdge</strong>
+                <small>Pvt. Ltd.</small>
+              </span>
+            </span>
+          </a>
+
+          <div class="footer-copy">
+            <p>Bansal StratEdge Pvt. Ltd. | Original perspectives on enterprise finance, capital strategy and governed AI.</p>
+            <p>&copy; <span id="year"></span> Bansal StratEdge Pvt. Ltd.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="./speed-insights.js"></script>
+    <script src="./chatbase-config.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
