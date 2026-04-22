@@ -30,6 +30,7 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: light;
 }
 
 body {
@@ -42,6 +43,9 @@ body {
     radial-gradient(circle at 85% 15%, rgba(36, 55, 87, 0.1), transparent 24%),
     linear-gradient(180deg, #fbf8f2 0%, #f6f1e9 48%, #f8f5ef 100%);
   overflow-x: hidden;
+  transition:
+    background 320ms ease,
+    color 240ms ease;
 }
 
 body::before {
@@ -54,6 +58,7 @@ body::before {
   background-size: 112px 112px;
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.58), transparent 86%);
   pointer-events: none;
+  transition: opacity 320ms ease;
 }
 
 img {
@@ -207,6 +212,220 @@ textarea {
   border-radius: 999px;
   background: var(--navy);
   transition: transform var(--transition), opacity var(--transition);
+}
+
+.theme-toggle {
+  display: inline-grid;
+  justify-items: center;
+  gap: 0.38rem;
+  margin-left: 1rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  transform: translateY(-1px);
+}
+
+.theme-toggle:focus-visible {
+  outline: none;
+}
+
+.theme-toggle-track {
+  position: relative;
+  width: 5.7rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #76d7ee 0%, #4f9cb7 100%);
+  box-shadow:
+    inset 0 1px 3px rgba(255, 255, 255, 0.36),
+    0 10px 18px rgba(24, 53, 84, 0.18);
+  transition:
+    background 380ms ease,
+    box-shadow 380ms ease;
+}
+
+.theme-toggle-thumb {
+  position: absolute;
+  top: 0.25rem;
+  left: 0.28rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #ffef7a 0 36%, #ffd511 70%, #f0b100 100%);
+  box-shadow:
+    0 0 18px rgba(255, 224, 80, 0.48),
+    0 10px 18px rgba(0, 0, 0, 0.16);
+  transition:
+    transform 500ms cubic-bezier(0.32, 1.35, 0.38, 1),
+    background 380ms ease,
+    box-shadow 380ms ease;
+  z-index: 3;
+}
+
+.theme-toggle-cloud,
+.theme-toggle-cloud::before,
+.theme-toggle-cloud::after {
+  position: absolute;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.theme-toggle-cloud {
+  height: 0.68rem;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.14);
+  transition:
+    opacity 280ms ease,
+    transform 500ms cubic-bezier(0.32, 1.35, 0.38, 1);
+}
+
+.theme-toggle-cloud::before,
+.theme-toggle-cloud::after {
+  content: "";
+}
+
+.theme-toggle-cloud-one {
+  width: 1.46rem;
+  top: 0.56rem;
+  left: 2.54rem;
+}
+
+.theme-toggle-cloud-one::before {
+  width: 0.72rem;
+  height: 0.72rem;
+  left: 0.18rem;
+  bottom: 0.16rem;
+}
+
+.theme-toggle-cloud-one::after {
+  width: 0.9rem;
+  height: 0.9rem;
+  right: 0.14rem;
+  bottom: 0.08rem;
+}
+
+.theme-toggle-cloud-two {
+  width: 1.76rem;
+  bottom: 0.5rem;
+  left: 2.04rem;
+}
+
+.theme-toggle-cloud-two::before {
+  width: 0.88rem;
+  height: 0.88rem;
+  left: 0.22rem;
+  bottom: 0.16rem;
+}
+
+.theme-toggle-cloud-two::after {
+  width: 1.02rem;
+  height: 1.02rem;
+  right: 0.12rem;
+  bottom: 0.04rem;
+}
+
+.theme-toggle-stars {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(0.36rem);
+  transition:
+    opacity 280ms ease,
+    transform 500ms cubic-bezier(0.32, 1.35, 0.38, 1);
+}
+
+.theme-toggle-star {
+  position: absolute;
+  width: 0.14rem;
+  height: 0.14rem;
+  border-radius: 999px;
+  background: rgba(255, 247, 214, 0.92);
+  box-shadow: 0 0 6px rgba(255, 247, 214, 0.48);
+}
+
+.theme-toggle-star-a {
+  top: 0.68rem;
+  left: 1rem;
+}
+
+.theme-toggle-star-b {
+  top: 1.25rem;
+  left: 1.62rem;
+}
+
+.theme-toggle-star-c {
+  top: 0.84rem;
+  left: 2.34rem;
+}
+
+.theme-toggle-star-d {
+  top: 1.72rem;
+  left: 2.86rem;
+}
+
+.theme-toggle-star-e {
+  top: 1.08rem;
+  left: 3.28rem;
+}
+
+.theme-toggle-horizon {
+  position: absolute;
+  left: -0.46rem;
+  bottom: -0.36rem;
+  width: 4.2rem;
+  height: 1.64rem;
+  border-radius: 999px 999px 0 0;
+  background: linear-gradient(180deg, rgba(42, 83, 121, 0.75), rgba(16, 38, 65, 0.96));
+  opacity: 0;
+  transform: translateX(-0.4rem);
+  transition:
+    opacity 280ms ease,
+    transform 500ms cubic-bezier(0.32, 1.35, 0.38, 1);
+}
+
+.theme-toggle-crater {
+  position: absolute;
+  border-radius: 999px;
+  background: rgba(191, 183, 162, 0.48);
+  opacity: 0;
+  transition: opacity 240ms ease 80ms;
+}
+
+.theme-toggle-crater-one {
+  top: 0.54rem;
+  left: 0.56rem;
+  width: 0.34rem;
+  height: 0.34rem;
+}
+
+.theme-toggle-crater-two {
+  top: 0.98rem;
+  left: 1.12rem;
+  width: 0.42rem;
+  height: 0.42rem;
+}
+
+.theme-toggle-crater-three {
+  top: 0.54rem;
+  left: 1.4rem;
+  width: 0.26rem;
+  height: 0.26rem;
+}
+
+.theme-toggle-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink-soft);
+  transition: color 240ms ease;
 }
 
 .button {
@@ -1209,6 +1428,13 @@ h3 {
 
   .nav-toggle {
     display: inline-flex;
+    order: 2;
+    margin-left: 0.55rem;
+  }
+
+  .theme-toggle {
+    order: 1;
+    margin-left: auto;
   }
 
   .site-nav {
@@ -1218,6 +1444,7 @@ h3 {
     align-items: flex-start;
     gap: 1rem;
     margin: 0;
+    order: 3;
     padding-top: 0.4rem;
   }
 
@@ -1260,6 +1487,24 @@ h3 {
   .hero,
   .page-hero {
     padding-top: 2.4rem;
+  }
+
+  .theme-toggle {
+    gap: 0.28rem;
+  }
+
+  .theme-toggle-track {
+    width: 5rem;
+    height: 2.45rem;
+  }
+
+  .theme-toggle-thumb {
+    width: 1.98rem;
+    height: 1.98rem;
+  }
+
+  .theme-toggle-label {
+    font-size: 0.7rem;
   }
 
   .section {
@@ -2634,9 +2879,362 @@ body.checklist-page::before {
   }
 }
 
+.nav-shell,
+.site-header::after,
+.brand-mark-image,
+.nav-toggle,
+.button-secondary,
+.hero-indicators article,
+.premium-card,
+.insight-card,
+.insight-feature,
+.signature-card,
+.journal-card,
+.journal-stat,
+.editorial-card,
+.founder-profile-copy,
+.signature-panel,
+.hero-suite,
+.suite-card,
+.contact-card,
+.journal-feature,
+.article-hero-card,
+.article-body,
+.longform-card,
+.article-related-card,
+.aside-card,
+.mini-panel,
+.portrait-frame,
+.lp-hero-copy,
+.lp-panel-item,
+.lp-fit-card,
+.lp-service-card,
+.lp-process-card,
+.lp-proof-card,
+.lp-lead-card,
+.lp-final-card,
+.lp-faq-item,
+.lp-scheduler-card,
+.lp-hero-help,
+.lp-checklist-preview,
+.lp-hero-chips span,
+.lp-inline-chip,
+.lp-button-soft,
+.lp-field input,
+.lp-field textarea,
+.lp-lead-form input,
+.tag-list span,
+.source-pill,
+.mini-chip,
+.lp-footer a,
+.lp-kicker,
+.lp-card-label,
+.lp-panel-label,
+.article-pullquote,
+.checklist-hero-card,
+.checklist-summary-card,
+.checklist-notes-card,
+.checklist-card,
+.checklist-choice,
+.checklist-score-grid article,
+.checklist-progress,
+.theme-toggle-label {
+  transition:
+    background 320ms ease,
+    background-color 320ms ease,
+    color 240ms ease,
+    border-color 240ms ease,
+    box-shadow 320ms ease,
+    opacity 240ms ease;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #edf4ff;
+  --ink-soft: rgba(220, 231, 250, 0.78);
+  --line: rgba(166, 191, 231, 0.18);
+  --line-strong: rgba(166, 191, 231, 0.28);
+  --shadow: 0 30px 70px rgba(0, 0, 0, 0.36);
+  --shadow-soft: 0 20px 44px rgba(0, 0, 0, 0.28);
+  --theme-panel-bg: linear-gradient(180deg, rgba(11, 25, 45, 0.96), rgba(6, 18, 34, 0.92));
+  --theme-panel-bg-strong: linear-gradient(180deg, rgba(15, 33, 58, 0.98), rgba(8, 20, 37, 0.94));
+  --theme-panel-border: rgba(160, 186, 228, 0.14);
+  --theme-panel-shadow: 0 22px 54px rgba(0, 0, 0, 0.28);
+  --theme-chip-bg: rgba(132, 162, 212, 0.12);
+  --theme-chip-border: rgba(132, 162, 212, 0.18);
+  --theme-input-bg: rgba(5, 16, 30, 0.82);
+  --theme-input-border: rgba(160, 186, 228, 0.18);
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] body.home-page.landing-page,
+html[data-theme="dark"] body.checklist-page {
+  color: #f7fbff;
+  background:
+    radial-gradient(circle at top left, rgba(200, 169, 106, 0.16), transparent 24%),
+    radial-gradient(circle at 88% 10%, rgba(66, 125, 188, 0.16), transparent 26%),
+    linear-gradient(180deg, #071322 0%, #09192d 46%, #0d1f34 100%);
+}
+
+html[data-theme="dark"] body::before,
+html[data-theme="dark"] body.home-page.landing-page::before,
+html[data-theme="dark"] body.checklist-page::before {
+  background-image:
+    linear-gradient(rgba(163, 190, 232, 0.038) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(163, 190, 232, 0.038) 1px, transparent 1px);
+  opacity: 0.9;
+}
+
+html[data-theme="dark"] .site-header::after {
+  background: linear-gradient(90deg, transparent, rgba(171, 197, 238, 0.18), transparent);
+}
+
+html[data-theme="dark"] .nav-shell {
+  border-color: rgba(171, 197, 238, 0.16);
+  background: rgba(7, 19, 35, 0.78);
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="dark"] .brand-mark-image {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="dark"] .nav-toggle {
+  background: rgba(132, 162, 212, 0.12);
+}
+
+html[data-theme="dark"] .nav-toggle span {
+  background: #e8f0ff;
+}
+
+html[data-theme="dark"] .theme-toggle-track {
+  background: linear-gradient(135deg, #061529 0%, #0d2342 55%, #102947 100%);
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.04),
+    0 10px 18px rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] .theme-toggle-thumb {
+  transform: translateX(2.95rem);
+  background: radial-gradient(circle at 32% 32%, #fff7da 0 34%, #efe9d9 68%, #d8d0c0 100%);
+  box-shadow:
+    0 0 16px rgba(255, 244, 204, 0.55),
+    0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="dark"] .theme-toggle-crater,
+html[data-theme="dark"] .theme-toggle-stars,
+html[data-theme="dark"] .theme-toggle-horizon {
+  opacity: 1;
+}
+
+html[data-theme="dark"] .theme-toggle-stars {
+  transform: translateY(0);
+}
+
+html[data-theme="dark"] .theme-toggle-cloud {
+  opacity: 0;
+  transform: translateX(-0.85rem) scale(0.8);
+}
+
+html[data-theme="dark"] .theme-toggle-horizon {
+  transform: translateX(0);
+}
+
+html[data-theme="dark"] .theme-toggle-label {
+  color: #f7fbff;
+}
+
+html[data-theme="dark"] .hero-indicators article,
+html[data-theme="dark"] .premium-card,
+html[data-theme="dark"] .insight-card,
+html[data-theme="dark"] .insight-feature,
+html[data-theme="dark"] .signature-card,
+html[data-theme="dark"] .journal-card,
+html[data-theme="dark"] .journal-stat,
+html[data-theme="dark"] .editorial-card,
+html[data-theme="dark"] .founder-profile-copy,
+html[data-theme="dark"] .signature-panel,
+html[data-theme="dark"] .contact-card,
+html[data-theme="dark"] .journal-feature,
+html[data-theme="dark"] .article-hero-card,
+html[data-theme="dark"] .article-body,
+html[data-theme="dark"] .longform-card,
+html[data-theme="dark"] .article-related-card,
+html[data-theme="dark"] .aside-card,
+html[data-theme="dark"] .mini-panel,
+html[data-theme="dark"] .portrait-frame,
+html[data-theme="dark"] .lp-hero-copy,
+html[data-theme="dark"] .lp-panel-item,
+html[data-theme="dark"] .lp-fit-card,
+html[data-theme="dark"] .lp-service-card,
+html[data-theme="dark"] .lp-process-card,
+html[data-theme="dark"] .lp-proof-card,
+html[data-theme="dark"] .lp-lead-card,
+html[data-theme="dark"] .lp-final-card,
+html[data-theme="dark"] .lp-faq-item,
+html[data-theme="dark"] .lp-scheduler-card,
+html[data-theme="dark"] .lp-checklist-preview,
+html[data-theme="dark"] .checklist-hero-card,
+html[data-theme="dark"] .checklist-summary-card,
+html[data-theme="dark"] .checklist-notes-card,
+html[data-theme="dark"] .checklist-card,
+html[data-theme="dark"] .checklist-choice,
+html[data-theme="dark"] .checklist-score-grid article {
+  background: var(--theme-panel-bg);
+  border-color: var(--theme-panel-border);
+  box-shadow: var(--theme-panel-shadow);
+}
+
+html[data-theme="dark"] .hero-suite,
+html[data-theme="dark"] .lp-hero-help,
+html[data-theme="dark"] .suite-card-muted {
+  background: var(--theme-panel-bg-strong);
+  border-color: rgba(183, 202, 236, 0.16);
+  box-shadow: 0 26px 58px rgba(0, 0, 0, 0.34);
+}
+
+html[data-theme="dark"] .button-secondary,
+html[data-theme="dark"] .lp-button-soft,
+html[data-theme="dark"] .lp-hero-chips span,
+html[data-theme="dark"] .lp-inline-chip,
+html[data-theme="dark"] .tag-list span,
+html[data-theme="dark"] .source-pill,
+html[data-theme="dark"] .mini-chip,
+html[data-theme="dark"] .checklist-progress,
+html[data-theme="dark"] .lp-process-card span {
+  background: var(--theme-chip-bg);
+  border-color: var(--theme-chip-border);
+  color: #edf4ff;
+  box-shadow: none;
+}
+
+html[data-theme="dark"] .lp-field input,
+html[data-theme="dark"] .lp-field textarea,
+html[data-theme="dark"] .lp-lead-form input {
+  background: var(--theme-input-bg);
+  border-color: var(--theme-input-border);
+  color: #f7fbff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+html[data-theme="dark"] .lp-field input::placeholder,
+html[data-theme="dark"] .lp-field textarea::placeholder,
+html[data-theme="dark"] .lp-lead-form input::placeholder {
+  color: rgba(220, 231, 250, 0.48);
+}
+
+html[data-theme="dark"] .metric,
+html[data-theme="dark"] .journal-stat strong,
+html[data-theme="dark"] .checklist-summary-score strong,
+html[data-theme="dark"] .checklist-card h2,
+html[data-theme="dark"] .article-pullquote,
+html[data-theme="dark"] .lp-service-card strong,
+html[data-theme="dark"] .lp-footer a {
+  color: #f7fbff;
+}
+
+html[data-theme="dark"] .lp-kicker,
+html[data-theme="dark"] .lp-card-label,
+html[data-theme="dark"] .lp-panel-label,
+html[data-theme="dark"] .suite-label,
+html[data-theme="dark"] .aside-label,
+html[data-theme="dark"] .mini-panel span,
+html[data-theme="dark"] .lp-faq-item summary::after {
+  color: #f3dfb4;
+}
+
+html[data-theme="dark"] .brand-copy small,
+html[data-theme="dark"] .brand-copy strong,
+html[data-theme="dark"] .lp-brand-copy small,
+html[data-theme="dark"] .site-nav,
+html[data-theme="dark"] .suite-caption,
+html[data-theme="dark"] .trust-band-row,
+html[data-theme="dark"] .lp-lead,
+html[data-theme="dark"] .lp-section-heading p,
+html[data-theme="dark"] .lp-service-card p,
+html[data-theme="dark"] .lp-process-card p,
+html[data-theme="dark"] .lp-proof-copy p,
+html[data-theme="dark"] .lp-lead-copy p,
+html[data-theme="dark"] .lp-founder-copy p,
+html[data-theme="dark"] .lp-final-card p,
+html[data-theme="dark"] .lp-faq-item p,
+html[data-theme="dark"] .lp-panel-item p,
+html[data-theme="dark"] .lp-microcopy,
+html[data-theme="dark"] .lp-footer p,
+html[data-theme="dark"] .lp-list li,
+html[data-theme="dark"] .lp-panel-copy,
+html[data-theme="dark"] .lp-hero-points li,
+html[data-theme="dark"] .lp-field span,
+html[data-theme="dark"] .lp-form-note,
+html[data-theme="dark"] .journal-stat span,
+html[data-theme="dark"] .article-standfirst,
+html[data-theme="dark"] .checklist-summary-score span,
+html[data-theme="dark"] .checklist-summary-copy,
+html[data-theme="dark"] .checklist-card-status,
+html[data-theme="dark"] .checklist-choice-copy span,
+html[data-theme="dark"] .founder-credentials,
+html[data-theme="dark"] .footer-row,
+html[data-theme="dark"] .checklist-score-grid p {
+  color: rgba(220, 231, 250, 0.74);
+}
+
+html[data-theme="dark"] .text-link,
+html[data-theme="dark"] .lp-inline-link,
+html[data-theme="dark"] .lp-form-response {
+  color: #f3dfb4;
+}
+
+html[data-theme="dark"] .lp-list li::before,
+html[data-theme="dark"] .lp-hero-points li::before {
+  background: #f3dfb4;
+}
+
+html[data-theme="dark"] .checklist-choice:hover {
+  border-color: rgba(183, 202, 236, 0.24);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.22);
+}
+
+html[data-theme="dark"] .checklist-toggle:checked + .checklist-choice {
+  background: rgba(21, 38, 61, 0.88);
+  border-color: rgba(200, 169, 106, 0.34);
+}
+
+html[data-theme="dark"] .checklist-tick {
+  border-color: rgba(160, 186, 228, 0.22);
+  background: rgba(4, 14, 27, 0.9);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+html[data-theme="dark"] .checklist-toggle:checked + .checklist-choice .checklist-tick {
+  border-color: rgba(200, 169, 106, 0.2);
+}
+
+html[data-theme="dark"] .checklist-card.is-complete {
+  box-shadow: 0 22px 46px rgba(0, 0, 0, 0.34);
+}
+
+html[data-theme="dark"] .article-pullquote {
+  background: rgba(200, 169, 106, 0.14);
+  border-left-color: #f3dfb4;
+}
+
+html[data-theme="dark"] .topic-card {
+  background: rgba(10, 25, 45, 0.72);
+  border-color: rgba(171, 197, 238, 0.16);
+}
+
+@media (max-width: 640px) {
+  html[data-theme="dark"] .theme-toggle-thumb {
+    transform: translateX(2.52rem);
+  }
+}
+
 @media print {
   body.checklist-page::before,
   .site-header,
+  .theme-toggle,
   .checklist-hero-actions {
     display: none;
   }

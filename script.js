@@ -2,9 +2,211 @@ const header = document.querySelector(".site-header");
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelectorAll(".site-nav a");
 const year = document.querySelector("#year");
+const CHATBASE_DEFAULT_BOT_ID = "wDye2cLkm_hH2e4lyjq_F";
+const CHATBASE_DEFAULT_HOST = "www.chatbase.co";
+const themeStorageKey = "bansal-stratedge-theme";
+const root = document.documentElement;
+const themeMediaQuery =
+  typeof window.matchMedia === "function"
+    ? window.matchMedia("(prefers-color-scheme: dark)")
+    : null;
+
+const readStoredTheme = () => {
+  try {
+    const storedTheme = window.localStorage.getItem(themeStorageKey);
+
+    if (storedTheme === "dark" || storedTheme === "light") {
+      return storedTheme;
+    }
+  } catch (error) {
+    return null;
+  }
+
+  return null;
+};
+
+const getSystemTheme = () => (themeMediaQuery?.matches ? "dark" : "light");
+
+const getActiveTheme = () => {
+  const storedTheme = readStoredTheme();
+
+  if (storedTheme) {
+    return storedTheme;
+  }
+
+  if (root.dataset.theme === "dark" || root.dataset.theme === "light") {
+    return root.dataset.theme;
+  }
+
+  return getSystemTheme();
+};
+
+const syncThemeToggle = (theme) => {
+  document.querySelectorAll(".theme-toggle").forEach((toggle) => {
+    const label = toggle.querySelector("[data-theme-label]");
+    const nextTheme = theme === "dark" ? "light" : "dark";
+
+    if (label) {
+      label.textContent = theme === "dark" ? "Dark mode" : "Light mode";
+    }
+
+    toggle.setAttribute("aria-label", `Switch to ${nextTheme} mode`);
+    toggle.setAttribute("aria-pressed", String(theme === "dark"));
+    toggle.setAttribute("title", `Switch to ${nextTheme} mode`);
+  });
+};
+
+const applyTheme = (theme, { persist = false } = {}) => {
+  root.dataset.theme = theme;
+  root.style.colorScheme = theme;
+
+  if (persist) {
+    try {
+      window.localStorage.setItem(themeStorageKey, theme);
+    } catch (error) {
+      // Ignore localStorage write issues and still apply the theme for this session.
+    }
+  }
+
+  syncThemeToggle(theme);
+};
+
+const createThemeToggle = () => {
+  const navShell = document.querySelector(".nav-shell");
+  const siteNav = navShell?.querySelector(".site-nav");
+
+  if (!navShell || navShell.querySelector(".theme-toggle")) {
+    return;
+  }
+
+  const toggle = document.createElement("button");
+  toggle.type = "button";
+  toggle.className = "theme-toggle";
+  toggle.innerHTML = `
+    <span class="theme-toggle-track" aria-hidden="true">
+      <span class="theme-toggle-stars">
+        <span class="theme-toggle-star theme-toggle-star-a"></span>
+        <span class="theme-toggle-star theme-toggle-star-b"></span>
+        <span class="theme-toggle-star theme-toggle-star-c"></span>
+        <span class="theme-toggle-star theme-toggle-star-d"></span>
+        <span class="theme-toggle-star theme-toggle-star-e"></span>
+      </span>
+      <span class="theme-toggle-cloud theme-toggle-cloud-one"></span>
+      <span class="theme-toggle-cloud theme-toggle-cloud-two"></span>
+      <span class="theme-toggle-horizon"></span>
+      <span class="theme-toggle-thumb">
+        <span class="theme-toggle-crater theme-toggle-crater-one"></span>
+        <span class="theme-toggle-crater theme-toggle-crater-two"></span>
+        <span class="theme-toggle-crater theme-toggle-crater-three"></span>
+      </span>
+    </span>
+    <span class="theme-toggle-label" data-theme-label></span>
+  `;
+
+  toggle.addEventListener("click", () => {
+    const nextTheme = getActiveTheme() === "dark" ? "light" : "dark";
+    applyTheme(nextTheme, { persist: true });
+  });
+
+  if (siteNav) {
+    siteNav.insertAdjacentElement("afterend", toggle);
+  } else {
+    navShell.appendChild(toggle);
+  }
+
+  syncThemeToggle(getActiveTheme());
+};
+
+const initTheme = () => {
+  applyTheme(getActiveTheme());
+  createThemeToggle();
+
+  if (!themeMediaQuery) {
+    return;
+  }
+
+  const handleThemeChange = (event) => {
+    if (readStoredTheme()) {
+      return;
+    }
+
+    applyTheme(event.matches ? "dark" : "light");
+  };
+
+  if (typeof themeMediaQuery.addEventListener === "function") {
+    themeMediaQuery.addEventListener("change", handleThemeChange);
+  } else if (typeof themeMediaQuery.addListener === "function") {
+    themeMediaQuery.addListener(handleThemeChange);
+  }
+};
+
+const getChatbaseConfig = () => {
+  const botIdMeta = document.querySelector('meta[name="chatbase-bot-id"]');
+  const hostMeta = document.querySelector('meta[name="chatbase-host"]');
+  const runtimeConfig = window.CHATBASE_CONFIG || {};
+
+  return {
+    botId:
+      window.CHATBASE_BOT_ID ||
+      runtimeConfig.botId ||
+      botIdMeta?.content ||
+      CHATBASE_DEFAULT_BOT_ID,
+    host:
+      window.CHATBASE_HOST ||
+      runtimeConfig.host ||
+      hostMeta?.content ||
+      CHATBASE_DEFAULT_HOST,
+  };
+};
+
+const ensureChatbaseLoaded = () => {
+  const { botId, host } = getChatbaseConfig();
+
+  if (!botId || document.getElementById(botId)) {
+    return;
+  }
+
+  const existingState =
+    typeof window.chatbase === "function" ? window.chatbase("getState") : null;
+
+  if (existingState === "initialized") {
+    return;
+  }
+
+  if (!window.chatbase) {
+    window.chatbase = (...args) => {
+      window.chatbase.q = window.chatbase.q || [];
+      window.chatbase.q.push(args);
+    };
+
+    window.chatbase = new Proxy(window.chatbase, {
+      get(target, prop) {
+        if (prop === "q") {
+          return target.q;
+        }
+
+        return (...args) => target(prop, ...args);
+      },
+    });
+  }
+
+  const script = document.createElement("script");
+  script.src = `https://${host}/embed.min.js`;
+  script.id = botId;
+  script.setAttribute("domain", host);
+  document.body.appendChild(script);
+};
 
 if (year) {
   year.textContent = new Date().getFullYear();
+}
+
+initTheme();
+
+if (document.readyState === "complete") {
+  ensureChatbaseLoaded();
+} else {
+  window.addEventListener("load", ensureChatbaseLoaded, { once: true });
 }
 
 if (navToggle && header) {

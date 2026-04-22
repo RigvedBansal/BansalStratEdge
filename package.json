@@ -5,6 +5,8 @@
   "main": "script.js",
   "type": "module",
   "scripts": {
+    "build": "node ./scripts/generate-chatbase-config.mjs",
+    "vercel-build": "npm run build",
     "test": "echo \"No tests specified\""
   },
   "repository": {
