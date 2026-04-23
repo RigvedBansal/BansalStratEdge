@@ -231,6 +231,7 @@ navLinks.forEach((link) => {
 const path = window.location.pathname.split("/").pop() || "index.html";
 const isHomePage = document.body.classList.contains("home-page");
 const isFoundersPage = document.body.classList.contains("founders-page");
+const isWorkshopsPage = document.body.classList.contains("workshops-page");
 const isBlogsSection =
   document.body.classList.contains("blogs-page") ||
   document.body.classList.contains("journal-article-page") ||
@@ -249,6 +250,10 @@ document.querySelectorAll("[data-nav-link]").forEach((link) => {
   }
 
   if ((isFoundersPage || path === "founders.html") && target === "./founders.html") {
+    link.setAttribute("aria-current", "page");
+  }
+
+  if ((isWorkshopsPage || path === "workshops.html") && target === "./workshops.html") {
     link.setAttribute("aria-current", "page");
   }
 });
@@ -296,6 +301,15 @@ const checklistProgressBar = document.querySelector("#checklist-progress-bar");
 const checklistStatusCopy = document.querySelector("#checklist-status-copy");
 const checklistResetButton = document.querySelector("[data-checklist-reset]");
 const checklistStorageKey = "bansal-stratedge-cfo-checklist-progress";
+const workshopInterestForm = document.querySelector("#workshop-interest-form");
+const workshopName = document.querySelector("#workshop-name");
+const workshopEmail = document.querySelector("#workshop-email");
+const workshopOrganization = document.querySelector("#workshop-organization");
+const workshopFormat = document.querySelector("#workshop-format");
+const workshopAudience = document.querySelector("#workshop-audience");
+const workshopDelivery = document.querySelector("#workshop-delivery");
+const workshopNote = document.querySelector("#workshop-note");
+const workshopResponse = document.querySelector("#workshop-response");
 
 const formatDateLabel = (dateValue) => {
   if (!dateValue) {
@@ -425,6 +439,40 @@ if (checklistForm && checklistEmail && checklistResponse) {
 
     openGmailCompose({
       to: "rigvedkbansal@gmail.com",
+      subject,
+      body,
+    });
+  });
+}
+
+if (workshopInterestForm && workshopName && workshopEmail && workshopResponse) {
+  workshopInterestForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!workshopInterestForm.reportValidity()) {
+      return;
+    }
+
+    const name = workshopName.value.trim();
+    const email = workshopEmail.value.trim();
+    const organization = workshopOrganization ? workshopOrganization.value.trim() : "";
+    const format = workshopFormat ? workshopFormat.value.trim() : "";
+    const audience = workshopAudience ? workshopAudience.value.trim() : "";
+    const delivery = workshopDelivery ? workshopDelivery.value.trim() : "";
+    const note = workshopNote ? workshopNote.value.trim() : "";
+    const subject = organization ? `Workshop Inquiry - ${organization}` : "Workshop Inquiry";
+    const body =
+      `Hi Kamlesh,\n\nI'm interested in your workshop offerings.\n\nName: ${name}\nEmail: ${email}\n${
+        organization ? `Institution / company: ${organization}\n` : ""
+      }${format ? `Preferred format: ${format}\n` : ""}${audience ? `Audience: ${audience}\n` : ""}${
+        delivery ? `Delivery mode: ${delivery}\n` : ""
+      }${note ? `\nInterest / timing / pricing note:\n${note}\n` : ""}\nPlease share availability and indicative pricing.\n\nThanks.`;
+
+    workshopResponse.textContent =
+      "Gmail is opening with a prefilled workshop inquiry to Kamlesh.";
+
+    openGmailCompose({
+      to: "kamlesh@kamleshbansal.com",
       subject,
       body,
     });

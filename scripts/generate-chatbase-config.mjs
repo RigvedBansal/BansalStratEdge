@@ -31,6 +31,7 @@ const filesToCopy = [
   "index.html",
   "blogs.html",
   "founders.html",
+  "workshops.html",
   "cfo-capital-efficiency-checklist.html",
   "journal-ai-control-tower.html",
   "journal-board-narratives.html",
