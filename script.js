@@ -1,5 +1,4 @@
 const header = document.querySelector(".site-header");
-const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelectorAll(".site-nav a");
 const year = document.querySelector("#year");
 const CHATBASE_DEFAULT_BOT_ID = "wDye2cLkm_hH2e4lyjq_F";
@@ -26,6 +25,32 @@ const readStoredTheme = () => {
 };
 
 const getSystemTheme = () => (themeMediaQuery?.matches ? "dark" : "light");
+
+const ensureNavToggle = () => {
+  const navShell = document.querySelector(".nav-shell");
+  const siteNav = navShell?.querySelector(".site-nav");
+
+  if (!navShell || !siteNav) {
+    return;
+  }
+
+  if (!siteNav.id) {
+    siteNav.id = "site-nav";
+  }
+
+  if (navShell.querySelector(".nav-toggle")) {
+    return;
+  }
+
+  const toggle = document.createElement("button");
+  toggle.type = "button";
+  toggle.className = "nav-toggle";
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.setAttribute("aria-controls", siteNav.id);
+  toggle.setAttribute("aria-label", "Toggle navigation");
+  toggle.innerHTML = "<span></span><span></span>";
+  navShell.insertBefore(toggle, siteNav);
+};
 
 const getActiveTheme = () => {
   const storedTheme = readStoredTheme();
@@ -201,6 +226,7 @@ if (year) {
   year.textContent = new Date().getFullYear();
 }
 
+ensureNavToggle();
 initTheme();
 
 if (document.readyState === "complete") {
@@ -209,13 +235,22 @@ if (document.readyState === "complete") {
   window.addEventListener("load", ensureChatbaseLoaded, { once: true });
 }
 
-if (navToggle && header) {
+const bindNavToggle = () => {
+  const navToggle = document.querySelector(".nav-toggle");
+
+  if (!navToggle || !header || navToggle.dataset.bound === "true") {
+    return;
+  }
+
+  navToggle.dataset.bound = "true";
   navToggle.addEventListener("click", () => {
     const expanded = navToggle.getAttribute("aria-expanded") === "true";
     navToggle.setAttribute("aria-expanded", String(!expanded));
     header.dataset.navOpen = String(!expanded);
   });
-}
+};
+
+bindNavToggle();
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
@@ -262,6 +297,11 @@ const path = normalizePagePath(window.location.pathname);
 const isHomePage = document.body.classList.contains("home-page");
 const isFoundersPage = document.body.classList.contains("founders-page");
 const isWorkshopsPage = document.body.classList.contains("workshops-page");
+const isToolkitPage =
+  document.body.classList.contains("toolkit-page") ||
+  document.body.classList.contains("tool-detail-page") ||
+  path === "finance-systems-toolkit.html" ||
+  path === "resources-toolkit.html";
 const isBlogsSection =
   document.body.classList.contains("blogs-page") ||
   document.body.classList.contains("journal-article-page") ||
@@ -299,6 +339,14 @@ const updateCurrentNavLink = () => {
     setCurrentNavLink((link) => {
       const { page, hash } = getNavLinkTarget(link);
       return page === "workshops.html" && hash === "";
+    });
+    return;
+  }
+
+  if (isToolkitPage) {
+    setCurrentNavLink((link) => {
+      const { page, hash } = getNavLinkTarget(link);
+      return page === "finance-systems-toolkit.html" && hash === "";
     });
     return;
   }
@@ -369,6 +417,16 @@ const workshopAudience = document.querySelector("#workshop-audience");
 const workshopDelivery = document.querySelector("#workshop-delivery");
 const workshopNote = document.querySelector("#workshop-note");
 const workshopResponse = document.querySelector("#workshop-response");
+const copyButtons = document.querySelectorAll("[data-copy-target]");
+const toolkitScoreInputs = document.querySelectorAll("[data-toolkit-score-input]");
+const toolkitScoreGroups = document.querySelectorAll("[data-toolkit-score-group]");
+const toolkitOverallScore = document.querySelector("#toolkit-overall-score");
+const toolkitOverallFlag = document.querySelector("#toolkit-overall-flag");
+const toolkitOverallProgressBar = document.querySelector("#toolkit-overall-progress-bar");
+const toolkitExecutiveSummary = document.querySelector("#toolkit-executive-summary");
+const toolkitPriorityList = document.querySelector("#toolkit-priority-list");
+const toolkitResetButton = document.querySelector("[data-toolkit-reset]");
+const toolkitStorageKey = "bansal-stratedge-toolkit-scorecard";
 
 const formatDateLabel = (dateValue) => {
   if (!dateValue) {
@@ -423,6 +481,25 @@ const buildGmailComposeUrl = ({ to, subject, body }) => {
 
 const openGmailCompose = ({ to, subject, body }) => {
   window.location.assign(buildGmailComposeUrl({ to, subject, body }));
+};
+
+const copyTextToClipboard = async (text) => {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return true;
+  }
+
+  const tempField = document.createElement("textarea");
+  tempField.value = text;
+  tempField.setAttribute("readonly", "");
+  tempField.style.position = "absolute";
+  tempField.style.left = "-9999px";
+  document.body.appendChild(tempField);
+  tempField.select();
+
+  const isCopied = document.execCommand("copy");
+  document.body.removeChild(tempField);
+  return isCopied;
 };
 
 if (strategyDate) {
@@ -648,4 +725,224 @@ if (checklistToggles.length) {
   }
 
   updateChecklistProgress();
+}
+
+if (copyButtons.length) {
+  copyButtons.forEach((button) => {
+    const originalLabel = button.textContent;
+
+    button.addEventListener("click", async () => {
+      const targetId = button.dataset.copyTarget;
+      const target = targetId ? document.getElementById(targetId) : null;
+      const textToCopy = target ? (target.value || target.textContent || "").trim() : "";
+
+      if (!textToCopy) {
+        return;
+      }
+
+      try {
+        const isCopied = await copyTextToClipboard(textToCopy);
+        button.textContent = isCopied ? "Copied" : "Copy failed";
+      } catch (error) {
+        button.textContent = "Copy failed";
+      }
+
+      window.setTimeout(() => {
+        button.textContent = originalLabel;
+      }, 1800);
+    });
+  });
+}
+
+const toolkitFlagClassNames = ["is-red", "is-amber", "is-green"];
+const getToolkitFlag = (score) => {
+  if (score < 2.5) {
+    return { label: "Red", className: "is-red" };
+  }
+
+  if (score < 3.75) {
+    return { label: "Amber", className: "is-amber" };
+  }
+
+  return { label: "Green", className: "is-green" };
+};
+
+const applyToolkitFlag = (element, score) => {
+  if (!element) {
+    return;
+  }
+
+  const { label, className } = getToolkitFlag(score);
+  element.textContent = label;
+  element.classList.add("toolkit-flag");
+  element.classList.remove(...toolkitFlagClassNames);
+  element.classList.add(className);
+};
+
+const readToolkitState = () => {
+  try {
+    return JSON.parse(window.localStorage.getItem(toolkitStorageKey) || "{}");
+  } catch (error) {
+    return {};
+  }
+};
+
+const writeToolkitState = (state) => {
+  try {
+    window.localStorage.setItem(toolkitStorageKey, JSON.stringify(state));
+  } catch (error) {
+    // Ignore storage issues and keep the scorecard working in-memory.
+  }
+};
+
+const getToolkitBoardImplication = (flagLabel, weakestSectionLabel) => {
+  if (flagLabel === "Red") {
+    return `Capital discipline is weak enough to slow decisions and raise avoidable risk. Start by stabilizing ${weakestSectionLabel}.`;
+  }
+
+  if (flagLabel === "Amber") {
+    return "The finance base is workable, but ownership and cadence are uneven enough to keep creating drag.";
+  }
+
+  return "The operating base is strong enough to shift attention toward sharper optimization, automation, and capital prioritization.";
+};
+
+const getToolkitActionForGroup = (groupKey) => {
+  const actions = {
+    cash: "tighten the weekly 13-week cash cadence and align leadership on one liquidity view.",
+    "working-capital": "assign owners for overdue receivables, renegotiate priority terms, and quantify trapped cash.",
+    "spend-control": "separate committed and discretionary spend, refresh renewal reviews, and reset approval thresholds.",
+    "capital-allocation": "run stop / continue / reset reviews on underperforming projects and restack the quarter's capital priorities.",
+    reporting: "compress management reporting around driver movement, decision points, and next actions.",
+    "ai-controls": "pilot only one repeatable AI workflow with named reviewer, prompt versioning, and an audit trail.",
+  };
+
+  return actions[groupKey] || "reset ownership, review cadence, and decision rules around this section.";
+};
+
+const buildToolkitExecutiveSummary = (overallAverage, orderedSections) => {
+  const weakestSections = orderedSections.slice(0, 2);
+  const strongestSections = orderedSections.slice(-2).reverse();
+  const overallFlag = getToolkitFlag(overallAverage).label;
+  const weakestLabel = weakestSections[0]?.label || "the weakest section";
+  const priorityList = weakestSections.length
+    ? weakestSections.map((section) => section.label).join("; ")
+    : "None selected yet";
+  const strengthList = strongestSections.length
+    ? strongestSections.map((section) => section.label).join("; ")
+    : "Still being rated";
+
+  return [
+    `Overall capital efficiency score: ${overallAverage.toFixed(1)} / 5 (${overallFlag}).`,
+    `Priority sections: ${priorityList}.`,
+    `Strongest sections: ${strengthList}.`,
+    `Board-level implication: ${getToolkitBoardImplication(overallFlag, weakestLabel)}`,
+    `Next 30 days: First, ${getToolkitActionForGroup(weakestSections[0]?.key)} Then, ${getToolkitActionForGroup(weakestSections[1]?.key)}`,
+  ].join("\n");
+};
+
+const updateToolkitScorecard = () => {
+  if (!toolkitScoreInputs.length) {
+    return;
+  }
+
+  const sectionSummaries = [];
+
+  toolkitScoreGroups.forEach((group, groupIndex) => {
+    const groupInputs = group.querySelectorAll("[data-toolkit-score-input]");
+    const groupLabel = group.querySelector(".suite-label")?.textContent?.trim() || `Section ${groupIndex + 1}`;
+    const groupKey = groupInputs[0]?.dataset.toolkitGroup || `group-${groupIndex + 1}`;
+    const groupTotal = Array.from(groupInputs).reduce((sum, input, inputIndex) => {
+      const numericValue = Number(input.value) || 0;
+      const scoreValue = input.parentElement?.querySelector("[data-toolkit-score-value]");
+
+      if (scoreValue) {
+        scoreValue.textContent = String(numericValue);
+      }
+
+      return sum + numericValue;
+    }, 0);
+
+    const groupAverage = groupInputs.length ? groupTotal / groupInputs.length : 0;
+    const groupScore = group.querySelector("[data-toolkit-group-score]");
+    const groupFlag = group.querySelector("[data-toolkit-group-flag]");
+
+    if (groupScore) {
+      groupScore.textContent = `${groupAverage.toFixed(1)} / 5`;
+    }
+
+    applyToolkitFlag(groupFlag, groupAverage);
+
+    sectionSummaries.push({
+      key: groupKey,
+      label: groupLabel,
+      average: groupAverage,
+    });
+  });
+
+  const orderedSections = [...sectionSummaries].sort((left, right) => left.average - right.average);
+  const overallAverage = sectionSummaries.length
+    ? sectionSummaries.reduce((sum, section) => sum + section.average, 0) / sectionSummaries.length
+    : 0;
+
+  if (toolkitOverallScore) {
+    toolkitOverallScore.textContent = overallAverage.toFixed(1);
+  }
+
+  applyToolkitFlag(toolkitOverallFlag, overallAverage);
+
+  if (toolkitOverallProgressBar) {
+    toolkitOverallProgressBar.style.width = `${Math.round((overallAverage / 5) * 100)}%`;
+  }
+
+  if (toolkitPriorityList) {
+    toolkitPriorityList.innerHTML = orderedSections
+      .slice(0, 3)
+      .map((section) => `<li>${section.label}</li>`)
+      .join("");
+  }
+
+  if (toolkitExecutiveSummary) {
+    toolkitExecutiveSummary.value = buildToolkitExecutiveSummary(overallAverage, orderedSections);
+  }
+};
+
+if (toolkitScoreInputs.length) {
+  const savedToolkitState = readToolkitState();
+
+  toolkitScoreInputs.forEach((input, inputIndex) => {
+    const groupKey = input.dataset.toolkitGroup || "group";
+    const storageId = `${groupKey}-${inputIndex}`;
+    input.dataset.toolkitStorageId = storageId;
+
+    if (savedToolkitState[storageId]) {
+      input.value = String(savedToolkitState[storageId]);
+    }
+
+    input.addEventListener("input", () => {
+      const nextState = readToolkitState();
+      nextState[storageId] = Number(input.value) || 3;
+      writeToolkitState(nextState);
+      updateToolkitScorecard();
+    });
+  });
+
+  if (toolkitResetButton) {
+    toolkitResetButton.addEventListener("click", () => {
+      const shouldReset = window.confirm("Reset all toolkit scores to the default benchmark?");
+
+      if (!shouldReset) {
+        return;
+      }
+
+      toolkitScoreInputs.forEach((input) => {
+        input.value = "3";
+      });
+
+      writeToolkitState({});
+      updateToolkitScorecard();
+    });
+  }
+
+  updateToolkitScorecard();
 }

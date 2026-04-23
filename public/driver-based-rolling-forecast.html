@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Driver-Based Rolling Forecast Starter | Bansal StratEdge Pvt. Ltd.</title>
+    <meta
+      name="description"
+      content="Detailed driver-based rolling 24-month forecast starter from Bansal StratEdge with tab structure, formulas, scenario logic, and example outputs for startup finance teams."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./assets/bansal-mark-clean.png" type="image/png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      (() => {
+        const storageKey = "bansal-stratedge-theme";
+        const prefersDark =
+          typeof window.matchMedia === "function" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        let theme = prefersDark ? "dark" : "light";
+
+        try {
+          const storedTheme = window.localStorage.getItem(storageKey);
+
+          if (storedTheme === "dark" || storedTheme === "light") {
+            theme = storedTheme;
+          }
+        } catch (error) {
+          // Ignore storage access issues and fall back to the system preference.
+        }
+
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
+  </head>
+  <body class="tool-detail-page">
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container nav-shell">
+          <a class="brand" href="./index.html" aria-label="Bansal StratEdge home">
+            <span class="brand-lockup">
+              <img class="brand-mark-image" src="./assets/bansal-mark-clean.png" alt="Bansal StratEdge logo mark" />
+              <span class="brand-copy">
+                <strong>Bansal StratEdge</strong>
+                <small>Pvt. Ltd.</small>
+              </span>
+            </span>
+          </a>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="site-nav" id="site-nav" aria-label="Tool page navigation">
+            <a href="./index.html" data-nav-link="home">Home</a>
+            <a href="./finance-systems-toolkit.html" data-nav-link="toolkit">Toolkit</a>
+            <a href="./index.html#capabilities">Capabilities</a>
+            <a href="./index.html#approach">Approach</a>
+            <a href="./cfo-capital-efficiency-checklist.html">Checklist</a>
+            <a href="./workshops.html" data-nav-link="workshops">Workshops</a>
+            <a href="./founders.html" data-nav-link="founders">Founders</a>
+            <a href="./blogs.html" data-nav-link="blogs">Insights</a>
+            <a href="./index.html#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-hero tool-page-hero">
+          <div class="container">
+            <div class="tool-page-hero-card">
+              <div class="tool-page-hero-copy reveal">
+                <p class="eyebrow">Forecast &amp; Planning Model</p>
+                <h1>Driver-Based Rolling 24-Month Forecast Starter</h1>
+                <p>
+                  This is the model you use when the annual budget is too static and the finance team needs a rolling
+                  operating view that leadership can challenge without getting lost in spreadsheet theatre. The point is
+                  not to forecast every line. The point is to surface the few drivers that actually move revenue, burn,
+                  and runway.
+                </p>
+                <div class="toolkit-chip-row">
+                  <span>24-month horizon</span>
+                  <span>Base / upside / downside / stress</span>
+                  <span>INR / USD FX aware</span>
+                  <span>Headcount and CAC linked</span>
+                </div>
+                <div class="hero-actions">
+                  <a class="button button-primary" href="./finance-systems-toolkit.html#forecast-models">Back to Toolkit</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/driver-based-rolling-forecast.xlsx" download>Download Workbook (.xlsx)</a>
+                  <a class="button button-secondary" href="./finance-systems-toolkit.html#fit-call">Book a Fit Call</a>
+                </div>
+              </div>
+
+              <aside class="tool-page-hero-panel reveal">
+                <div class="toolkit-summary-card">
+                  <p class="suite-label">Best For</p>
+                  <ul class="toolkit-list">
+                    <li>Series A-C startups rebuilding forecast credibility</li>
+                    <li>Monthly reforecast cycles that need faster scenario refresh</li>
+                    <li>Finance teams handling FX, hiring ramps, and CAC pressure together</li>
+                  </ul>
+                </div>
+
+                <div class="toolkit-summary-card">
+                  <p class="suite-label">Core Outputs</p>
+                  <ul class="toolkit-list">
+                    <li>Driver-led revenue, opex, EBITDA, cash, and runway view</li>
+                    <li>Scenario comparison across base, upside, downside, and stress</li>
+                    <li>Management-ready dashboard with the 5-8 drivers that matter most</li>
+                  </ul>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container tool-page-grid">
+            <div class="tool-page-main">
+              <article class="toolkit-resource-card reveal">
+                <p class="suite-label">Workbook Structure</p>
+                <h3>Keep the file short enough that someone else can still run it next month.</h3>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Tab</th>
+                        <th>What lives here</th>
+                        <th>Owner</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Assumptions &amp; Drivers</td>
+                        <td>Only the highlighted editable inputs in the downloadable workbook: new logos, ARPA, retention, FX, CAC, hiring pace, GST, and collections.</td>
+                        <td>FP&amp;A lead</td>
+                      </tr>
+                      <tr>
+                        <td>Revenue Build</td>
+                        <td>Segment-by-segment logic for SaaS, services, and other revenue streams</td>
+                        <td>FP&amp;A + commercial finance</td>
+                      </tr>
+                      <tr>
+                        <td>Expense Build</td>
+                        <td>Payroll, software, cloud, marketing, and discretionary spend by controllable bucket</td>
+                        <td>FP&amp;A + budget owners</td>
+                      </tr>
+                      <tr>
+                        <td>3-Statement / Cash View</td>
+                        <td>P&amp;L, simplified balance sheet, cash bridge, runway logic</td>
+                        <td>Finance</td>
+                      </tr>
+                      <tr>
+                        <td>Scenarios</td>
+                        <td>Scenario switches, overrides, and headline movement summary</td>
+                        <td>Finance leadership</td>
+                      </tr>
+                      <tr>
+                        <td>Dashboard</td>
+                        <td>Short management view with 6-8 metrics and 3 decision prompts</td>
+                        <td>CFO / CEO review</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </article>
+
+              <article class="toolkit-resource-card reveal">
+                <p class="suite-label">Example Output</p>
+                <h3>Sample monthly output for a Series B SaaS business.</h3>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Month</th>
+                        <th>Revenue</th>
+                        <th>Gross margin</th>
+                        <th>Headcount</th>
+                        <th>EBITDA</th>
+                        <th>Runway</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Jul</td>
+                        <td>INR 9.9 Cr</td>
+                        <td>64%</td>
+                        <td>54</td>
+                        <td>INR -1.3 Cr</td>
+                        <td>11.4 months</td>
+                      </tr>
+                      <tr>
+                        <td>Aug</td>
+                        <td>INR 10.3 Cr</td>
+                        <td>64.5%</td>
+                        <td>56</td>
+                        <td>INR -1.1 Cr</td>
+                        <td>11.1 months</td>
+                      </tr>
+                      <tr>
+                        <td>Sep downside</td>
+                        <td>INR 9.7 Cr</td>
+                        <td>63%</td>
+                        <td>57</td>
+                        <td>INR -1.6 Cr</td>
+                        <td>10.2 months</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tool-page-callout">
+                  <strong>Yellow-cell rule</strong>
+                  <p>Do not let scenario logic spread across the workbook. Leadership should be able to change the core drivers in one place and see the movement immediately.</p>
+                </div>
+              </article>
+
+              <article class="toolkit-resource-card reveal">
+                <p class="suite-label">How To Run It</p>
+                <h3>Simple operating rhythm.</h3>
+                <ul class="toolkit-list">
+                  <li>Load the last closed month of actuals before touching the next forecast cycle.</li>
+                  <li>Refresh the 8 core drivers first, then check revenue and expense logic by exception only.</li>
+                  <li>Run base and downside before discussing upside. Upside is not useful if downside is lazy.</li>
+                  <li>Review one scenario pack with the CEO and functional owners in under 45 minutes.</li>
+                  <li>Document any manual overrides in the scenario tab, never inside hidden rows or formulas.</li>
+                </ul>
+              </article>
+            </div>
+
+            <aside class="tool-page-sidebar">
+              <div class="toolkit-summary-card reveal">
+                <p class="suite-label">Key Logic</p>
+                <div class="tool-page-formula-list">
+                  <article>
+                    <strong>Recurring revenue movement</strong>
+                    <code>Closing ARR = Opening ARR + New ARR - Churned ARR - Contraction ARR + Expansion ARR</code>
+                  </article>
+                  <article>
+                    <strong>CAC payback</strong>
+                    <code>CAC Payback = CAC per customer / Monthly gross profit per customer</code>
+                  </article>
+                  <article>
+                    <strong>Runway</strong>
+                    <code>Runway months = Closing cash / Forward average monthly net burn</code>
+                  </article>
+                </div>
+              </div>
+
+              <div class="toolkit-summary-card reveal">
+                <p class="suite-label">Common Mistakes</p>
+                <ul class="toolkit-list">
+                  <li>Too many inputs that nobody owns</li>
+                  <li>Scenario logic hidden in tabs instead of centralized</li>
+                  <li>Revenue optimism that ignores hiring productivity lag</li>
+                  <li>Cash view disconnected from collections and GST timing</li>
+                </ul>
+              </div>
+
+              <div class="toolkit-summary-card reveal">
+                <p class="suite-label">When This Tool Shines</p>
+                <p>
+                  Use it when the business is scaling fast enough that the annual budget becomes stale within one
+                  quarter, but leadership still needs one file they can trust for planning, spending, and runway
+                  conversations.
+                </p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="tool-page-final-card reveal">
+              <p class="eyebrow">Adapt To Your Context</p>
+              <h2>Built for speed and clarity, not spreadsheet heroics.</h2>
+              <p>
+                Adapt the driver set to your business model, but keep the discipline: one input sheet, one scenario
+                layer, and one management view that names the decisions. If you want this rebuilt around your actual
+                commercial structure, capital constraints, and reporting cadence, start from the toolkit hub and we can
+                take it from there.
+              </p>
+              <div class="hero-actions">
+                <a class="button button-primary" href="./finance-systems-toolkit.html#tool-pages">Back to Tool Pages</a>
+                <a class="button button-secondary" href="./finance-systems-toolkit.html#fit-call">Book a Fit Call</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./chatbase-config.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

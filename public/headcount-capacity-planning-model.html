@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Headcount &amp; Capacity Planning Model | Bansal StratEdge Pvt. Ltd.</title>
+    <meta
+      name="description"
+      content="Detailed headcount and capacity planning model from Bansal StratEdge with hiring structure, capacity logic, payroll impact, and sample operating tables."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./assets/bansal-mark-clean.png" type="image/png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      (() => {
+        const storageKey = "bansal-stratedge-theme";
+        const prefersDark =
+          typeof window.matchMedia === "function" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        let theme = prefersDark ? "dark" : "light";
+
+        try {
+          const storedTheme = window.localStorage.getItem(storageKey);
+
+          if (storedTheme === "dark" || storedTheme === "light") {
+            theme = storedTheme;
+          }
+        } catch (error) {
+          // Ignore storage access issues and fall back to the system preference.
+        }
+
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
+  </head>
+  <body class="tool-detail-page">
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container nav-shell">
+          <a class="brand" href="./index.html" aria-label="Bansal StratEdge home">
+            <span class="brand-lockup">
+              <img class="brand-mark-image" src="./assets/bansal-mark-clean.png" alt="Bansal StratEdge logo mark" />
+              <span class="brand-copy">
+                <strong>Bansal StratEdge</strong>
+                <small>Pvt. Ltd.</small>
+              </span>
+            </span>
+          </a>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="site-nav" id="site-nav" aria-label="Tool page navigation">
+            <a href="./index.html" data-nav-link="home">Home</a>
+            <a href="./finance-systems-toolkit.html" data-nav-link="toolkit">Toolkit</a>
+            <a href="./index.html#capabilities">Capabilities</a>
+            <a href="./index.html#approach">Approach</a>
+            <a href="./cfo-capital-efficiency-checklist.html">Checklist</a>
+            <a href="./workshops.html" data-nav-link="workshops">Workshops</a>
+            <a href="./founders.html" data-nav-link="founders">Founders</a>
+            <a href="./blogs.html" data-nav-link="blogs">Insights</a>
+            <a href="./index.html#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-hero tool-page-hero">
+          <div class="container">
+            <div class="tool-page-hero-card">
+              <div class="tool-page-hero-copy reveal">
+                <p class="eyebrow">Capacity Planning Model</p>
+                <h1>Headcount &amp; Capacity Planning Model</h1>
+                <p>
+                  This model stops hiring from being discussed as a vibe. It links hires to real capacity, ramp time,
+                  payroll cost, ESOP effect, and the revenue or service output expected from the added team. That makes
+                  the hiring plan a capital decision instead of a wish list.
+                </p>
+                <div class="toolkit-chip-row">
+                  <span>Role-family based</span>
+                  <span>Payroll + ESOP impact</span>
+                  <span>Productivity ramp</span>
+                  <span>Capacity-linked</span>
+                </div>
+                <div class="hero-actions">
+                  <a class="button button-primary" href="./finance-systems-toolkit.html#forecast-models">Back to Toolkit</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/headcount-capacity-planning-model.xlsx" download>Download Workbook (.xlsx)</a>
+                  <a class="button button-secondary" href="./finance-systems-toolkit.html#fit-call">Book a Fit Call</a>
+                </div>
+              </div>
+
+              <aside class="tool-page-hero-panel reveal">
+                <div class="toolkit-summary-card">
+                  <p class="suite-label">Best For</p>
+                  <ul class="toolkit-list">
+                    <li>Growth plans where headcount is the largest controllable cost lever</li>
+                    <li>Boards asking whether hiring pace still matches commercial reality</li>
+                    <li>Finance teams needing a cleaner link between payroll and output</li>
+                  </ul>
+                </div>
+
+                <div class="toolkit-summary-card">
+                  <p class="suite-label">Core Outputs</p>
+                  <ul class="toolkit-list">
+                    <li>Opening headcount, planned hires, attrition, and closing headcount</li>
+                    <li>Fully loaded payroll plus ESOP pool refresh effect</li>
+                    <li>Capacity impact by sales, success, delivery, product, and G&amp;A</li>
+                  </ul>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container tool-page-grid">
+            <div class="tool-page-main">
+              <article class="toolkit-resource-card reveal">
+                <p class="suite-label">Structure</p>
+                <h3>Model by role family, not one payroll blob.</h3>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Function</th>
+                        <th>Opening HC</th>
+                        <th>Planned hires</th>
+                        <th>Attrition</th>
+                        <th>Capacity assumption</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Sales</td>
+                        <td>12</td>
+                        <td>+3</td>
+                        <td>-1</td>
+                        <td>1 AE supports INR 35-40 L new ARR per quarter after ramp</td>
+                      </tr>
+                      <tr>
+                        <td>Customer success</td>
+                        <td>8</td>
+                        <td>+2</td>
+                        <td>0</td>
+                        <td>1 CSM manages 55-65 strategic accounts</td>
+                      </tr>
+                      <tr>
+                        <td>Engineering</td>
+                        <td>24</td>
+                        <td>+4</td>
+                        <td>-1</td>
+                        <td>Productivity ramps over 2-3 months</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </article>
+
+              <article class="toolkit-resource-card reveal">
+                <p class="suite-label">Example Output</p>
+                <h3>Sample cost and capacity view.</h3>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Function</th>
+                        <th>Fully loaded monthly cost</th>
+                        <th>Ramp months</th>
+                        <th>Capacity effect</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Sales</td>
+                        <td>INR 2.8 L each</td>
+                        <td>3</td>
+                        <td>Supports INR 1.1 Cr new ARR per quarter once stable</td>
+                      </tr>
+                      <tr>
+                        <td>Customer success</td>
+                        <td>INR 1.9 L each</td>
+                        <td>2</td>
+                        <td>Protects retention above 93%</td>
+                      </tr>
+                      <tr>
+                        <td>Engineering</td>
+                        <td>INR 3.4 L each</td>
+                        <td>3</td>
+                        <td>Supports roadmap catch-up and defect reduction</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </article>
+
+              <article class="toolkit-resource-card reveal">
+                <p class="suite-label">Usage Rules</p>
+                <h3>How to keep it honest.</h3>
+                <ul class="toolkit-list">
+                  <li>Model start date and productivity ramp separately. A hire is not productive on day one.</li>
+                  <li>Keep sales and delivery capacity linked to revenue assumptions so the plan can be challenged cleanly.</li>
+                  <li>Include backfills separately from growth hires.</li>
+                  <li>Show fully loaded cost, not only CTC. Benefits, bonus, tools, and ESOP matter.</li>
+                  <li>Use the model to decide sequence, not just total hiring count.</li>
+                </ul>
+              </article>
+            </div>
+
+            <aside class="tool-page-sidebar">
+              <div class="toolkit-summary-card reveal">
+                <p class="suite-label">Key Logic</p>
+                <div class="tool-page-formula-list">
+                  <article>
+                    <strong>Closing headcount</strong>
+                    <code>Closing HC = Opening HC + Joins - Attrition</code>
+                  </article>
+                  <article>
+                    <strong>Fully loaded payroll</strong>
+                    <code>Loaded cost = CTC + bonus + benefits + tools + ESOP refresh allowance</code>
+                  </article>
+                  <article>
+                    <strong>Effective capacity</strong>
+                    <code>Effective capacity = Closing HC x Ramp productivity percent</code>
+                  </article>
+                </div>
+              </div>
+
+              <div class="toolkit-summary-card reveal">
+                <p class="suite-label">Common Mistakes</p>
+                <ul class="toolkit-list">
+                  <li>Assuming full productivity from month one</li>
+                  <li>Ignoring attrition and backfill drag</li>
+                  <li>Treating ESOP dilution as separate from hiring economics</li>
+                  <li>Adding headcount before showing the capacity bottleneck being solved</li>
+                </ul>
+              </div>
+
+              <div class="toolkit-summary-card reveal">
+                <p class="suite-label">When This Tool Shines</p>
+                <p>
+                  Use it when hiring is the biggest lever in the plan and leadership needs a cleaner answer to, "What
+                  exactly does this hiring wave buy us, and what does it cost in cash?"
+                </p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="tool-page-final-card reveal">
+              <p class="eyebrow">Adapt To Your Context</p>
+              <h2>Headcount only earns its place when it is linked to output.</h2>
+              <p>
+                Adjust the role families and capacity assumptions to your business, but keep the underlying rule: every
+                hire should solve a visible constraint, not just support a vague growth story. If you want this built
+                into your forecast and board rhythm, the toolkit hub is the right next stop.
+              </p>
+              <div class="hero-actions">
+                <a class="button button-primary" href="./finance-systems-toolkit.html#tool-pages">Back to Tool Pages</a>
+                <a class="button button-secondary" href="./finance-systems-toolkit.html#fit-call">Book a Fit Call</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./chatbase-config.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

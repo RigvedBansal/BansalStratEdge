@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Driver Decomposition Worksheet | Bansal StratEdge Pvt. Ltd.</title>
+    <meta
+      name="description"
+      content="Detailed driver decomposition worksheet from Bansal StratEdge with segment-level variance logic, formulas, sample output, and action framing."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./assets/bansal-mark-clean.png" type="image/png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      (() => {
+        const storageKey = "bansal-stratedge-theme";
+        const prefersDark =
+          typeof window.matchMedia === "function" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        let theme = prefersDark ? "dark" : "light";
+
+        try {
+          const storedTheme = window.localStorage.getItem(storageKey);
+
+          if (storedTheme === "dark" || storedTheme === "light") {
+            theme = storedTheme;
+          }
+        } catch (error) {
+          // Ignore storage access issues and fall back to the system preference.
+        }
+
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
+  </head>
+  <body class="tool-detail-page">
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container nav-shell">
+          <a class="brand" href="./index.html" aria-label="Bansal StratEdge home">
+            <span class="brand-lockup">
+              <img class="brand-mark-image" src="./assets/bansal-mark-clean.png" alt="Bansal StratEdge logo mark" />
+              <span class="brand-copy">
+                <strong>Bansal StratEdge</strong>
+                <small>Pvt. Ltd.</small>
+              </span>
+            </span>
+          </a>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="site-nav" id="site-nav" aria-label="Tool page navigation">
+            <a href="./index.html" data-nav-link="home">Home</a>
+            <a href="./finance-systems-toolkit.html" data-nav-link="toolkit">Toolkit</a>
+            <a href="./index.html#capabilities">Capabilities</a>
+            <a href="./index.html#approach">Approach</a>
+            <a href="./cfo-capital-efficiency-checklist.html">Checklist</a>
+            <a href="./workshops.html" data-nav-link="workshops">Workshops</a>
+            <a href="./founders.html" data-nav-link="founders">Founders</a>
+            <a href="./blogs.html" data-nav-link="blogs">Insights</a>
+            <a href="./index.html#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-hero tool-page-hero">
+          <div class="container">
+            <div class="tool-page-hero-card">
+              <div class="tool-page-hero-copy reveal">
+                <p class="eyebrow">Decomposition Tool</p>
+                <h1>Driver Decomposition Worksheet</h1>
+                <p>
+                  This worksheet exists to stop the team from saying "revenue missed budget" and calling it analysis.
+                  Break the movement into segment, volume, price, mix, churn, and timing. Then assign action. If the
+                  worksheet still cannot produce an owner and a next step, the decomposition is not finished.
+                </p>
+                <div class="toolkit-chip-row">
+                  <span>Segment-level</span>
+                  <span>Volume / price / mix</span>
+                  <span>Timing versus structural</span>
+                  <span>Action linked</span>
+                </div>
+                <div class="hero-actions">
+                  <a class="button button-primary" href="./finance-systems-toolkit.html#variance-arsenal">Back to Toolkit</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/driver-decomposition-worksheet.xlsx" download>Download Workbook (.xlsx)</a>
+                  <a class="button button-secondary" href="./finance-systems-toolkit.html#fit-call">Book a Fit Call</a>
+                </div>
+              </div>
+
+              <aside class="tool-page-hero-panel reveal">
+                <div class="toolkit-summary-card">
+                  <p class="suite-label">Best For</p>
+                  <ul class="toolkit-list">
+                    <li>Revenue or gross margin misses that need driver clarity fast</li>
+                    <li>Commercial finance reviews with segment owners</li>
+                    <li>Board or CEO narratives that need cause, not just amount</li>
+                  </ul>
+                </div>
+
+                <div class="toolkit-summary-card">
+                  <p class="suite-label">Core Outputs</p>
+                  <ul class="toolkit-list">
+                    <li>Segment-level movement by driver</li>
+                    <li>Timing versus structural view</li>
+                    <li>Named actions by commercial, finance, or operations owner</li>
+                  </ul>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container tool-page-grid">
+            <div class="tool-page-main">
+              <article class="toolkit-resource-card reveal">
+                <p class="suite-label">Worksheet Layout</p>
+                <h3>One row per segment, one column per real driver.</h3>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Segment</th>
+                        <th>Volume</th>
+                        <th>Price</th>
+                        <th>Mix</th>
+                        <th>Timing</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>SMB SaaS</td>
+                        <td>INR -18 L</td>
+                        <td>INR +4 L</td>
+                        <td>INR -3 L</td>
+                        <td>INR -2 L</td>
+                        <td>Refocus paid search and onboarding</td>
+                      </tr>
+                      <tr>
+                        <td>Enterprise</td>
+                        <td>INR -42 L</td>
+                        <td>INR +11 L</td>
+                        <td>INR +6 L</td>
+                        <td>INR -20 L</td>
+                        <td>Fix deal slippage and legal cycle</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </article>
+
+              <article class="toolkit-resource-card reveal">
+                <p class="suite-label">How To Use It</p>
+                <h3>Ask four questions in order.</h3>
+                <ul class="toolkit-list">
+                  <li>Which segment moved most?</li>
+                  <li>Inside that segment, was the movement driven mainly by volume, price, mix, churn, or timing?</li>
+                  <li>Which part can still be recovered this quarter?</li>
+                  <li>What should sales, marketing, finance, or operations do next?</li>
+                </ul>
+                <div class="tool-page-callout">
+                  <strong>Decision rule</strong>
+                  <p>If no action changes after the decomposition, the worksheet is too abstract or too late.</p>
+                </div>
+              </article>
+
+              <article class="toolkit-resource-card reveal">
+                <p class="suite-label">Example Action Readout</p>
+                <div class="toolkit-narrative-sample">
+                  <p><strong>Recoverable this quarter:</strong> Enterprise timing and part of the SMB onboarding loss.</p>
+                  <p><strong>Structural concern:</strong> CAC quality in paid SMB channels is now reducing efficient volume.</p>
+                  <p><strong>Immediate actions:</strong> Rephase enterprise close assumptions, tighten onboarding conversion, and cut the lowest-yield paid channel.</p>
+                </div>
+              </article>
+            </div>
+
+            <aside class="tool-page-sidebar">
+              <div class="toolkit-summary-card reveal">
+                <p class="suite-label">Key Logic</p>
+                <div class="tool-page-formula-list">
+                  <article>
+                    <strong>Volume effect</strong>
+                    <code>Volume effect = (Actual units - Plan units) x Plan price</code>
+                  </article>
+                  <article>
+                    <strong>Price effect</strong>
+                    <code>Price effect = (Actual price - Plan price) x Actual units</code>
+                  </article>
+                  <article>
+                    <strong>Mix effect</strong>
+                    <code>Mix effect = Residual movement after volume, price, and timing are explained</code>
+                  </article>
+                </div>
+              </div>
+
+              <div class="toolkit-summary-card reveal">
+                <p class="suite-label">Common Mistakes</p>
+                <ul class="toolkit-list">
+                  <li>Mixing timing and structural decline</li>
+                  <li>Doing the view only at total-company level</li>
+                  <li>Confusing commercial narrative with financial movement</li>
+                </ul>
+              </div>
+
+              <div class="toolkit-summary-card reveal">
+                <p class="suite-label">When This Tool Shines</p>
+                <p>
+                  Use it when the organization needs to move from headline disappointment to practical action, especially
+                  across multiple revenue segments or channels.
+                </p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="tool-page-final-card reveal">
+              <p class="eyebrow">Adapt To Your Context</p>
+              <h2>Decomposition is only useful if the buckets match your business model.</h2>
+              <p>
+                Use the same driver structure every month so leadership learns how to read it. Then keep forcing the
+                last step: what changes next? That is where analysis starts becoming operating discipline.
+              </p>
+              <div class="hero-actions">
+                <a class="button button-primary" href="./finance-systems-toolkit.html#tool-pages">Back to Tool Pages</a>
+                <a class="button button-secondary" href="./finance-systems-toolkit.html#fit-call">Book a Fit Call</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./chatbase-config.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

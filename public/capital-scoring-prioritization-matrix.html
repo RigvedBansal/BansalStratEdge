@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capital Scoring &amp; Prioritization Matrix | Bansal StratEdge Pvt. Ltd.</title>
+    <meta
+      name="description"
+      content="Detailed capital scoring and prioritization matrix from Bansal StratEdge with weighting logic, gating rules, sample scoring tables, and allocation guidance."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./assets/bansal-mark-clean.png" type="image/png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      (() => {
+        const storageKey = "bansal-stratedge-theme";
+        const prefersDark =
+          typeof window.matchMedia === "function" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        let theme = prefersDark ? "dark" : "light";
+
+        try {
+          const storedTheme = window.localStorage.getItem(storageKey);
+
+          if (storedTheme === "dark" || storedTheme === "light") {
+            theme = storedTheme;
+          }
+        } catch (error) {
+          // Ignore storage access issues and fall back to the system preference.
+        }
+
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
+  </head>
+  <body class="tool-detail-page">
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container nav-shell">
+          <a class="brand" href="./index.html" aria-label="Bansal StratEdge home">
+            <span class="brand-lockup">
+              <img class="brand-mark-image" src="./assets/bansal-mark-clean.png" alt="Bansal StratEdge logo mark" />
+              <span class="brand-copy">
+                <strong>Bansal StratEdge</strong>
+                <small>Pvt. Ltd.</small>
+              </span>
+            </span>
+          </a>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="site-nav" id="site-nav" aria-label="Tool page navigation">
+            <a href="./index.html" data-nav-link="home">Home</a>
+            <a href="./finance-systems-toolkit.html" data-nav-link="toolkit">Toolkit</a>
+            <a href="./index.html#capabilities">Capabilities</a>
+            <a href="./index.html#approach">Approach</a>
+            <a href="./cfo-capital-efficiency-checklist.html">Checklist</a>
+            <a href="./workshops.html" data-nav-link="workshops">Workshops</a>
+            <a href="./founders.html" data-nav-link="founders">Founders</a>
+            <a href="./blogs.html" data-nav-link="blogs">Insights</a>
+            <a href="./index.html#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-hero tool-page-hero">
+          <div class="container">
+            <div class="tool-page-hero-card">
+              <div class="tool-page-hero-copy reveal">
+                <p class="eyebrow">Capital Allocation Tool</p>
+                <h1>Capital Scoring &amp; Prioritization Matrix</h1>
+                <p>
+                  Capital deserves a common scoreboard. This matrix lets finance compare growth bets, efficiency projects,
+                  and operating fixes using one set of weights and one set of gating rules. That makes saying no less
+                  political and saying yes more defensible.
+                </p>
+                <div class="toolkit-chip-row">
+                  <span>Weighted scoring</span>
+                  <span>Kill-list ready</span>
+                  <span>Payback aware</span>
+                  <span>Risk-adjusted</span>
+                </div>
+                <div class="hero-actions">
+                  <a class="button button-primary" href="./finance-systems-toolkit.html#capital-frameworks">Back to Toolkit</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/capital-scoring-prioritization-matrix.xlsx" download>Download Workbook (.xlsx)</a>
+                  <a class="button button-secondary" href="./finance-systems-toolkit.html#fit-call">Book a Fit Call</a>
+                </div>
+              </div>
+
+              <aside class="tool-page-hero-panel reveal">
+                <div class="toolkit-summary-card">
+                  <p class="suite-label">Best For</p>
+                  <ul class="toolkit-list">
+                    <li>Quarterly capital planning and project ranking</li>
+                    <li>Board discussions where multiple projects compete for cash</li>
+                    <li>Resetting old projects through stop / continue / reset review</li>
+                  </ul>
+                </div>
+
+                <div class="toolkit-summary-card">
+                  <p class="suite-label">Core Outputs</p>
+                  <ul class="toolkit-list">
+                    <li>Weighted score by project</li>
+                    <li>Payback, risk, and execution-speed comparison</li>
+                    <li>Fund now / phase / pilot / kill recommendation</li>
+                  </ul>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container tool-page-grid">
+            <div class="tool-page-main">
+              <article class="toolkit-resource-card reveal">
+                <p class="suite-label">Weight Table</p>
+                <h3>Set one weight system for the quarter and do not change it project by project.</h3>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Criterion</th>
+                        <th>Weight</th>
+                        <th>What good looks like</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Strategic fit</td>
+                        <td>25%</td>
+                        <td>Directly supports core strategy, not side ambition</td>
+                      </tr>
+                      <tr>
+                        <td>Expected ROI / payback</td>
+                        <td>25%</td>
+                        <td>Clear economics with recoverable payback</td>
+                      </tr>
+                      <tr>
+                        <td>Capital efficiency</td>
+                        <td>20%</td>
+                        <td>Low capital intensity for the expected value created</td>
+                      </tr>
+                      <tr>
+                        <td>Risk</td>
+                        <td>15%</td>
+                        <td>Downside contained and understood</td>
+                      </tr>
+                      <tr>
+                        <td>Execution speed</td>
+                        <td>15%</td>
+                        <td>Can be implemented without major drag or dependence risk</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </article>
+
+              <article class="toolkit-resource-card reveal">
+                <p class="suite-label">Sample Ranking</p>
+                <h3>Example project stack.</h3>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Project</th>
+                        <th>Weighted score</th>
+                        <th>Payback</th>
+                        <th>Decision</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Collections automation</td>
+                        <td>8.6 / 10</td>
+                        <td>7 months</td>
+                        <td>Fund now</td>
+                      </tr>
+                      <tr>
+                        <td>New fintech sales pod</td>
+                        <td>7.4 / 10</td>
+                        <td>14 months</td>
+                        <td>Fund in phases</td>
+                      </tr>
+                      <tr>
+                        <td>AI close assistant pilot</td>
+                        <td>6.8 / 10</td>
+                        <td>10 months</td>
+                        <td>Pilot with controls</td>
+                      </tr>
+                      <tr>
+                        <td>Warehouse expansion</td>
+                        <td>4.9 / 10</td>
+                        <td>29 months</td>
+                        <td>Kill list</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </article>
+
+              <article class="toolkit-resource-card reveal">
+                <p class="suite-label">Gating Rules</p>
+                <ul class="toolkit-list">
+                  <li>If payback is beyond the approved hurdle, require board-level justification.</li>
+                  <li>If risk is high and execution readiness is low, force a pilot or defer outcome.</li>
+                  <li>If score is low but project is already underway, run a formal stop / continue / reset review.</li>
+                  <li>Always keep a visible kill list. It protects the ranking discipline.</li>
+                </ul>
+              </article>
+            </div>
+
+            <aside class="tool-page-sidebar">
+              <div class="toolkit-summary-card reveal">
+                <p class="suite-label">Key Logic</p>
+                <div class="tool-page-formula-list">
+                  <article>
+                    <strong>Weighted score</strong>
+                    <code>Weighted score = Sum of (criterion score x criterion weight)</code>
+                  </article>
+                  <article>
+                    <strong>Ranking rule</strong>
+                    <code>Highest score wins only if gating rules are also passed</code>
+                  </article>
+                  <article>
+                    <strong>Kill-list filter</strong>
+                    <code>If payback &gt; hurdle and strategic fit low, default to do not fund</code>
+                  </article>
+                </div>
+              </div>
+
+              <div class="toolkit-summary-card reveal">
+                <p class="suite-label">Common Mistakes</p>
+                <ul class="toolkit-list">
+                  <li>Changing weights to suit the preferred project</li>
+                  <li>Using narrative to override weak economics every time</li>
+                  <li>Skipping stop / continue / reset reviews for sunk-cost reasons</li>
+                </ul>
+              </div>
+
+              <div class="toolkit-summary-card reveal">
+                <p class="suite-label">When This Tool Shines</p>
+                <p>
+                  Use it when several projects all sound important but capital is tight and finance needs a defensible
+                  ranking logic the business can still understand.
+                </p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="tool-page-final-card reveal">
+              <p class="eyebrow">Adapt To Your Context</p>
+              <h2>Capital discipline improves when comparison gets harder to game.</h2>
+              <p>
+                Adjust the weights to match your strategy, but set them once and use them consistently across all major
+                bets. If you want a live matrix built around your actual capex, growth, and efficiency decisions, the
+                toolkit hub is the next place to go.
+              </p>
+              <div class="hero-actions">
+                <a class="button button-primary" href="./finance-systems-toolkit.html#tool-pages">Back to Tool Pages</a>
+                <a class="button button-secondary" href="./finance-systems-toolkit.html#fit-call">Book a Fit Call</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./chatbase-config.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

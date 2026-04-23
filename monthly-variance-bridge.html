@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monthly Variance Bridge Template | Bansal StratEdge Pvt. Ltd.</title>
+    <meta
+      name="description"
+      content="Detailed monthly variance bridge template from Bansal StratEdge with bridge structure, sample waterfall logic, commentary prompts, and finance operating guidance."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./assets/bansal-mark-clean.png" type="image/png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      (() => {
+        const storageKey = "bansal-stratedge-theme";
+        const prefersDark =
+          typeof window.matchMedia === "function" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        let theme = prefersDark ? "dark" : "light";
+
+        try {
+          const storedTheme = window.localStorage.getItem(storageKey);
+
+          if (storedTheme === "dark" || storedTheme === "light") {
+            theme = storedTheme;
+          }
+        } catch (error) {
+          // Ignore storage access issues and fall back to the system preference.
+        }
+
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
+  </head>
+  <body class="tool-detail-page">
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container nav-shell">
+          <a class="brand" href="./index.html" aria-label="Bansal StratEdge home">
+            <span class="brand-lockup">
+              <img class="brand-mark-image" src="./assets/bansal-mark-clean.png" alt="Bansal StratEdge logo mark" />
+              <span class="brand-copy">
+                <strong>Bansal StratEdge</strong>
+                <small>Pvt. Ltd.</small>
+              </span>
+            </span>
+          </a>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="site-nav" id="site-nav" aria-label="Tool page navigation">
+            <a href="./index.html" data-nav-link="home">Home</a>
+            <a href="./finance-systems-toolkit.html" data-nav-link="toolkit">Toolkit</a>
+            <a href="./index.html#capabilities">Capabilities</a>
+            <a href="./index.html#approach">Approach</a>
+            <a href="./cfo-capital-efficiency-checklist.html">Checklist</a>
+            <a href="./workshops.html" data-nav-link="workshops">Workshops</a>
+            <a href="./founders.html" data-nav-link="founders">Founders</a>
+            <a href="./blogs.html" data-nav-link="blogs">Insights</a>
+            <a href="./index.html#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-hero tool-page-hero">
+          <div class="container">
+            <div class="tool-page-hero-card">
+              <div class="tool-page-hero-copy reveal">
+                <p class="eyebrow">Variance Analysis Template</p>
+                <h1>Monthly Variance Bridge Template</h1>
+                <p>
+                  A good bridge does more than reconcile plan to actual. It exposes which movements were real, which
+                  were timing, and which now deserve intervention. This template is built to compress the distance
+                  between the close and a useful management conversation.
+                </p>
+                <div class="toolkit-chip-row">
+                  <span>Plan to actual bridge</span>
+                  <span>Waterfall-ready logic</span>
+                  <span>Commentary cues</span>
+                  <span>Board-friendly</span>
+                </div>
+                <div class="hero-actions">
+                  <a class="button button-primary" href="./finance-systems-toolkit.html#variance-arsenal">Back to Toolkit</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/monthly-variance-bridge.xlsx" download>Download Workbook (.xlsx)</a>
+                  <a class="button button-secondary" href="./finance-systems-toolkit.html#fit-call">Book a Fit Call</a>
+                </div>
+              </div>
+
+              <aside class="tool-page-hero-panel reveal">
+                <div class="toolkit-summary-card">
+                  <p class="suite-label">Best For</p>
+                  <ul class="toolkit-list">
+                    <li>Monthly business review packs</li>
+                    <li>CEO or board commentary after a miss or outperformance</li>
+                    <li>Teams that want fewer tables and clearer movement logic</li>
+                  </ul>
+                </div>
+
+                <div class="toolkit-summary-card">
+                  <p class="suite-label">Core Outputs</p>
+                  <ul class="toolkit-list">
+                    <li>Revenue, gross margin, EBITDA, or cash bridge from plan to actual</li>
+                    <li>Driver labels that help commentary move beyond "better / worse than budget"</li>
+                    <li>Short note on what changed, why, and what follows</li>
+                  </ul>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container tool-page-grid">
+            <div class="tool-page-main">
+              <article class="toolkit-resource-card reveal">
+                <p class="suite-label">Bridge Structure</p>
+                <h3>Keep categories clean enough that management can follow them in one pass.</h3>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Bridge item</th>
+                        <th>Impact</th>
+                        <th>Commentary cue</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Opening budget EBITDA</td>
+                        <td>INR 2.4 Cr</td>
+                        <td>Baseline</td>
+                      </tr>
+                      <tr>
+                        <td>Volume miss in enterprise</td>
+                        <td>INR -0.7 Cr</td>
+                        <td>Deals slipped 3-4 weeks</td>
+                      </tr>
+                      <tr>
+                        <td>FX gain on USD billing</td>
+                        <td>INR +0.2 Cr</td>
+                        <td>Rate moved from 82.8 to 83.5</td>
+                      </tr>
+                      <tr>
+                        <td>Cloud cost overrun</td>
+                        <td>INR -0.18 Cr</td>
+                        <td>Usage spike on data workloads</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </article>
+
+              <article class="toolkit-resource-card reveal">
+                <p class="suite-label">Commentary Builder</p>
+                <h3>Use the bridge to draft the note, not the other way around.</h3>
+                <div class="toolkit-narrative-sample">
+                  <p><strong>What changed:</strong> EBITDA landed INR 0.68 Cr below plan, mainly from enterprise timing and cloud overrun.</p>
+                  <p><strong>Why:</strong> Two large deals shifted into next month while data workloads ran above expected usage.</p>
+                  <p><strong>What follows:</strong> Revenue timing remains recoverable, but cloud usage now needs owner review before the next cycle.</p>
+                </div>
+              </article>
+
+              <article class="toolkit-resource-card reveal">
+                <p class="suite-label">Usage Rules</p>
+                <h3>Keep the bridge honest.</h3>
+                <ul class="toolkit-list">
+                  <li>Use mutually exclusive categories. One movement should not sit in two buckets.</li>
+                  <li>Separate timing effects from structural change whenever possible.</li>
+                  <li>Bridge only the handful of movements that explain most of the variance.</li>
+                  <li>End the bridge with a sentence on action, not just explanation.</li>
+                </ul>
+              </article>
+            </div>
+
+            <aside class="tool-page-sidebar">
+              <div class="toolkit-summary-card reveal">
+                <p class="suite-label">Key Logic</p>
+                <div class="tool-page-formula-list">
+                  <article>
+                    <strong>Total variance</strong>
+                    <code>Total variance = Actual result - Budget result</code>
+                  </article>
+                  <article>
+                    <strong>Bridge balance check</strong>
+                    <code>Opening budget + Sum of bridge movements = Actual result</code>
+                  </article>
+                  <article>
+                    <strong>Timing note</strong>
+                    <code>If recoverable next cycle, label as timing. If new run-rate changes, label as structural.</code>
+                  </article>
+                </div>
+              </div>
+
+              <div class="toolkit-summary-card reveal">
+                <p class="suite-label">Common Mistakes</p>
+                <ul class="toolkit-list">
+                  <li>Too many small categories that hide the main story</li>
+                  <li>Using the bridge as a data dump instead of a decision tool</li>
+                  <li>Mixing revenue, margin, and cash movement without clear order</li>
+                </ul>
+              </div>
+
+              <div class="toolkit-summary-card reveal">
+                <p class="suite-label">When This Tool Shines</p>
+                <p>
+                  Use it when management wants the short answer to, "What moved this month and what should we do about
+                  it?" without forcing finance to explain ten disconnected tables.
+                </p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="tool-page-final-card reveal">
+              <p class="eyebrow">Adapt To Your Context</p>
+              <h2>The bridge only works when the categories mirror how the business actually moves.</h2>
+              <p>
+                Adapt the buckets to your operating model, but do not let the bridge become another report no one can
+                narrate. The main goal is faster judgment. If you want this embedded into your month-end, variance, and
+                board pack rhythm, the toolkit hub is the next step.
+              </p>
+              <div class="hero-actions">
+                <a class="button button-primary" href="./finance-systems-toolkit.html#tool-pages">Back to Tool Pages</a>
+                <a class="button button-secondary" href="./finance-systems-toolkit.html#fit-call">Book a Fit Call</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./chatbase-config.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>13-Week Cash Flow &amp; Runway Planner | Bansal StratEdge Pvt. Ltd.</title>
+    <meta
+      name="description"
+      content="Detailed 13-week cash flow and runway planner from Bansal StratEdge with weekly structure, alert logic, sample output, and operating cadence guidance."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./assets/bansal-mark-clean.png" type="image/png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      (() => {
+        const storageKey = "bansal-stratedge-theme";
+        const prefersDark =
+          typeof window.matchMedia === "function" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        let theme = prefersDark ? "dark" : "light";
+
+        try {
+          const storedTheme = window.localStorage.getItem(storageKey);
+
+          if (storedTheme === "dark" || storedTheme === "light") {
+            theme = storedTheme;
+          }
+        } catch (error) {
+          // Ignore storage access issues and fall back to the system preference.
+        }
+
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
+  </head>
+  <body class="tool-detail-page">
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container nav-shell">
+          <a class="brand" href="./index.html" aria-label="Bansal StratEdge home">
+            <span class="brand-lockup">
+              <img class="brand-mark-image" src="./assets/bansal-mark-clean.png" alt="Bansal StratEdge logo mark" />
+              <span class="brand-copy">
+                <strong>Bansal StratEdge</strong>
+                <small>Pvt. Ltd.</small>
+              </span>
+            </span>
+          </a>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="site-nav" id="site-nav" aria-label="Tool page navigation">
+            <a href="./index.html" data-nav-link="home">Home</a>
+            <a href="./finance-systems-toolkit.html" data-nav-link="toolkit">Toolkit</a>
+            <a href="./index.html#capabilities">Capabilities</a>
+            <a href="./index.html#approach">Approach</a>
+            <a href="./cfo-capital-efficiency-checklist.html">Checklist</a>
+            <a href="./workshops.html" data-nav-link="workshops">Workshops</a>
+            <a href="./founders.html" data-nav-link="founders">Founders</a>
+            <a href="./blogs.html" data-nav-link="blogs">Insights</a>
+            <a href="./index.html#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-hero tool-page-hero">
+          <div class="container">
+            <div class="tool-page-hero-card">
+              <div class="tool-page-hero-copy reveal">
+                <p class="eyebrow">Cash Planning Model</p>
+                <h1>13-Week Cash Flow &amp; Runway Planner</h1>
+                <p>
+                  This is the weekly liquidity file that should stay open when collections timing gets messy, supplier
+                  negotiations get real, or the board starts asking how much room is actually left. The job is not to
+                  predict perfectly. The job is to make cash movement explainable early enough to change behavior.
+                </p>
+                <div class="toolkit-chip-row">
+                  <span>Weekly cadence</span>
+                  <span>Runway alerts</span>
+                  <span>Collections visibility</span>
+                  <span>Base / downside / stress</span>
+                </div>
+                <div class="hero-actions">
+                  <a class="button button-primary" href="./finance-systems-toolkit.html#forecast-models">Back to Toolkit</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/cash-flow-runway-planner.xlsx" download>Download Workbook (.xlsx)</a>
+                  <a class="button button-secondary" href="./finance-systems-toolkit.html#fit-call">Book a Fit Call</a>
+                </div>
+              </div>
+
+              <aside class="tool-page-hero-panel reveal">
+                <div class="toolkit-summary-card">
+                  <p class="suite-label">Best For</p>
+                  <ul class="toolkit-list">
+                    <li>Teams needing weekly runway discipline, not just monthly reporting</li>
+                    <li>Periods with funding pressure, payroll sensitivity, or slow collections</li>
+                    <li>CFOs who need one liquidity truth before leadership meetings</li>
+                  </ul>
+                </div>
+
+                <div class="toolkit-summary-card">
+                  <p class="suite-label">Core Outputs</p>
+                  <ul class="toolkit-list">
+                    <li>13-week opening cash, inflows, outflows, and closing cash bridge</li>
+                    <li>Downside and stress overlays for collections delay and cost spikes</li>
+                    <li>Funding-gap, covenant, and minimum-cash warning signals</li>
+                  </ul>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container tool-page-grid">
+            <div class="tool-page-main">
+              <article class="toolkit-resource-card reveal">
+                <p class="suite-label">Structure</p>
+                <h3>Weekly cash should be boring, repeatable, and brutally clear.</h3>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Section</th>
+                        <th>Include</th>
+                        <th>Do not bury</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Inflows</td>
+                        <td>Collections by customer group, tax refunds, debt drawdowns, other confirmed receipts</td>
+                        <td>Expected billings that are not yet collectible</td>
+                      </tr>
+                      <tr>
+                        <td>Outflows</td>
+                        <td>Payroll, vendors, rent, taxes, debt service, capex, one-offs</td>
+                        <td>Committed payments hidden inside generic overhead</td>
+                      </tr>
+                      <tr>
+                        <td>Alerts</td>
+                        <td>Minimum cash threshold, runway weeks, covenant proximity, funding gap</td>
+                        <td>Soft commentary without a trigger number</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </article>
+
+              <article class="toolkit-resource-card reveal">
+                <p class="suite-label">Example Output</p>
+                <h3>Sample weekly bridge.</h3>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Week</th>
+                        <th>Opening cash</th>
+                        <th>Inflows</th>
+                        <th>Outflows</th>
+                        <th>Closing cash</th>
+                        <th>Signal</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Wk 1</td>
+                        <td>INR 6.40 Cr</td>
+                        <td>INR 0.92 Cr</td>
+                        <td>INR 1.30 Cr</td>
+                        <td>INR 6.02 Cr</td>
+                        <td>Normal</td>
+                      </tr>
+                      <tr>
+                        <td>Wk 4</td>
+                        <td>INR 5.46 Cr</td>
+                        <td>INR 0.41 Cr</td>
+                        <td>INR 1.12 Cr</td>
+                        <td>INR 4.75 Cr</td>
+                        <td>Collections watch</td>
+                      </tr>
+                      <tr>
+                        <td>Wk 9 stress</td>
+                        <td>INR 3.82 Cr</td>
+                        <td>INR 0.33 Cr</td>
+                        <td>INR 1.27 Cr</td>
+                        <td>INR 2.88 Cr</td>
+                        <td>Funding gap alert</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </article>
+
+              <article class="toolkit-resource-card reveal">
+                <p class="suite-label">Operating Cadence</p>
+                <h3>How to keep the file decision-useful.</h3>
+                <ul class="toolkit-list">
+                  <li>Update the file on the same weekday every week before management review.</li>
+                  <li>Review top overdue receivables and top expected outflows every cycle.</li>
+                  <li>Separate timing risk from true spend risk so leadership does not overreact to every dip.</li>
+                  <li>Track base and downside in the same file; do not create parallel liquidity truths.</li>
+                  <li>Escalate any week that crosses minimum cash or covenant comfort limits.</li>
+                </ul>
+              </article>
+            </div>
+
+            <aside class="tool-page-sidebar">
+              <div class="toolkit-summary-card reveal">
+                <p class="suite-label">Key Logic</p>
+                <div class="tool-page-formula-list">
+                  <article>
+                    <strong>Weekly cash bridge</strong>
+                    <code>Closing cash = Opening cash + Total inflows - Total outflows</code>
+                  </article>
+                  <article>
+                    <strong>Runway</strong>
+                    <code>Runway weeks = Closing cash / Forward average weekly net burn</code>
+                  </article>
+                  <article>
+                    <strong>Collections slippage impact</strong>
+                    <code>Slip impact = Delayed receipts this week - delayed receipts recovered next week</code>
+                  </article>
+                </div>
+              </div>
+
+              <div class="toolkit-summary-card reveal">
+                <p class="suite-label">Warning Triggers</p>
+                <ul class="toolkit-list">
+                  <li>Closing cash below floor set by CFO / board</li>
+                  <li>Two or more major collections shift in the same 2-week window</li>
+                  <li>Debt service or payroll week covered only by optimistic receipts</li>
+                </ul>
+              </div>
+
+              <div class="toolkit-summary-card reveal">
+                <p class="suite-label">When This Tool Shines</p>
+                <p>
+                  Use it when the business needs sharper cash ownership than a monthly report can provide, especially
+                  around payroll, debt, supplier timing, and fundraising readiness.
+                </p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="tool-page-final-card reveal">
+              <p class="eyebrow">Adapt To Your Context</p>
+              <h2>Cash planning works only when someone owns the movements.</h2>
+              <p>
+                Adapt the inflow and outflow lines to your operating reality, but keep collections and committed cash
+                obligations visible at weekly level. If the file is clean and the team still cannot act on it, the
+                problem is not the workbook anymore. It is cadence and ownership.
+              </p>
+              <div class="hero-actions">
+                <a class="button button-primary" href="./finance-systems-toolkit.html#tool-pages">Back to Tool Pages</a>
+                <a class="button button-secondary" href="./finance-systems-toolkit.html#fit-call">Book a Fit Call</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./chatbase-config.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

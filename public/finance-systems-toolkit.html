@@ -1,0 +1,2065 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finance Systems Toolkit | Bansal StratEdge Pvt. Ltd.</title>
+    <meta
+      name="description"
+      content="Practical finance systems toolkit from Bansal StratEdge with capital-efficiency scoring, rolling forecast starters, variance templates, capital allocation frameworks, and AI prompts for finance teams."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./assets/bansal-mark-clean.png" type="image/png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      (() => {
+        const storageKey = "bansal-stratedge-theme";
+        const prefersDark =
+          typeof window.matchMedia === "function" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        let theme = prefersDark ? "dark" : "light";
+
+        try {
+          const storedTheme = window.localStorage.getItem(storageKey);
+
+          if (storedTheme === "dark" || storedTheme === "light") {
+            theme = storedTheme;
+          }
+        } catch (error) {
+          // Ignore storage access issues and fall back to the system preference.
+        }
+
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body class="toolkit-page">
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container nav-shell">
+          <a class="brand" href="./index.html" aria-label="Bansal StratEdge home">
+            <span class="brand-lockup">
+              <img class="brand-mark-image" src="./assets/bansal-mark-clean.png" alt="Bansal StratEdge logo mark" />
+              <span class="brand-copy">
+                <strong>Bansal StratEdge</strong>
+                <small>Pvt. Ltd.</small>
+              </span>
+            </span>
+          </a>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="site-nav" id="site-nav" aria-label="Toolkit navigation">
+            <a href="./index.html" data-nav-link="home">Home</a>
+            <a href="./finance-systems-toolkit.html" data-nav-link="toolkit">Toolkit</a>
+            <a href="./index.html#capabilities">Capabilities</a>
+            <a href="./index.html#approach">Approach</a>
+            <a href="./cfo-capital-efficiency-checklist.html">Checklist</a>
+            <a href="./workshops.html" data-nav-link="workshops">Workshops</a>
+            <a href="./founders.html" data-nav-link="founders">Founders</a>
+            <a href="./blogs.html" data-nav-link="blogs">Insights</a>
+            <a href="./index.html#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-hero toolkit-hero">
+          <div class="container">
+            <div class="toolkit-hero-card">
+              <div class="toolkit-hero-copy reveal">
+                <p class="eyebrow">Finance Systems Toolkit</p>
+                <h1>
+                  Finance Systems Toolkit
+                  <span>- Practical Tools That Actually Get Used</span>
+                </h1>
+                <p class="toolkit-subheadline">
+                  Battle-tested checklists, models, frameworks, and AI prompts built from 25+ years in global banking
+                  and real startup finance. No theory. No bloated dashboards. Just disciplined, capital-efficient tools
+                  you can copy today and run tomorrow.
+                </p>
+                <p class="toolkit-hero-intro">
+                  We created this hub because great finance does not need complexity. It needs clarity, speed, and
+                  ownership. Start with the free Capital Efficiency Checklist below, then move into rolling forecasts,
+                  variance bridges, capital scoring matrices, and ready-to-paste AI prompts that cut real time from the
+                  month-end cycle.
+                </p>
+                <p class="toolkit-hero-intro">
+                  Every tool here is built for CFOs and finance teams that want tighter systems without the consulting
+                  fluff. Adapt to your context. These are starting points built for speed and clarity.
+                </p>
+
+                <div class="hero-actions toolkit-hero-actions">
+                  <a class="button button-primary" href="./assets/toolkit-downloads/finance-systems-toolkit-pack.zip" download>Download Full Toolkit Pack (.zip)</a>
+                  <a class="button button-secondary" href="#toolkit-sections">Browse All Tools</a>
+                  <a class="button button-secondary" href="#fit-call">Book a 20-min Fit Call</a>
+                </div>
+
+                <p class="toolkit-hero-note">
+                  Every workbook download now includes pale-gold editable inputs, protected formula cells, sample data,
+                  and a clean instructions tab. Interactive scoring still lives below, and you can print the executive
+                  summary after rating your current state.
+                </p>
+              </div>
+
+              <aside class="toolkit-hero-panel reveal" aria-label="Toolkit highlights">
+                <div class="toolkit-hero-metrics">
+                  <article>
+                    <strong>25+</strong>
+                    <span>years across Citi, Deutsche, JPMorgan, ING Vysya, and operating finance work that had to hold up under pressure</span>
+                  </article>
+                  <article>
+                    <strong>15</strong>
+                    <span>copy-paste AI prompts for forecasting, variance, capital allocation, board reporting, and workflow redesign</span>
+                  </article>
+                  <article>
+                    <strong>6</strong>
+                    <span>resource stacks spanning diagnostics, planning, variance analysis, capital frameworks, leadership packs, and implementation</span>
+                  </article>
+                </div>
+
+                <div class="toolkit-hero-list">
+                  <p class="suite-label">What you can use immediately</p>
+                  <ul class="toolkit-points">
+                    <li>Capital-efficiency scoring with red, amber, and green flags</li>
+                    <li>Driver-based rolling forecast starter for Indian startup realities</li>
+                    <li>13-week cash planning and runway alert structure</li>
+                    <li>Board-ready narratives and decision memo templates</li>
+                    <li>Prompt patterns that improve finance work without weakening review discipline</li>
+                  </ul>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <div class="toolkit-anchor-wrap" id="toolkit-sections">
+          <div class="container">
+            <nav class="toolkit-anchor-nav" aria-label="Toolkit sections">
+              <a href="#downloads-library">Download Library</a>
+              <a href="#tool-pages">Detailed Tool Pages</a>
+              <a href="#core-diagnostics">Core Checklists &amp; Diagnostics</a>
+              <a href="#forecast-models">Forecast &amp; Planning Models</a>
+              <a href="#variance-arsenal">Variance Analysis Arsenal</a>
+              <a href="#capital-frameworks">Capital Allocation Frameworks</a>
+              <a href="#ai-prompts">AI Prompts for Finance</a>
+              <a href="#board-one-pagers">Board &amp; Leadership One-Pagers</a>
+              <a href="#implementation-tips">How to Use These Tools</a>
+              <a href="#ready-for-more">Ready for More?</a>
+            </nav>
+          </div>
+        </div>
+
+        <section class="section toolkit-section toolkit-section-soft" id="downloads-library">
+          <div class="container">
+            <div class="section-intro reveal">
+              <p class="eyebrow">Download Library</p>
+              <h2>Every major toolkit asset is now downloadable as a real workbook, not just described on the page.</h2>
+              <p>
+                The pack below is built around current driver-based planning, scenario, liquidity, and reporting
+                practices. Each file uses highlighted editable inputs, protected formulas, sample data, and simple
+                sheet structure so the team can actually run it next month.
+              </p>
+            </div>
+
+            <div class="toolkit-download-grid">
+              <article class="toolkit-download-card reveal">
+                <p class="suite-label">Complete Pack</p>
+                <h3>Finance Systems Toolkit Pack</h3>
+                <p>All workbook templates bundled in one `.zip`, ready for Excel with separate files by use case.</p>
+                <div class="toolkit-card-actions">
+                  <a class="button button-primary" href="./assets/toolkit-downloads/finance-systems-toolkit-pack.zip" download>Download Full Pack</a>
+                </div>
+                <ul class="toolkit-list toolkit-legend-list">
+                  <li><span class="toolkit-input-key toolkit-input-key-input"></span> Editable assumptions</li>
+                  <li><span class="toolkit-input-key toolkit-input-key-actual"></span> Sample actuals / source rows</li>
+                  <li><span class="toolkit-input-key toolkit-input-key-formula"></span> Protected formulas and outputs</li>
+                </ul>
+              </article>
+
+              <article class="toolkit-download-card reveal">
+                <p class="suite-label">Diagnostics</p>
+                <h3>Start With the Assessment Files</h3>
+                <p>Three fast workbook downloads for capital efficiency, FP&amp;A health, and AI readiness inside finance.</p>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/capital-efficiency-checklist.xlsx" download>Capital Checklist</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/fpa-system-health-diagnostic.xlsx" download>FP&amp;A Diagnostic</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/ai-readiness-finance-audit.xlsx" download>AI Readiness Audit</a>
+                </div>
+              </article>
+
+              <article class="toolkit-download-card reveal">
+                <p class="suite-label">Planning Models</p>
+                <h3>Forecast, Cash, and Headcount</h3>
+                <p>Three linked workbook templates for rolling plans, 13-week liquidity, and hiring / capacity decisions.</p>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/driver-based-rolling-forecast.xlsx" download>Rolling Forecast</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/cash-flow-runway-planner.xlsx" download>13-Week Cash</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/headcount-capacity-planning-model.xlsx" download>Headcount Model</a>
+                </div>
+              </article>
+
+              <article class="toolkit-download-card reveal">
+                <p class="suite-label">Variance &amp; Capital</p>
+                <h3>Bridge, Narrative, Prioritization</h3>
+                <p>Decision-ready workbooks for bridge logic, driver decomposition, capital ranking, and cash conversion.</p>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/monthly-variance-bridge.xlsx" download>Variance Bridge</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/driver-decomposition-worksheet.xlsx" download>Decomposition</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/variance-narrative-builder.xlsx" download>Narrative Builder</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/capital-scoring-prioritization-matrix.xlsx" download>Capital Matrix</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/cash-conversion-cycle-optimizer.xlsx" download>CCC Optimizer</a>
+                </div>
+              </article>
+
+              <article class="toolkit-download-card reveal">
+                <p class="suite-label">Leadership &amp; AI</p>
+                <h3>Board Templates and Prompt Library</h3>
+                <p>Download the board one-pagers and the structured prompt library as workbook files too.</p>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/board-ceo-one-pagers.xlsx" download>Board Templates</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/finance-ai-prompts-library.xlsx" download>Prompt Library</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section toolkit-section" id="tool-pages">
+          <div class="container">
+            <div class="section-intro reveal">
+              <p class="eyebrow">Detailed Tool Pages</p>
+              <h2>Every core model now has its own page so the main toolkit can act like a proper command center.</h2>
+              <p>
+                Use this directory when you want the standalone version of a model with structure, sample tables,
+                formulas, setup notes, and implementation guidance. The toolkit hub stays the index. The pages below do
+                the deeper work.
+              </p>
+            </div>
+
+            <div class="toolkit-directory-grid">
+              <article class="tool-page-directory-card reveal">
+                <p class="suite-label">Forecast Model</p>
+                <h3><a href="./driver-based-rolling-forecast.html">Driver-Based Rolling 24-Month Forecast Starter</a></h3>
+                <p>Detailed tab structure, driver logic, sample outputs, scenario rules, and finance-team setup notes.</p>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./driver-based-rolling-forecast.html">Open detailed page</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/driver-based-rolling-forecast.xlsx" download>Download .xlsx</a>
+                </div>
+              </article>
+
+              <article class="tool-page-directory-card reveal">
+                <p class="suite-label">Cash Model</p>
+                <h3><a href="./cash-flow-runway-planner.html">13-Week Cash Flow &amp; Runway Planner</a></h3>
+                <p>Weekly cash structure, alert logic, runway framing, and the operating cadence that makes the file useful.</p>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./cash-flow-runway-planner.html">Open detailed page</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/cash-flow-runway-planner.xlsx" download>Download .xlsx</a>
+                </div>
+              </article>
+
+              <article class="tool-page-directory-card reveal">
+                <p class="suite-label">Capacity Model</p>
+                <h3><a href="./headcount-capacity-planning-model.html">Headcount &amp; Capacity Planning Model</a></h3>
+                <p>Role-level capacity logic, productivity ramps, payroll impact, and hiring decision discipline.</p>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./headcount-capacity-planning-model.html">Open detailed page</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/headcount-capacity-planning-model.xlsx" download>Download .xlsx</a>
+                </div>
+              </article>
+
+              <article class="tool-page-directory-card reveal">
+                <p class="suite-label">Variance Template</p>
+                <h3><a href="./monthly-variance-bridge.html">Monthly Variance Bridge Template</a></h3>
+                <p>Bridge logic, movement categories, commentary cues, and sample management-ready output.</p>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./monthly-variance-bridge.html">Open detailed page</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/monthly-variance-bridge.xlsx" download>Download .xlsx</a>
+                </div>
+              </article>
+
+              <article class="tool-page-directory-card reveal">
+                <p class="suite-label">Decomposition Tool</p>
+                <h3><a href="./driver-decomposition-worksheet.html">Driver Decomposition Worksheet</a></h3>
+                <p>Segment, volume, price, mix, and timing logic for turning a miss into a clear action view.</p>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./driver-decomposition-worksheet.html">Open detailed page</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/driver-decomposition-worksheet.xlsx" download>Download .xlsx</a>
+                </div>
+              </article>
+
+              <article class="tool-page-directory-card reveal">
+                <p class="suite-label">Narrative Template</p>
+                <h3><a href="./variance-narrative-builder.html">Board-Ready Variance Narrative Builder</a></h3>
+                <p>Structured narrative blocks, tone rules, action framing, and examples that travel well to CEOs and boards.</p>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./variance-narrative-builder.html">Open detailed page</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/variance-narrative-builder.xlsx" download>Download .xlsx</a>
+                </div>
+              </article>
+
+              <article class="tool-page-directory-card reveal">
+                <p class="suite-label">Allocation Tool</p>
+                <h3><a href="./capital-scoring-prioritization-matrix.html">Capital Scoring &amp; Prioritization Matrix</a></h3>
+                <p>Weighted scoring, gating rules, kill-list logic, and sample investment ranking for finance teams.</p>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./capital-scoring-prioritization-matrix.html">Open detailed page</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/capital-scoring-prioritization-matrix.xlsx" download>Download .xlsx</a>
+                </div>
+              </article>
+
+              <article class="tool-page-directory-card reveal">
+                <p class="suite-label">Working Capital Tool</p>
+                <h3><a href="./cash-conversion-cycle-optimizer.html">Working Capital &amp; Cash Conversion Cycle Optimizer</a></h3>
+                <p>Cash conversion structure, owner-based levers, DSO / DPO / inventory logic, and improvement sequencing.</p>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./cash-conversion-cycle-optimizer.html">Open detailed page</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/cash-conversion-cycle-optimizer.xlsx" download>Download .xlsx</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section toolkit-section" id="core-diagnostics">
+          <div class="container">
+            <div class="section-intro reveal">
+              <p class="eyebrow">Core Checklists &amp; Diagnostics</p>
+              <h2>Start with the tool that tells you where discipline is leaking first.</h2>
+              <p>
+                The highest-leverage starting point is not another dashboard. It is a sharper diagnostic. Rate the
+                finance system you have, spot the weak control points, and use the summary to focus the next 30 days of
+                work.
+              </p>
+            </div>
+
+            <div class="toolkit-featured-card reveal" id="capital-scorecard">
+              <div class="toolkit-featured-copy">
+                <p class="card-index">01</p>
+                <h3>CFO Capital Efficiency Checklist</h3>
+                <p>
+                  This expands the original 24-point checklist into a scored operating review. Rate each item from 1 to
+                  5, watch the section flags update, and use the auto-generated executive summary to tighten the next
+                  management review or board prep cycle.
+                </p>
+
+                <div class="toolkit-scale-note">
+                  <span><strong>1</strong> weak or absent</span>
+                  <span><strong>3</strong> partially in place</span>
+                  <span><strong>5</strong> disciplined and repeatable</span>
+                </div>
+
+                <div class="toolkit-score-groups">
+                  <article class="toolkit-score-group" data-toolkit-score-group>
+                    <div class="toolkit-score-group-head">
+                      <div>
+                        <p class="suite-label">Cash visibility and runway</p>
+                        <h4>Liquidity truth should be visible before pressure shows up.</h4>
+                      </div>
+                      <div class="toolkit-group-status">
+                        <strong data-toolkit-group-score>3.0 / 5</strong>
+                        <span class="toolkit-flag is-amber" data-toolkit-group-flag>Amber</span>
+                      </div>
+                    </div>
+
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>Rolling 13-week cash view is refreshed weekly.</strong>
+                        <span>The file survives normal operating weeks, not only pressure weeks.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="cash" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>Finance can explain near-term cash movements quickly.</strong>
+                        <span>No scramble required to explain the next few weeks of obligations.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="cash" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>Runway is reviewed against downside triggers.</strong>
+                        <span>Liquidity, covenant, and scenario pressure are read together.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="cash" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>Leadership sees one liquidity narrative.</strong>
+                        <span>The CEO and CFO are working from the same version of truth.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="cash" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                  </article>
+
+                  <article class="toolkit-score-group" data-toolkit-score-group>
+                    <div class="toolkit-score-group-head">
+                      <div>
+                        <p class="suite-label">Working capital discipline</p>
+                        <h4>Cash gets trapped quietly when ownership is blurry.</h4>
+                      </div>
+                      <div class="toolkit-group-status">
+                        <strong data-toolkit-group-score>3.0 / 5</strong>
+                        <span class="toolkit-flag is-amber" data-toolkit-group-flag>Amber</span>
+                      </div>
+                    </div>
+
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>Receivables have named owners and active review cadence.</strong>
+                        <span>Aging is managed, not merely reported.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="working-capital" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>Inventory and purchasing follow real demand signals.</strong>
+                        <span>Cash is not getting locked through habit or optimism.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="working-capital" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>Payment terms are actively managed.</strong>
+                        <span>Customer and vendor terms move when leverage or risk changes.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="working-capital" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>Finance can quantify trapped cash.</strong>
+                        <span>The number is visible across receivables, stock, and payment timing.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="working-capital" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                  </article>
+
+                  <article class="toolkit-score-group" data-toolkit-score-group>
+                    <div class="toolkit-score-group-head">
+                      <div>
+                        <p class="suite-label">Spend control and approvals</p>
+                        <h4>Recurring cost creep is usually a governance problem.</h4>
+                      </div>
+                      <div class="toolkit-group-status">
+                        <strong data-toolkit-group-score>3.0 / 5</strong>
+                        <span class="toolkit-flag is-amber" data-toolkit-group-flag>Amber</span>
+                      </div>
+                    </div>
+
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>New recurring spend needs an owner and business case.</strong>
+                        <span>Spend is tied to a decision-maker and a review date.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="spend-control" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>Major renewals are reviewed early.</strong>
+                        <span>Finance has time to renegotiate, consolidate, or stop the spend.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="spend-control" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>Committed and discretionary spend can be separated fast.</strong>
+                        <span>The cost base can be read under normal and stressed scenarios.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="spend-control" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>Approval thresholds are obvious.</strong>
+                        <span>Teams know what requires CFO or leadership review.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="spend-control" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                  </article>
+
+                  <article class="toolkit-score-group" data-toolkit-score-group>
+                    <div class="toolkit-score-group-head">
+                      <div>
+                        <p class="suite-label">Capital allocation quality</p>
+                        <h4>Capital should compete on one scoreboard, not separate stories.</h4>
+                      </div>
+                      <div class="toolkit-group-status">
+                        <strong data-toolkit-group-score>3.0 / 5</strong>
+                        <span class="toolkit-flag is-amber" data-toolkit-group-flag>Amber</span>
+                      </div>
+                    </div>
+
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>Growth bets and operating investments use common return logic.</strong>
+                        <span>ROI, payback, and downside resilience are compared on the same basis.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="capital-allocation" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>Underperforming initiatives face stop, continue, or reset reviews.</strong>
+                        <span>Projects do not drift because they already started.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="capital-allocation" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>Downside resilience is funded before upside experiments.</strong>
+                        <span>The company knows what capital must stay reserved.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="capital-allocation" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>The top capital priorities are explicit each quarter.</strong>
+                        <span>Leadership can name them without debate.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="capital-allocation" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                  </article>
+
+                  <article class="toolkit-score-group" data-toolkit-score-group>
+                    <div class="toolkit-score-group-head">
+                      <div>
+                        <p class="suite-label">Reporting and decision support</p>
+                        <h4>Good reporting reduces decision time. Bad reporting creates hunting behavior.</h4>
+                      </div>
+                      <div class="toolkit-group-status">
+                        <strong data-toolkit-group-score>3.0 / 5</strong>
+                        <span class="toolkit-flag is-amber" data-toolkit-group-flag>Amber</span>
+                      </div>
+                    </div>
+
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>Monthly reporting highlights decisions and trade-offs.</strong>
+                        <span>The pack is built to trigger action, not just show numbers.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="reporting" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>Forecast changes trace back to a few real drivers.</strong>
+                        <span>The business can explain movement without hiding behind model complexity.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="reporting" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>Board and management packs are short enough to read before the meeting.</strong>
+                        <span>Length is not compensating for weak prioritization.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="reporting" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>Commentary answers what changed, why, and what follows.</strong>
+                        <span>Action is explicit rather than implied.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="reporting" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                  </article>
+
+                  <article class="toolkit-score-group" data-toolkit-score-group>
+                    <div class="toolkit-score-group-head">
+                      <div>
+                        <p class="suite-label">AI controls in finance</p>
+                        <h4>Useful AI removes work without weakening review discipline.</h4>
+                      </div>
+                      <div class="toolkit-group-status">
+                        <strong data-toolkit-group-score>3.0 / 5</strong>
+                        <span class="toolkit-flag is-amber" data-toolkit-group-flag>Amber</span>
+                      </div>
+                    </div>
+
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>There is a finance workflow worth automating.</strong>
+                        <span>The use case saves analyst time or improves review quality.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="ai-controls" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>AI-assisted outputs have a named reviewer.</strong>
+                        <span>Management-facing output is checked before it travels.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="ai-controls" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>Prompts, sources, and review rules are repeatable.</strong>
+                        <span>The workflow can be run consistently by the team.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="ai-controls" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                    <div class="toolkit-score-item">
+                      <div>
+                        <strong>AI is removing manual work, not hiding process weakness.</strong>
+                        <span>The operating logic still makes sense without the model.</span>
+                      </div>
+                      <label>
+                        <input type="range" min="1" max="5" step="1" value="3" data-toolkit-score-input data-toolkit-group="ai-controls" />
+                        <output data-toolkit-score-value>3</output>
+                      </label>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <aside class="toolkit-score-summary">
+                <div>
+                  <p class="suite-label">Executive view</p>
+                  <div class="toolkit-score-hero">
+                    <strong id="toolkit-overall-score">3.0</strong>
+                    <span>/ 5 overall average</span>
+                  </div>
+                  <div class="checklist-progress toolkit-overall-progress" aria-hidden="true">
+                    <span id="toolkit-overall-progress-bar" style="width: 60%"></span>
+                  </div>
+                  <p class="toolkit-summary-line">
+                    Current flag:
+                    <span class="toolkit-flag is-amber" id="toolkit-overall-flag">Amber</span>
+                  </p>
+                </div>
+
+                <div class="toolkit-summary-card">
+                  <p class="suite-label">Immediate priorities</p>
+                  <ul class="toolkit-priority-list" id="toolkit-priority-list">
+                    <li>Cash visibility and runway</li>
+                    <li>Working capital discipline</li>
+                    <li>Spend control and approvals</li>
+                  </ul>
+                </div>
+
+                <div class="toolkit-summary-card">
+                  <p class="suite-label">One-page executive summary</p>
+                  <textarea id="toolkit-executive-summary" rows="10" readonly>
+Overall capital efficiency score: 3.0 / 5 (Amber).
+Priority sections: Cash visibility and runway; Working capital discipline.
+Board-level implication: The finance base is workable but discipline is uneven across liquidity, ownership, and stop-or-reset decisions.
+Next 30 days: tighten weekly cash cadence, assign owners for trapped-cash levers, and review one underperforming investment using a stop / continue / reset lens.
+                  </textarea>
+                  <div class="toolkit-summary-actions">
+                    <button class="button button-secondary" type="button" data-copy-target="toolkit-executive-summary">Copy Summary</button>
+                    <a class="button button-secondary" href="./assets/toolkit-downloads/capital-efficiency-checklist.xlsx" download>Download .xlsx</a>
+                    <button class="button button-secondary" type="button" onclick="window.print()">Print / Save PDF</button>
+                  </div>
+                </div>
+
+                <div class="toolkit-summary-card">
+                  <p class="suite-label">Flag guide</p>
+                  <div class="toolkit-flag-grid">
+                    <article>
+                      <span class="toolkit-flag is-red">Red</span>
+                      <p>Below 2.5. Structural leaks are slowing decisions or increasing risk.</p>
+                    </article>
+                    <article>
+                      <span class="toolkit-flag is-amber">Amber</span>
+                      <p>2.5 to 3.7. The base exists, but ownership or cadence is inconsistent.</p>
+                    </article>
+                    <article>
+                      <span class="toolkit-flag is-green">Green</span>
+                      <p>Above 3.7. The control layer is strong enough for sharper optimization.</p>
+                    </article>
+                  </div>
+                  <div class="toolkit-summary-actions">
+                    <button class="button button-secondary" type="button" data-toolkit-reset>Reset Scores</button>
+                    <a class="text-link" href="./cfo-capital-efficiency-checklist.html">Open the checklist-only page</a>
+                  </div>
+                </div>
+              </aside>
+            </div>
+
+            <div class="toolkit-card-grid toolkit-card-grid-2">
+              <article class="toolkit-resource-card reveal">
+                <p class="card-index">02</p>
+                <h3>FP&amp;A System Health Diagnostic</h3>
+                <p>
+                  An 18-question self-audit that pressure-tests model structure, ownership, reporting cadence, scenario
+                  logic, and decision usefulness. Use it when the forecast technically exists but nobody trusts it
+                  enough to act fast.
+                </p>
+                <h4>What it measures</h4>
+                <ul class="toolkit-list">
+                  <li>Model structure: driver clarity, version control, auditability, and scenario discipline</li>
+                  <li>Ownership: named owners for forecast inputs, assumptions, and review timing</li>
+                  <li>Decision usefulness: whether the output changes actions, trade-offs, and resource deployment</li>
+                </ul>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Band</th>
+                        <th>Maturity score</th>
+                        <th>Typical fix</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Reactive</td>
+                        <td>0-35</td>
+                        <td>Rebuild around drivers and ownership</td>
+                      </tr>
+                      <tr>
+                        <td>Functional</td>
+                        <td>36-70</td>
+                        <td>Tighten cadence and commentary logic</td>
+                      </tr>
+                      <tr>
+                        <td>Decision-ready</td>
+                        <td>71-100</td>
+                        <td>Add sharper scenarios and exception tracking</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="toolkit-when">
+                  <strong>When this tool shines:</strong> when leadership keeps asking for one more version of the
+                  forecast because the current one is not trusted.
+                </p>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/fpa-system-health-diagnostic.xlsx" download>Download .xlsx</a>
+                </div>
+              </article>
+
+              <article class="toolkit-resource-card reveal">
+                <p class="card-index">03</p>
+                <h3>AI Readiness in Finance</h3>
+                <p>
+                  A quick audit that separates promising finance AI use cases from risky shortcuts. It is built to help
+                  teams decide where AI adds real value and where it is likely to create review noise, control gaps, or
+                  bad confidence.
+                </p>
+                <h4>Use it to score</h4>
+                <ul class="toolkit-list">
+                  <li>Task repeatability and time saved per cycle</li>
+                  <li>Availability of clean source data and reference documents</li>
+                  <li>Need for judgment, approvals, and human review before output is shared</li>
+                </ul>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Workflow</th>
+                        <th>Value</th>
+                        <th>Risk</th>
+                        <th>Recommendation</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Variance commentary draft</td>
+                        <td>High</td>
+                        <td>Low</td>
+                        <td>Automate with reviewer</td>
+                      </tr>
+                      <tr>
+                        <td>Board pack final numbers</td>
+                        <td>Medium</td>
+                        <td>High</td>
+                        <td>Keep human-controlled</td>
+                      </tr>
+                      <tr>
+                        <td>Vendor term review notes</td>
+                        <td>High</td>
+                        <td>Medium</td>
+                        <td>Pilot with audit trail</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="toolkit-when">
+                  <strong>When this tool shines:</strong> when the team is excited about AI but has not yet drawn the
+                  line between a useful workflow and a governance problem.
+                </p>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/ai-readiness-finance-audit.xlsx" download>Download .xlsx</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section toolkit-section toolkit-section-soft" id="forecast-models">
+          <div class="container">
+            <div class="section-intro reveal">
+              <p class="eyebrow">Forecast &amp; Planning Models</p>
+              <h2>Planning models that tell the operating story without turning into spreadsheet theatre.</h2>
+              <p>
+                These models are built to be touched by real finance teams, not trapped with one analyst. Keep the
+                inputs tight, show the drivers clearly, and make scenario changes fast enough to matter.
+              </p>
+            </div>
+
+            <div class="toolkit-card-grid">
+              <article class="toolkit-resource-card reveal">
+                <p class="card-index">01</p>
+                <h3>Driver-Based Rolling 24-Month Forecast Starter</h3>
+                <p>
+                  Available in Google Sheets or Excel structure. Built around the tabs finance teams actually need:
+                  Assumptions &amp; Drivers, Revenue Build, Expense Build, 3-Statement Output, Scenarios, and Dashboard.
+                </p>
+                <h4>Change these 8 highlighted input cells in the workbook</h4>
+                <div class="toolkit-chip-row toolkit-input-row">
+                  <span>New logos per month</span>
+                  <span>ARPA</span>
+                  <span>Gross retention</span>
+                  <span>CAC by channel</span>
+                  <span>Hiring pace</span>
+                  <span>INR / USD FX</span>
+                  <span>GST impact</span>
+                  <span>Collection days</span>
+                </div>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Driver</th>
+                        <th>Example input</th>
+                        <th>Why it matters</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>INR / USD FX</td>
+                        <td>83.40</td>
+                        <td>Reprices overseas tooling and USD-linked contracts</td>
+                      </tr>
+                      <tr>
+                        <td>GST rate on billings</td>
+                        <td>18%</td>
+                        <td>Shapes cash timing and output tax planning</td>
+                      </tr>
+                      <tr>
+                        <td>Paid social CAC</td>
+                        <td>INR 42,000</td>
+                        <td>Connects growth spend to payback discipline</td>
+                      </tr>
+                      <tr>
+                        <td>Sales headcount ramp</td>
+                        <td>+1 in Jul, +2 in Oct</td>
+                        <td>Links bookings capacity to cost and ESOP dilution</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <ul class="toolkit-list">
+                  <li>Load last actual month before touching the plan logic</li>
+                  <li>Keep scenario changes inside the driver sheet, not hidden formulas</li>
+                  <li>Use the stress case to answer runway, not just revenue ambition</li>
+                  <li>Editable assumptions are highlighted in pale gold in the download; formulas stay protected</li>
+                </ul>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./driver-based-rolling-forecast.html">Open detailed page</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/driver-based-rolling-forecast.xlsx" download>Download .xlsx</a>
+                </div>
+                <p class="toolkit-when">
+                  <strong>When this tool shines:</strong> when the annual budget is too slow and finance needs a rolling
+                  view that can absorb hiring, FX, and margin shocks without a full rebuild.
+                </p>
+              </article>
+
+              <article class="toolkit-resource-card reveal">
+                <p class="card-index">02</p>
+                <h3>13-Week Cash Flow &amp; Runway Planner</h3>
+                <p>
+                  Weekly cash visibility with burn scenarios, covenant watchpoints, and funding-gap alerts. This is the
+                  file you open before leadership asks, "What happens if collections slip by two weeks?"
+                </p>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Week</th>
+                        <th>Opening cash</th>
+                        <th>Net movement</th>
+                        <th>Closing cash</th>
+                        <th>Signal</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Wk 1</td>
+                        <td>INR 6.4 Cr</td>
+                        <td>INR -0.38 Cr</td>
+                        <td>INR 6.02 Cr</td>
+                        <td>Normal</td>
+                      </tr>
+                      <tr>
+                        <td>Wk 4</td>
+                        <td>INR 5.46 Cr</td>
+                        <td>INR -0.71 Cr</td>
+                        <td>INR 4.75 Cr</td>
+                        <td>Watch collections</td>
+                      </tr>
+                      <tr>
+                        <td>Wk 9 stress</td>
+                        <td>INR 3.82 Cr</td>
+                        <td>INR -0.94 Cr</td>
+                        <td>INR 2.88 Cr</td>
+                        <td>Funding gap alert</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <ul class="toolkit-list">
+                  <li>Refresh the file every week on the same day and time</li>
+                  <li>Track collection timing separately from billed revenue</li>
+                  <li>Show base, downside, and severe downside on one view</li>
+                </ul>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./cash-flow-runway-planner.html">Open detailed page</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/cash-flow-runway-planner.xlsx" download>Download .xlsx</a>
+                </div>
+                <p class="toolkit-when">
+                  <strong>When this tool shines:</strong> when you need sharper control over runway, debt timing,
+                  payroll risk, or supplier negotiations in a fast-scaling quarter.
+                </p>
+              </article>
+
+              <article class="toolkit-resource-card reveal">
+                <p class="card-index">03</p>
+                <h3>Headcount &amp; Capacity Planning Model</h3>
+                <p>
+                  Links hiring to revenue capacity, payroll cost, and cash impact. Helpful when the business keeps
+                  discussing headcount in isolation rather than as a capital deployment decision.
+                </p>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Function</th>
+                        <th>Opening HC</th>
+                        <th>Planned hires</th>
+                        <th>Fully loaded monthly cost</th>
+                        <th>Capacity note</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Sales</td>
+                        <td>12</td>
+                        <td>+3</td>
+                        <td>INR 2.8 L each</td>
+                        <td>Supports INR 1.1 Cr new ARR per quarter</td>
+                      </tr>
+                      <tr>
+                        <td>Customer success</td>
+                        <td>8</td>
+                        <td>+2</td>
+                        <td>INR 1.9 L each</td>
+                        <td>Protects retention above 93%</td>
+                      </tr>
+                      <tr>
+                        <td>Product / engineering</td>
+                        <td>24</td>
+                        <td>+4</td>
+                        <td>INR 3.4 L each</td>
+                        <td>Includes ESOP pool refresh assumption</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <ul class="toolkit-list">
+                  <li>Model hiring by role family, not one pooled line item</li>
+                  <li>Translate headcount into revenue capacity or service delivery capacity</li>
+                  <li>Include ESOP dilution and bench time where relevant</li>
+                </ul>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./headcount-capacity-planning-model.html">Open detailed page</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/headcount-capacity-planning-model.xlsx" download>Download .xlsx</a>
+                </div>
+                <p class="toolkit-when">
+                  <strong>When this tool shines:</strong> when the hiring plan feels optimistic but finance cannot yet
+                  show the cash and capacity trade-off cleanly.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section toolkit-section" id="variance-arsenal">
+          <div class="container">
+            <div class="section-intro reveal">
+              <p class="eyebrow">Variance Analysis Arsenal</p>
+              <h2>Move from "we missed plan" to "these drivers moved and this is what we do next."</h2>
+              <p>
+                Good variance analysis reduces ambiguity and speeds ownership. Each template below is designed to pull
+                teams away from generic narrative and toward specific movement, cause, and action.
+              </p>
+            </div>
+
+            <div class="toolkit-card-grid toolkit-card-grid-3">
+              <article class="toolkit-resource-card reveal">
+                <p class="card-index">01</p>
+                <h3>Monthly Variance Bridge Template</h3>
+                <p>
+                  A bridge view that moves from plan to actual using a clean waterfall logic. Pair it with the
+                  commentary builder to explain which levers mattered and which did not.
+                </p>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Bridge item</th>
+                        <th>Impact</th>
+                        <th>Commentary cue</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Opening budget EBITDA</td>
+                        <td>INR 2.4 Cr</td>
+                        <td>Baseline</td>
+                      </tr>
+                      <tr>
+                        <td>Volume miss in enterprise</td>
+                        <td>INR -0.7 Cr</td>
+                        <td>Deals slipped by 3-4 weeks</td>
+                      </tr>
+                      <tr>
+                        <td>FX gain on USD billing</td>
+                        <td>INR +0.2 Cr</td>
+                        <td>Rate moved from 82.8 to 83.5</td>
+                      </tr>
+                      <tr>
+                        <td>Cloud cost overrun</td>
+                        <td>INR -0.18 Cr</td>
+                        <td>Usage spike on data workloads</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./monthly-variance-bridge.html">Open detailed page</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/monthly-variance-bridge.xlsx" download>Download .xlsx</a>
+                </div>
+                <p class="toolkit-when">
+                  <strong>When this tool shines:</strong> when management wants a faster read on whether the month was a
+                  timing issue, pricing issue, mix issue, or execution issue.
+                </p>
+              </article>
+
+              <article class="toolkit-resource-card reveal">
+                <p class="card-index">02</p>
+                <h3>Driver Decomposition Worksheet</h3>
+                <p>
+                  Breaks a miss into segment, volume, price, mix, churn, and timing. Useful when a headline number is
+                  obscuring which part of the business actually changed.
+                </p>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Segment</th>
+                        <th>Volume</th>
+                        <th>Price</th>
+                        <th>Mix</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>SMB SaaS</td>
+                        <td>INR -18 L</td>
+                        <td>INR +4 L</td>
+                        <td>INR -3 L</td>
+                        <td>Refocus paid search and onboarding</td>
+                      </tr>
+                      <tr>
+                        <td>Enterprise</td>
+                        <td>INR -42 L</td>
+                        <td>INR +11 L</td>
+                        <td>INR +6 L</td>
+                        <td>Fix deal slippage and legal cycle</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./driver-decomposition-worksheet.html">Open detailed page</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/driver-decomposition-worksheet.xlsx" download>Download .xlsx</a>
+                </div>
+                <p class="toolkit-when">
+                  <strong>When this tool shines:</strong> when the team keeps saying "revenue missed budget" without
+                  being able to say which segment, which driver, and which action matters.
+                </p>
+              </article>
+
+              <article class="toolkit-resource-card reveal">
+                <p class="card-index">03</p>
+                <h3>Board-Ready Variance Narrative Builder</h3>
+                <p>
+                  A structured story template that forces tone, cause, confidence level, and next actions into one
+                  short block. Good for board packs, CEO updates, and lender communication.
+                </p>
+                <div class="toolkit-narrative-sample">
+                  <p><strong>What moved:</strong> Revenue landed INR 0.9 Cr below plan, mostly from enterprise timing.</p>
+                  <p><strong>Why:</strong> Two contracted deals moved from March to April due to customer procurement delays.</p>
+                  <p><strong>What we are doing:</strong> Rephasing enterprise close assumptions, tightening collections, and pausing one discretionary hiring wave.</p>
+                  <p><strong>Confidence:</strong> Medium. Pricing remains intact; timing risk remains elevated.</p>
+                </div>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./variance-narrative-builder.html">Open detailed page</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/variance-narrative-builder.xlsx" download>Download .xlsx</a>
+                </div>
+                <p class="toolkit-when">
+                  <strong>When this tool shines:</strong> when finance has the numbers but the message is still too long,
+                  too soft, or too defensive.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section toolkit-section toolkit-section-soft" id="capital-frameworks">
+          <div class="container">
+            <div class="section-intro reveal">
+              <p class="eyebrow">Capital Allocation Frameworks</p>
+              <h2>Capital should face a clear scoring logic before it gets a champion.</h2>
+              <p>
+                These frameworks push teams toward explicit trade-offs. They help finance compare projects, defend a
+                stop decision, and free working capital without hand-waving.
+              </p>
+            </div>
+
+            <div class="toolkit-card-grid toolkit-card-grid-2">
+              <article class="toolkit-resource-card reveal">
+                <p class="card-index">01</p>
+                <h3>Capital Scoring &amp; Prioritization Matrix</h3>
+                <p>
+                  A weighted decision tool for competing projects. Use Strategic Fit, Expected ROI / Payback, Capital
+                  Efficiency, Risk, and Execution Speed to compare bets that normally get sold on separate narratives.
+                </p>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Project</th>
+                        <th>Weighted score</th>
+                        <th>Payback</th>
+                        <th>Decision</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Collections automation</td>
+                        <td>8.6 / 10</td>
+                        <td>7 months</td>
+                        <td>Fund now</td>
+                      </tr>
+                      <tr>
+                        <td>New fintech sales pod</td>
+                        <td>7.4 / 10</td>
+                        <td>14 months</td>
+                        <td>Fund in phases</td>
+                      </tr>
+                      <tr>
+                        <td>AI close assistant pilot</td>
+                        <td>6.8 / 10</td>
+                        <td>10 months</td>
+                        <td>Pilot with controls</td>
+                      </tr>
+                      <tr>
+                        <td>Warehouse expansion</td>
+                        <td>4.9 / 10</td>
+                        <td>29 months</td>
+                        <td>Kill list</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <ul class="toolkit-list">
+                  <li>Set one weight table for the quarter and use it consistently</li>
+                  <li>Require a kill, continue, or reset outcome for low scorers</li>
+                  <li>Compare strategic projects and efficiency projects on one page</li>
+                </ul>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./capital-scoring-prioritization-matrix.html">Open detailed page</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/capital-scoring-prioritization-matrix.xlsx" download>Download .xlsx</a>
+                </div>
+                <p class="toolkit-when">
+                  <strong>When this tool shines:</strong> when multiple projects feel "important" but capital is tight
+                  and the team needs a common language for saying no.
+                </p>
+              </article>
+
+              <article class="toolkit-resource-card reveal">
+                <p class="card-index">02</p>
+                <h3>Working Capital &amp; Cash Conversion Cycle Optimizer</h3>
+                <p>
+                  A diagnostic plus action log tailored to Indian operating realities: vendor terms, GST timing,
+                  collections discipline, inventory pockets, and operating seasonality.
+                </p>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Lever</th>
+                        <th>Current</th>
+                        <th>Target</th>
+                        <th>Impact</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>DSO</td>
+                        <td>74 days</td>
+                        <td>58 days</td>
+                        <td>INR 1.2 Cr release</td>
+                      </tr>
+                      <tr>
+                        <td>DPO</td>
+                        <td>38 days</td>
+                        <td>50 days</td>
+                        <td>INR 0.6 Cr release</td>
+                      </tr>
+                      <tr>
+                        <td>Inventory days</td>
+                        <td>49 days</td>
+                        <td>35 days</td>
+                        <td>INR 0.8 Cr release</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <ul class="toolkit-list">
+                  <li>Separate timing levers from structural commercial terms</li>
+                  <li>Review top 20 receivables weekly, not only month-end</li>
+                  <li>Track whether GST and invoicing mechanics are slowing cash realization</li>
+                </ul>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./cash-conversion-cycle-optimizer.html">Open detailed page</a>
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/cash-conversion-cycle-optimizer.xlsx" download>Download .xlsx</a>
+                </div>
+                <p class="toolkit-when">
+                  <strong>When this tool shines:</strong> when cash feels tighter than EBITDA suggests and the business
+                  needs working capital owners, not just one more report.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section toolkit-section" id="ai-prompts">
+          <div class="container">
+            <div class="section-intro reveal">
+              <p class="eyebrow">AI Prompts for Finance</p>
+              <h2>The prompt library built for finance teams that still care about control, judgment, and owner names.</h2>
+              <p>
+                Each prompt below follows a simple RCTF structure: Role, Context, Task, Format. Copy them directly,
+                paste in your numbers, and keep a human reviewer on anything that influences management or board
+                decisions.
+              </p>
+              <div class="toolkit-card-actions">
+                <a class="button button-secondary" href="./assets/toolkit-downloads/finance-ai-prompts-library.xlsx" download>Download Prompt Library (.xlsx)</a>
+              </div>
+            </div>
+
+            <div class="toolkit-prompt-category reveal">
+              <div class="toolkit-prompt-category-head">
+                <div>
+                  <p class="suite-label">Forecasting &amp; Scenario Planning</p>
+                  <h3>Use AI to tighten logic and speed analysis, not to guess the answer.</h3>
+                </div>
+              </div>
+
+              <div class="toolkit-prompt-grid">
+                <details class="toolkit-prompt-card">
+                  <summary>
+                    <span>
+                      <strong>Rolling Forecast Reset After a Miss</strong>
+                      <small>Forecasting &amp; Scenario Planning</small>
+                    </span>
+                    <span class="toolkit-prompt-badge">Prompt 01</span>
+                  </summary>
+                  <div class="toolkit-prompt-body">
+                    <p><strong>When to use it:</strong> after a weak month when you need a disciplined reset instead of a hand-wavy reforecast.</p>
+                    <pre id="prompt-01">Role: You are my CFO-level FP&amp;A partner.
+Context: We are a Series B SaaS company in India with INR reporting, some USD-linked costs, and a board update in 5 days. I will give you actuals, current forecast, headcount plan, CAC by channel, and collections timing.
+Task: Rebuild the next 6 months into base, downside, and stress cases. Identify the 5 drivers that explain most of the change, quantify runway impact, and highlight 3 decisions leadership should make now.
+Format: Return a concise table for each scenario, then a short management note with what changed, why, and what action is required.</pre>
+                    <div class="toolkit-summary-actions">
+                      <button class="button button-secondary" type="button" data-copy-target="prompt-01">Copy Prompt</button>
+                    </div>
+                    <div class="toolkit-snippet-grid">
+                      <article>
+                        <strong>Example output snippet</strong>
+                        <p>Stress case reduces runway from 11.2 months to 8.7 months, driven mainly by slower enterprise collections and a delayed hiring productivity curve.</p>
+                      </article>
+                      <article>
+                        <strong>Pro tip</strong>
+                        <p>Do not let the model reforecast every line. Force it to name the handful of drivers that actually moved the month.</p>
+                      </article>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="toolkit-prompt-card">
+                  <summary>
+                    <span>
+                      <strong>Runway and Burn Scenario Ladder</strong>
+                      <small>Forecasting &amp; Scenario Planning</small>
+                    </span>
+                    <span class="toolkit-prompt-badge">Prompt 02</span>
+                  </summary>
+                  <div class="toolkit-prompt-body">
+                    <p><strong>When to use it:</strong> when the CEO asks how much room exists before a hiring pause, fundraise, or cost reset becomes unavoidable.</p>
+                    <pre id="prompt-02">Role: Act as a disciplined startup finance operator.
+Context: I will share opening cash, monthly burn, collections risk, committed hires, and any debt or covenant limits.
+Task: Build a scenario ladder showing runway under current plan, 10 percent revenue shortfall, 20 percent collections delay, and a combined downside case. Tell me which operating levers preserve the most runway with the least strategic damage.
+Format: Output a 4-row scenario table, then a ranked list of levers with estimated runway benefit and likely business downside.</pre>
+                    <div class="toolkit-summary-actions">
+                      <button class="button button-secondary" type="button" data-copy-target="prompt-02">Copy Prompt</button>
+                    </div>
+                    <div class="toolkit-snippet-grid">
+                      <article>
+                        <strong>Example output snippet</strong>
+                        <p>Deferring the Q3 sales pod extends runway by 1.4 months with lower strategic damage than reducing customer success capacity.</p>
+                      </article>
+                      <article>
+                        <strong>Pro tip</strong>
+                        <p>Always ask for lever impact in months of runway and business damage, not just absolute rupees.</p>
+                      </article>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="toolkit-prompt-card">
+                  <summary>
+                    <span>
+                      <strong>Forecast Driver Sanity Check</strong>
+                      <small>Forecasting &amp; Scenario Planning</small>
+                    </span>
+                    <span class="toolkit-prompt-badge">Prompt 03</span>
+                  </summary>
+                  <div class="toolkit-prompt-body">
+                    <p><strong>When to use it:</strong> before a board pack, when you want the model challenged for driver inconsistency and hidden optimism.</p>
+                    <pre id="prompt-03">Role: You are an experienced board-facing finance reviewer.
+Context: I will provide a draft forecast with assumptions for bookings, retention, headcount, gross margin, CAC, and FX.
+Task: Challenge the forecast. Find assumption conflicts, unsupported optimism, and missing downside triggers. Then suggest the minimum changes needed to make the forecast board-ready.
+Format: Return three sections: red flags, questions for management, and a cleaner forecast assumption set.</pre>
+                    <div class="toolkit-summary-actions">
+                      <button class="button button-secondary" type="button" data-copy-target="prompt-03">Copy Prompt</button>
+                    </div>
+                    <div class="toolkit-snippet-grid">
+                      <article>
+                        <strong>Example output snippet</strong>
+                        <p>The plan assumes faster enterprise conversion and lower CAC at the same time, but no change in sales capacity or market mix supports that view.</p>
+                      </article>
+                      <article>
+                        <strong>Pro tip</strong>
+                        <p>Use this before the pack leaves finance. It is cheaper to be challenged internally than by the board.</p>
+                      </article>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <div class="toolkit-prompt-category reveal">
+              <div class="toolkit-prompt-category-head">
+                <div>
+                  <p class="suite-label">Variance Analysis &amp; Commentary</p>
+                  <h3>Tell the operating story cleanly enough that leadership knows what to do next.</h3>
+                </div>
+              </div>
+
+              <div class="toolkit-prompt-grid">
+                <details class="toolkit-prompt-card">
+                  <summary>
+                    <span>
+                      <strong>Monthly Variance Bridge Narrator</strong>
+                      <small>Variance Analysis &amp; Commentary</small>
+                    </span>
+                    <span class="toolkit-prompt-badge">Prompt 04</span>
+                  </summary>
+                  <div class="toolkit-prompt-body">
+                    <p><strong>When to use it:</strong> after closing the month when you need crisp commentary that follows the actual bridge logic.</p>
+                    <pre id="prompt-04">Role: You are an FP&amp;A lead who writes sharp monthly commentary.
+Context: I will provide plan, actual, and bridge line items for revenue, gross margin, EBITDA, and cash.
+Task: Write a short monthly variance note that explains the main drivers, separates timing from structural issues, and names the immediate actions by owner.
+Format: Output three paragraphs: what changed, why it changed, and what happens next. Keep the tone board-ready and direct.</pre>
+                    <div class="toolkit-summary-actions">
+                      <button class="button button-secondary" type="button" data-copy-target="prompt-04">Copy Prompt</button>
+                    </div>
+                    <div class="toolkit-snippet-grid">
+                      <article>
+                        <strong>Example output snippet</strong>
+                        <p>Revenue landed below plan due mainly to two enterprise deals moving into April, while pricing and retention remained stable.</p>
+                      </article>
+                      <article>
+                        <strong>Pro tip</strong>
+                        <p>Push the model to call out timing versus true deterioration. That distinction changes decisions.</p>
+                      </article>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="toolkit-prompt-card">
+                  <summary>
+                    <span>
+                      <strong>Revenue Miss Decomposition and Next Actions</strong>
+                      <small>Variance Analysis &amp; Commentary</small>
+                    </span>
+                    <span class="toolkit-prompt-badge">Prompt 05</span>
+                  </summary>
+                  <div class="toolkit-prompt-body">
+                    <p><strong>When to use it:</strong> when "revenue missed" is too vague and you need segment-level explanation with clear next moves.</p>
+                    <pre id="prompt-05">Role: Act as a commercial finance analyst with strong business judgment.
+Context: I will share actual versus plan by segment, along with volume, price, mix, churn, and timing data.
+Task: Decompose the miss into the few drivers that matter most, identify which are recoverable this quarter, and recommend 3 actions for sales, marketing, and finance.
+Format: Return one driver table followed by a short action memo with named owners and expected impact.</pre>
+                    <div class="toolkit-summary-actions">
+                      <button class="button button-secondary" type="button" data-copy-target="prompt-05">Copy Prompt</button>
+                    </div>
+                    <div class="toolkit-snippet-grid">
+                      <article>
+                        <strong>Example output snippet</strong>
+                        <p>Sixty percent of the miss sits in enterprise timing, while the more important structural issue is rising CAC in SMB paid social.</p>
+                      </article>
+                      <article>
+                        <strong>Pro tip</strong>
+                        <p>If the model cannot propose a recoverable plan and a non-recoverable plan, it has not really decomposed the miss.</p>
+                      </article>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="toolkit-prompt-card">
+                  <summary>
+                    <span>
+                      <strong>Opex Overspend Commentary with Owner Actions</strong>
+                      <small>Variance Analysis &amp; Commentary</small>
+                    </span>
+                    <span class="toolkit-prompt-badge">Prompt 06</span>
+                  </summary>
+                  <div class="toolkit-prompt-body">
+                    <p><strong>When to use it:</strong> when costs are drifting and the team needs a sharper explanation than "higher than expected spend."</p>
+                    <pre id="prompt-06">Role: You are a disciplined finance business partner.
+Context: I will provide actual versus budget operating expenses by department, highlighting headcount, software, travel, and professional fees.
+Task: Explain the overspend, separate one-off and recurring items, identify any approval or renewal control failures, and recommend corrective actions by owner.
+Format: Return a short memo with a table for overspend drivers and a final section called "what we stop, what we keep, what we review."</pre>
+                    <div class="toolkit-summary-actions">
+                      <button class="button button-secondary" type="button" data-copy-target="prompt-06">Copy Prompt</button>
+                    </div>
+                    <div class="toolkit-snippet-grid">
+                      <article>
+                        <strong>Example output snippet</strong>
+                        <p>Recurring overspend is concentrated in cloud tools and professional fees, with one renewal approved without a refreshed business case.</p>
+                      </article>
+                      <article>
+                        <strong>Pro tip</strong>
+                        <p>Ask for the control failure, not just the cost category. That is what prevents repeat leakage.</p>
+                      </article>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <div class="toolkit-prompt-category reveal">
+              <div class="toolkit-prompt-category-head">
+                <div>
+                  <p class="suite-label">Capital Efficiency &amp; Allocation</p>
+                  <h3>Use AI to sharpen trade-offs, not to outsource capital judgment.</h3>
+                </div>
+              </div>
+
+              <div class="toolkit-prompt-grid">
+                <details class="toolkit-prompt-card">
+                  <summary>
+                    <span>
+                      <strong>Capital Scoring Memo for Competing Bets</strong>
+                      <small>Capital Efficiency &amp; Allocation</small>
+                    </span>
+                    <span class="toolkit-prompt-badge">Prompt 07</span>
+                  </summary>
+                  <div class="toolkit-prompt-body">
+                    <p><strong>When to use it:</strong> when two or more projects all sound compelling but capital is tight.</p>
+                    <pre id="prompt-07">Role: You are my capital allocation partner.
+Context: I will provide 3 to 5 proposed projects with expected spend, strategic rationale, payback, risks, and execution demands.
+Task: Score each project on strategic fit, expected ROI, capital efficiency, risk, and execution speed. Then recommend which to fund now, phase, or stop.
+Format: Output a score table, then a direct recommendation memo explaining the ranking and the most important trade-offs.</pre>
+                    <div class="toolkit-summary-actions">
+                      <button class="button button-secondary" type="button" data-copy-target="prompt-07">Copy Prompt</button>
+                    </div>
+                    <div class="toolkit-snippet-grid">
+                      <article>
+                        <strong>Example output snippet</strong>
+                        <p>Collections automation ranks first because it improves cash within one quarter and requires less execution drag than a new expansion pod.</p>
+                      </article>
+                      <article>
+                        <strong>Pro tip</strong>
+                        <p>Ask the model to name what should not be funded. Good capital discipline needs a kill list.</p>
+                      </article>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="toolkit-prompt-card">
+                  <summary>
+                    <span>
+                      <strong>Kill / Continue / Reset Review</strong>
+                      <small>Capital Efficiency &amp; Allocation</small>
+                    </span>
+                    <span class="toolkit-prompt-badge">Prompt 08</span>
+                  </summary>
+                  <div class="toolkit-prompt-body">
+                    <p><strong>When to use it:</strong> when a project is consuming money but nobody wants to confront whether it still deserves funding.</p>
+                    <pre id="prompt-08">Role: Act as a hard-nosed but fair investment reviewer.
+Context: I will share the original business case for a project, money spent so far, actual outcomes, revised timeline, and strategic value today.
+Task: Recommend whether we kill, continue, or reset the initiative. Explain the sunk-cost risk, what new evidence matters, and the decision rule leadership should use.
+Format: Return a one-page memo with recommendation, rationale, and next action.</pre>
+                    <div class="toolkit-summary-actions">
+                      <button class="button button-secondary" type="button" data-copy-target="prompt-08">Copy Prompt</button>
+                    </div>
+                    <div class="toolkit-snippet-grid">
+                      <article>
+                        <strong>Example output snippet</strong>
+                        <p>Reset rather than continue. Strategic fit remains, but original payback assumptions no longer hold and the scope must be reduced.</p>
+                      </article>
+                      <article>
+                        <strong>Pro tip</strong>
+                        <p>Make the model restate the original underwriting case first. Otherwise sunk cost bias sneaks in quietly.</p>
+                      </article>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="toolkit-prompt-card">
+                  <summary>
+                    <span>
+                      <strong>Working Capital Release Plan</strong>
+                      <small>Capital Efficiency &amp; Allocation</small>
+                    </span>
+                    <span class="toolkit-prompt-badge">Prompt 09</span>
+                  </summary>
+                  <div class="toolkit-prompt-body">
+                    <p><strong>When to use it:</strong> when EBITDA looks acceptable but cash conversion is weak.</p>
+                    <pre id="prompt-09">Role: You are a CFO advisor focused on cash conversion.
+Context: I will provide DSO, DPO, inventory days, top overdue accounts, vendor terms, and any GST or billing constraints.
+Task: Identify the 5 biggest working capital release levers, estimate the likely cash impact, and recommend owners plus weekly tracking metrics.
+Format: Output a ranked action table and a short note on what can move in 30 days versus what needs structural negotiation.</pre>
+                    <div class="toolkit-summary-actions">
+                      <button class="button button-secondary" type="button" data-copy-target="prompt-09">Copy Prompt</button>
+                    </div>
+                    <div class="toolkit-snippet-grid">
+                      <article>
+                        <strong>Example output snippet</strong>
+                        <p>Reducing DSO by 12 days releases more cash than stretching all vendor terms by one week, with less relationship damage.</p>
+                      </article>
+                      <article>
+                        <strong>Pro tip</strong>
+                        <p>Force the model to separate timing wins from permanent process fixes. Both matter, but they behave differently.</p>
+                      </article>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <div class="toolkit-prompt-category reveal">
+              <div class="toolkit-prompt-category-head">
+                <div>
+                  <p class="suite-label">Narrative &amp; Board Reporting</p>
+                  <h3>Make the message shorter, sharper, and more decision-focused.</h3>
+                </div>
+              </div>
+
+              <div class="toolkit-prompt-grid">
+                <details class="toolkit-prompt-card">
+                  <summary>
+                    <span>
+                      <strong>CFO Board One-Pager Drafter</strong>
+                      <small>Narrative &amp; Board Reporting</small>
+                    </span>
+                    <span class="toolkit-prompt-badge">Prompt 10</span>
+                  </summary>
+                  <div class="toolkit-prompt-body">
+                    <p><strong>When to use it:</strong> when you need a concise board page that surfaces only the metrics and decisions that matter.</p>
+                    <pre id="prompt-10">Role: You are an experienced CFO preparing a board one-pager.
+Context: I will provide the latest KPIs, actual versus plan, cash position, runway, and 3 to 4 major business developments.
+Task: Turn this into a one-page board summary with headline metrics, key insights, emerging risks, and decisions required from the board or leadership.
+Format: Return a tight one-page layout in bullet format with a direct, calm tone and no unnecessary jargon.</pre>
+                    <div class="toolkit-summary-actions">
+                      <button class="button button-secondary" type="button" data-copy-target="prompt-10">Copy Prompt</button>
+                    </div>
+                    <div class="toolkit-snippet-grid">
+                      <article>
+                        <strong>Example output snippet</strong>
+                        <p>Cash remains adequate at 10.4 months of runway, but collections slippage in enterprise is now the main pressure point to monitor.</p>
+                      </article>
+                      <article>
+                        <strong>Pro tip</strong>
+                        <p>Good board pages do not try to sound comprehensive. They try to sound useful.</p>
+                      </article>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="toolkit-prompt-card">
+                  <summary>
+                    <span>
+                      <strong>CEO Finance Update Builder</strong>
+                      <small>Narrative &amp; Board Reporting</small>
+                    </span>
+                    <span class="toolkit-prompt-badge">Prompt 11</span>
+                  </summary>
+                  <div class="toolkit-prompt-body">
+                    <p><strong>When to use it:</strong> when the CEO needs a short, action-led finance note instead of a dense report.</p>
+                    <pre id="prompt-11">Role: Act as a finance chief of staff to the CEO.
+Context: I will give you actuals, forecast changes, cash position, hiring updates, and any open capital decisions.
+Task: Draft a short CEO update that explains what changed, what it means, and which two to three decisions need attention this week.
+Format: Return a short memo with headings: headline, why it matters, decisions required.</pre>
+                    <div class="toolkit-summary-actions">
+                      <button class="button button-secondary" type="button" data-copy-target="prompt-11">Copy Prompt</button>
+                    </div>
+                    <div class="toolkit-snippet-grid">
+                      <article>
+                        <strong>Example output snippet</strong>
+                        <p>Headline: plan remains achievable, but only if enterprise collections recover in the next 3 weeks and Q3 hiring is sequenced more tightly.</p>
+                      </article>
+                      <article>
+                        <strong>Pro tip</strong>
+                        <p>The CEO usually needs finance compressed into decisions, timing, and risk. Keep the prompt aligned to that.</p>
+                      </article>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="toolkit-prompt-card">
+                  <summary>
+                    <span>
+                      <strong>Decision Memo for Forecast Reset or Capital Request</strong>
+                      <small>Narrative &amp; Board Reporting</small>
+                    </span>
+                    <span class="toolkit-prompt-badge">Prompt 12</span>
+                  </summary>
+                  <div class="toolkit-prompt-body">
+                    <p><strong>When to use it:</strong> when finance needs one sharp memo to support a budget reset, capital request, or resource reallocation.</p>
+                    <pre id="prompt-12">Role: You are preparing a finance decision memo for senior leadership.
+Context: I will provide the situation, the capital requested or forecast change proposed, expected return, risks, and alternatives considered.
+Task: Write a decision memo that states the ask, business rationale, financial impact, downside case, and recommendation.
+Format: Use a simple structure with sections: decision required, business case, financial case, risks, recommendation.</pre>
+                    <div class="toolkit-summary-actions">
+                      <button class="button button-secondary" type="button" data-copy-target="prompt-12">Copy Prompt</button>
+                    </div>
+                    <div class="toolkit-snippet-grid">
+                      <article>
+                        <strong>Example output snippet</strong>
+                        <p>Recommendation: approve the collections automation spend now, defer the expansion pod by one quarter, and revisit after DSO improvement is visible.</p>
+                      </article>
+                      <article>
+                        <strong>Pro tip</strong>
+                        <p>A good memo makes the downside case explicit. Otherwise the recommendation sounds less disciplined than it is.</p>
+                      </article>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <div class="toolkit-prompt-category reveal">
+              <div class="toolkit-prompt-category-head">
+                <div>
+                  <p class="suite-label">Workflow Automation Ideas</p>
+                  <h3>Use AI on repeatable finance work that still has a visible reviewer and a clear audit trail.</h3>
+                </div>
+              </div>
+
+              <div class="toolkit-prompt-grid">
+                <details class="toolkit-prompt-card">
+                  <summary>
+                    <span>
+                      <strong>Month-End Bottleneck Mapper</strong>
+                      <small>Workflow Automation Ideas</small>
+                    </span>
+                    <span class="toolkit-prompt-badge">Prompt 13</span>
+                  </summary>
+                  <div class="toolkit-prompt-body">
+                    <p><strong>When to use it:</strong> when month-end feels heavy but nobody has mapped where the actual delay and rework live.</p>
+                    <pre id="prompt-13">Role: You are a finance operations designer.
+Context: I will share the month-end close calendar, handoffs, owners, recurring delays, and manual tasks.
+Task: Identify the biggest bottlenecks, which steps are candidates for automation, and where control risk means the task should stay manual.
+Format: Return a process map table with columns for step, pain point, automation potential, control risk, and recommendation.</pre>
+                    <div class="toolkit-summary-actions">
+                      <button class="button button-secondary" type="button" data-copy-target="prompt-13">Copy Prompt</button>
+                    </div>
+                    <div class="toolkit-snippet-grid">
+                      <article>
+                        <strong>Example output snippet</strong>
+                        <p>Variance commentary prep is a strong automation candidate because it is repeatable, source-based, and reviewer-controlled.</p>
+                      </article>
+                      <article>
+                        <strong>Pro tip</strong>
+                        <p>Do not start by asking where AI can help. Start by asking where rework keeps appearing.</p>
+                      </article>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="toolkit-prompt-card">
+                  <summary>
+                    <span>
+                      <strong>AI Control Design for a Finance Workflow</strong>
+                      <small>Workflow Automation Ideas</small>
+                    </span>
+                    <span class="toolkit-prompt-badge">Prompt 14</span>
+                  </summary>
+                  <div class="toolkit-prompt-body">
+                    <p><strong>When to use it:</strong> when a use case looks promising but you need a control design before the pilot expands.</p>
+                    <pre id="prompt-14">Role: You are a finance governance and controls advisor.
+Context: I will describe a proposed AI workflow, the source data used, the output created, and who will consume it.
+Task: Design the minimum controls required so the workflow can run safely inside finance. Cover data inputs, reviewer responsibility, version control, exception handling, and audit trail.
+Format: Return a control checklist plus a simple operating policy for the team.</pre>
+                    <div class="toolkit-summary-actions">
+                      <button class="button button-secondary" type="button" data-copy-target="prompt-14">Copy Prompt</button>
+                    </div>
+                    <div class="toolkit-snippet-grid">
+                      <article>
+                        <strong>Example output snippet</strong>
+                        <p>Require locked source files, named reviewer sign-off, stored prompt versions, and exception logging before output reaches management.</p>
+                      </article>
+                      <article>
+                        <strong>Pro tip</strong>
+                        <p>The most useful AI workflows often need boring controls. That is not a flaw. That is what makes them scalable.</p>
+                      </article>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="toolkit-prompt-card">
+                  <summary>
+                    <span>
+                      <strong>Master Data Anomaly Scan</strong>
+                      <small>Workflow Automation Ideas</small>
+                    </span>
+                    <span class="toolkit-prompt-badge">Prompt 15</span>
+                  </summary>
+                  <div class="toolkit-prompt-body">
+                    <p><strong>When to use it:</strong> when you want AI to flag weird patterns in vendor, customer, or GL data before close review.</p>
+                    <pre id="prompt-15">Role: Act as a finance data quality analyst.
+Context: I will provide exported transaction or master data with vendor names, GL codes, departments, dates, and amounts.
+Task: Flag unusual duplicates, missing fields, coding inconsistencies, and transactions that deserve human review before close.
+Format: Return a prioritized exception list with reason codes and a suggested reviewer for each exception group.</pre>
+                    <div class="toolkit-summary-actions">
+                      <button class="button button-secondary" type="button" data-copy-target="prompt-15">Copy Prompt</button>
+                    </div>
+                    <div class="toolkit-snippet-grid">
+                      <article>
+                        <strong>Example output snippet</strong>
+                        <p>Eight vendors appear under variant spellings across two departments, creating spend fragmentation and approval noise.</p>
+                      </article>
+                      <article>
+                        <strong>Pro tip</strong>
+                        <p>This works best as a pre-review screen, not as the final judgment on what is wrong.</p>
+                      </article>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section toolkit-section toolkit-section-soft" id="board-one-pagers">
+          <div class="container">
+            <div class="section-intro reveal">
+              <p class="eyebrow">Board &amp; Leadership One-Pagers</p>
+              <h2>Short enough to read. Sharp enough to guide decisions.</h2>
+              <p>
+                These templates are built for busy leadership teams. They cut reporting clutter and force the finance
+                message into metrics, insights, and decisions.
+              </p>
+              <div class="toolkit-card-actions">
+                <a class="button button-secondary" href="./assets/toolkit-downloads/board-ceo-one-pagers.xlsx" download>Download Board Templates (.xlsx)</a>
+              </div>
+            </div>
+
+            <div class="toolkit-card-grid toolkit-card-grid-2">
+              <article class="toolkit-resource-card reveal">
+                <p class="card-index">01</p>
+                <h3>One-Page Dashboard Template</h3>
+                <p>
+                  A single-page leadership snapshot with six core metrics and a short insights block. Useful for monthly
+                  reviews, founder updates, or lender communication when you want clarity without a 30-page pack.
+                </p>
+                <div class="toolkit-mini-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Metric</th>
+                        <th>Actual</th>
+                        <th>Plan</th>
+                        <th>Signal</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Revenue</td>
+                        <td>INR 9.8 Cr</td>
+                        <td>INR 10.4 Cr</td>
+                        <td>Down on enterprise timing</td>
+                      </tr>
+                      <tr>
+                        <td>Gross margin</td>
+                        <td>63%</td>
+                        <td>61%</td>
+                        <td>Better due to mix and FX</td>
+                      </tr>
+                      <tr>
+                        <td>Net burn</td>
+                        <td>INR 1.7 Cr</td>
+                        <td>INR 1.5 Cr</td>
+                        <td>High due to cloud and hiring</td>
+                      </tr>
+                      <tr>
+                        <td>Cash runway</td>
+                        <td>10.4 months</td>
+                        <td>11.1 months</td>
+                        <td>Watch collections</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="toolkit-narrative-sample">
+                  <p><strong>Insight 1:</strong> Commercial demand is intact, but enterprise closure timing weakened March output.</p>
+                  <p><strong>Insight 2:</strong> Margin quality improved, which gives room to protect customer success capacity.</p>
+                  <p><strong>Insight 3:</strong> Cash discipline needs tighter collections follow-through before Q3 hiring expands.</p>
+                </div>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/board-ceo-one-pagers.xlsx" download>Download .xlsx</a>
+                </div>
+              </article>
+
+              <article class="toolkit-resource-card reveal">
+                <p class="card-index">02</p>
+                <h3>Decision Memo Template</h3>
+                <p>
+                  Use this for capital requests, forecast resets, or a funding decision that needs a clean record of
+                  the ask, the economics, and the downside case.
+                </p>
+                <div class="toolkit-narrative-sample">
+                  <p><strong>Decision required:</strong> Approve or defer the INR 75 L collections automation build.</p>
+                  <p><strong>Business case:</strong> Reduce DSO by 10-12 days and free collections team capacity.</p>
+                  <p><strong>Financial case:</strong> Estimated payback in 7 months with INR 1.2 Cr cash release potential.</p>
+                  <p><strong>Downside:</strong> Implementation drag for 6 weeks; success depends on sales and finance adoption.</p>
+                  <p><strong>Recommendation:</strong> Approve now, phase the rollout, and review results after 8 weeks.</p>
+                </div>
+                <ul class="toolkit-list">
+                  <li>State the ask in one line before any background</li>
+                  <li>Quantify financial impact using payback, cash release, or runway effect</li>
+                  <li>Show the downside explicitly so the recommendation sounds disciplined</li>
+                </ul>
+                <div class="toolkit-card-actions">
+                  <a class="button button-secondary" href="./assets/toolkit-downloads/board-ceo-one-pagers.xlsx" download>Download .xlsx</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section toolkit-section" id="implementation-tips">
+          <div class="container">
+            <div class="section-intro reveal">
+              <p class="eyebrow">How to Use These Tools</p>
+              <h2>Take quick wins, then use the friction you uncover to guide the real rebuild.</h2>
+              <p>
+                These tools are designed to expose the actual bottleneck, not create a new layer of finance theatre.
+                Most teams get immediate clarity from the first forecast rebuild or variance deep-dive. The real value
+                comes from naming owners, fixing cadence, and simplifying the path from numbers to decisions.
+              </p>
+            </div>
+
+            <div class="toolkit-principle-grid">
+              <article class="toolkit-principle-card reveal">
+                <span>01</span>
+                <h3>Start with the decision bottleneck</h3>
+                <p>Pick the issue slowing judgment right now: runway, budget confidence, spend drift, or capital prioritization.</p>
+              </article>
+              <article class="toolkit-principle-card reveal">
+                <span>02</span>
+                <h3>Rebuild around drivers, not line-item noise</h3>
+                <p>Use a small number of visible assumptions that leaders can challenge and finance can own.</p>
+              </article>
+              <article class="toolkit-principle-card reveal">
+                <span>03</span>
+                <h3>Use AI only where source data and reviewer are clear</h3>
+                <p>Prompts save time when the task is repeatable and the sign-off path is named in advance.</p>
+              </article>
+              <article class="toolkit-principle-card reveal">
+                <span>04</span>
+                <h3>Turn every insight into an owner and cadence</h3>
+                <p>If the output does not change weekly or monthly behavior, the tool is still only half-built.</p>
+              </article>
+            </div>
+
+            <div class="toolkit-honest-bridge reveal">
+              <div>
+                <p class="suite-label">If you want us to help</p>
+                <h3>We can take this from toolkit to operating system.</h3>
+              </div>
+              <ul class="toolkit-list">
+                <li>Customize and implement any of these tools inside your business</li>
+                <li>Run a full Capital Efficiency Audit with your actual numbers and management cadence</li>
+                <li>Build an end-to-end FP&amp;A system your team will actually enjoy running</li>
+              </ul>
+              <p>
+                Book a focused strategy call and we will diagnose the highest-leverage gap in 30 minutes. The aim is
+                not to sell complexity. It is to find the smallest useful rebuild that improves finance judgment fast.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section toolkit-section toolkit-final-section" id="ready-for-more">
+          <div class="container toolkit-final-grid">
+            <div class="toolkit-final-card reveal">
+              <p class="eyebrow">Ready for More?</p>
+              <h2>Use the tools first. Bring us in when the system needs to hold under real pressure.</h2>
+              <p>
+                The toolkit is deliberately practical. It should give you quick wins, clearer judgment, and a better
+                sense of where the real finance bottleneck sits. When you need a sharper implementation push, we can
+                help with focused workshops, diagnostics, or a full finance systems rebuild.
+              </p>
+              <div class="toolkit-cta-stack">
+                <a class="button button-primary" href="./workshops.html">Explore Workshops</a>
+                <a class="button button-secondary" href="./blogs.html">Read More Insights</a>
+              </div>
+            </div>
+
+            <aside class="lp-scheduler-card reveal" id="fit-call">
+              <p class="lp-panel-label">Book a fit call</p>
+              <h2>Pick a preferred date and time.</h2>
+              <p class="lp-panel-copy">
+                We will open Gmail with a prefilled draft addressed to Kamlesh. Use the note field to flag the tool,
+                model, or finance bottleneck you want to tackle first.
+              </p>
+
+              <form class="lp-call-form" id="strategy-call-form">
+                <div class="lp-field-grid">
+                  <label class="lp-field" for="strategy-date">
+                    <span>Date</span>
+                    <input id="strategy-date" name="preferred_date" type="date" required />
+                  </label>
+
+                  <label class="lp-field" for="strategy-time">
+                    <span>Time</span>
+                    <input id="strategy-time" name="preferred_time" type="time" required />
+                  </label>
+                </div>
+
+                <label class="lp-field" for="strategy-company">
+                  <span>Company / Role</span>
+                  <input id="strategy-company" name="company" type="text" placeholder="Example: CFO, Series B SaaS" />
+                </label>
+
+                <label class="lp-field" for="strategy-note">
+                  <span>What should we discuss?</span>
+                  <textarea
+                    id="strategy-note"
+                    name="context"
+                    rows="4"
+                    placeholder="Example: rolling forecast rebuild, runway pressure, variance pack redesign, or AI workflow pilot."
+                  ></textarea>
+                </label>
+
+                <button class="lp-button lp-button-dark" type="submit">Draft Fit Call Email</button>
+                <p class="lp-form-note">Opens Gmail in the browser with a draft addressed to Kamlesh.</p>
+                <p class="lp-form-response" id="strategy-response" aria-live="polite"></p>
+              </form>
+            </aside>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./speed-insights.js"></script>
+    <script src="./chatbase-config.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
