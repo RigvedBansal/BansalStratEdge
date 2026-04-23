@@ -460,16 +460,16 @@ if (workshopInterestForm && workshopName && workshopEmail && workshopResponse) {
     const audience = workshopAudience ? workshopAudience.value.trim() : "";
     const delivery = workshopDelivery ? workshopDelivery.value.trim() : "";
     const note = workshopNote ? workshopNote.value.trim() : "";
-    const subject = organization ? `Workshop Inquiry - ${organization}` : "Workshop Inquiry";
+    const subject = organization ? `Workshop or Speaking Inquiry - ${organization}` : "Workshop or Speaking Inquiry";
     const body =
-      `Hi Kamlesh,\n\nI'm interested in your workshop offerings.\n\nName: ${name}\nEmail: ${email}\n${
+      `Hi Kamlesh,\n\nI'm interested in your workshop or speaking offerings.\n\nName: ${name}\nEmail: ${email}\n${
         organization ? `Institution / company: ${organization}\n` : ""
       }${format ? `Preferred format: ${format}\n` : ""}${audience ? `Audience: ${audience}\n` : ""}${
         delivery ? `Delivery mode: ${delivery}\n` : ""
       }${note ? `\nInterest / timing / pricing note:\n${note}\n` : ""}\nPlease share availability and indicative pricing.\n\nThanks.`;
 
     workshopResponse.textContent =
-      "Gmail is opening with a prefilled workshop inquiry to Kamlesh.";
+      "Gmail is opening with a prefilled workshop or speaking inquiry to Kamlesh.";
 
     openGmailCompose({
       to: "kamlesh@kamleshbansal.com",
