@@ -228,7 +228,37 @@ navLinks.forEach((link) => {
   });
 });
 
-const path = window.location.pathname.split("/").pop() || "index.html";
+const normalizePagePath = (pathname) => pathname.split("/").pop() || "index.html";
+const getNavLinkTarget = (link) => {
+  const href = link.getAttribute("href");
+
+  if (!href) {
+    return { page: "", hash: "" };
+  }
+
+  const targetUrl = new URL(href, window.location.href);
+
+  return {
+    page: normalizePagePath(targetUrl.pathname),
+    hash: targetUrl.hash,
+  };
+};
+const setCurrentNavLink = (matcher) => {
+  let hasMatch = false;
+
+  navLinks.forEach((link) => {
+    const isMatch = !hasMatch && matcher(link);
+
+    if (isMatch) {
+      link.setAttribute("aria-current", "page");
+      hasMatch = true;
+      return;
+    }
+
+    link.removeAttribute("aria-current");
+  });
+};
+const path = normalizePagePath(window.location.pathname);
 const isHomePage = document.body.classList.contains("home-page");
 const isFoundersPage = document.body.classList.contains("founders-page");
 const isWorkshopsPage = document.body.classList.contains("workshops-page");
@@ -237,26 +267,55 @@ const isBlogsSection =
   document.body.classList.contains("journal-article-page") ||
   path === "blogs.html" ||
   path.startsWith("journal-");
+const updateCurrentNavLink = () => {
+  const currentHash = window.location.hash;
+  const isCurrentHomePage = isHomePage || path === "index.html";
 
-document.querySelectorAll("[data-nav-link]").forEach((link) => {
-  const target = link.getAttribute("href");
-
-  if ((isHomePage || path === "index.html" || path === "") && target === "./index.html") {
-    link.setAttribute("aria-current", "page");
+  if (isCurrentHomePage && (currentHash === "#capabilities" || currentHash === "#approach" || currentHash === "#contact")) {
+    setCurrentNavLink((link) => {
+      const { page, hash } = getNavLinkTarget(link);
+      return page === "index.html" && hash === currentHash;
+    });
+    return;
   }
 
-  if (isBlogsSection && target === "./blogs.html") {
-    link.setAttribute("aria-current", "page");
+  if (isBlogsSection) {
+    setCurrentNavLink((link) => {
+      const { page, hash } = getNavLinkTarget(link);
+      return page === "blogs.html" && hash === "";
+    });
+    return;
   }
 
-  if ((isFoundersPage || path === "founders.html") && target === "./founders.html") {
-    link.setAttribute("aria-current", "page");
+  if (isFoundersPage || path === "founders.html") {
+    setCurrentNavLink((link) => {
+      const { page, hash } = getNavLinkTarget(link);
+      return page === "founders.html" && hash === "";
+    });
+    return;
   }
 
-  if ((isWorkshopsPage || path === "workshops.html") && target === "./workshops.html") {
-    link.setAttribute("aria-current", "page");
+  if (isWorkshopsPage || path === "workshops.html") {
+    setCurrentNavLink((link) => {
+      const { page, hash } = getNavLinkTarget(link);
+      return page === "workshops.html" && hash === "";
+    });
+    return;
   }
-});
+
+  if (isCurrentHomePage) {
+    setCurrentNavLink((link) => {
+      const { page, hash } = getNavLinkTarget(link);
+      return page === "index.html" && hash === "";
+    });
+    return;
+  }
+
+  setCurrentNavLink(() => false);
+};
+
+updateCurrentNavLink();
+window.addEventListener("hashchange", updateCurrentNavLink);
 
 const reveals = document.querySelectorAll(".reveal");
 
