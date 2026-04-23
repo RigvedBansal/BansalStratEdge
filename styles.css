@@ -973,6 +973,10 @@ h3 {
   color: var(--navy);
 }
 
+.journal-feature .source-pill + .article-meta-row {
+  margin-top: 0.75rem;
+}
+
 .journal-feature-aside {
   display: grid;
   gap: 1rem;
