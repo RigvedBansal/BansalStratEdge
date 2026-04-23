@@ -7,7 +7,7 @@ import {
   statSync,
   writeFileSync,
 } from "node:fs";
-import { resolve } from "node:path";
+import { extname, resolve } from "node:path";
 
 const defaults = {
   botId: "wDye2cLkm_hH2e4lyjq_F",
@@ -27,24 +27,29 @@ window.CHATBASE_HOST = window.CHATBASE_HOST || window.CHATBASE_CONFIG.host;
 const rootDir = process.cwd();
 const publicDir = resolve(rootDir, "public");
 
-const filesToCopy = [
-  "index.html",
-  "blogs.html",
-  "founders.html",
-  "workshops.html",
-  "cfo-capital-efficiency-checklist.html",
-  "journal-ai-control-tower.html",
-  "journal-board-narratives.html",
-  "journal-capital-confidence.html",
-  "journal-cfo-dashboards.html",
-  "journal-daily-confidence.html",
-  "journal-growth-architecture.html",
-  "journal-treasury-mandate.html",
-  "styles.css",
-  "script.js",
-  "speed-insights.js",
-  "favicon.svg",
-];
+const rootStaticExtensions = new Set([
+  ".html",
+  ".css",
+  ".js",
+  ".svg",
+  ".txt",
+  ".xml",
+  ".webmanifest",
+]);
+
+const filesToCopy = readdirSync(rootDir).filter((file) => {
+  const filePath = resolve(rootDir, file);
+
+  if (!statSync(filePath).isFile()) {
+    return false;
+  }
+
+  if (file === "chatbase-config.js") {
+    return false;
+  }
+
+  return rootStaticExtensions.has(extname(file));
+});
 
 rmSync(publicDir, { recursive: true, force: true });
 mkdirSync(publicDir, { recursive: true });

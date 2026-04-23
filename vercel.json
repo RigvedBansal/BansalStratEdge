@@ -1,0 +1,34 @@
+{
+  "redirects": [
+    {
+      "source": "/toolkit",
+      "destination": "/finance-systems-toolkit.html",
+      "permanent": false
+    },
+    {
+      "source": "/toolkit/",
+      "destination": "/finance-systems-toolkit.html",
+      "permanent": false
+    },
+    {
+      "source": "/finance-systems-toolkit",
+      "destination": "/finance-systems-toolkit.html",
+      "permanent": false
+    },
+    {
+      "source": "/finance-systems-toolkit/",
+      "destination": "/finance-systems-toolkit.html",
+      "permanent": false
+    },
+    {
+      "source": "/resources-toolkit",
+      "destination": "/finance-systems-toolkit.html",
+      "permanent": false
+    },
+    {
+      "source": "/resources-toolkit/",
+      "destination": "/finance-systems-toolkit.html",
+      "permanent": false
+    }
+  ]
+}
