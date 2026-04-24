@@ -98,11 +98,13 @@ const applyTheme = (theme, { persist = false } = {}) => {
 
 const createThemeToggle = () => {
   const navShell = document.querySelector(".nav-shell");
-  const siteNav = navShell?.querySelector(".site-nav");
 
-  if (!navShell || navShell.querySelector(".theme-toggle")) {
+  if (!navShell || document.querySelector(".theme-toggle, .theme-toggle-dock")) {
     return;
   }
+
+  const dock = document.createElement("div");
+  dock.className = "theme-toggle-dock";
 
   const toggle = document.createElement("button");
   toggle.type = "button";
@@ -125,7 +127,6 @@ const createThemeToggle = () => {
         <span class="theme-toggle-crater theme-toggle-crater-three"></span>
       </span>
     </span>
-    <span class="theme-toggle-label" data-theme-label></span>
   `;
 
   toggle.addEventListener("click", () => {
@@ -133,11 +134,8 @@ const createThemeToggle = () => {
     applyTheme(nextTheme, { persist: true });
   });
 
-  if (siteNav) {
-    siteNav.insertAdjacentElement("afterend", toggle);
-  } else {
-    navShell.appendChild(toggle);
-  }
+  dock.appendChild(toggle);
+  document.body.appendChild(dock);
 
   syncThemeToggle(getActiveTheme());
 };
