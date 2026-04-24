@@ -3,32 +3,32 @@
     {
       "source": "/toolkit",
       "destination": "/finance-systems-toolkit.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/toolkit/",
       "destination": "/finance-systems-toolkit.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/finance-systems-toolkit",
       "destination": "/finance-systems-toolkit.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/finance-systems-toolkit/",
       "destination": "/finance-systems-toolkit.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/resources-toolkit",
       "destination": "/finance-systems-toolkit.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/resources-toolkit/",
       "destination": "/finance-systems-toolkit.html",
-      "permanent": false
+      "permanent": true
     }
   ]
 }
